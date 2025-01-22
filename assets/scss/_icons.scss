@@ -1,0 +1,90 @@
+$iconsList: "logo", "instagram", "youtube", "twitter", "facebook", "blog";
+
+[class*="icons-"] {
+  transition: background-color 0.3s;
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  flex: none;
+
+  &.exsmall {
+    width: 14px;
+    height: 14px;
+  }
+
+  &.small {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.mid {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.large {
+    width: 36px;
+    height: 36px;
+  }
+
+  &.large2 {
+    width: 34px;
+    height: 34px;
+  }
+
+  &.transition {
+    transition: 0.3s;
+  }
+
+  &.rotate {
+    transform: rotate(180deg);
+  }
+
+  &.icons {
+    @each $item in $iconsList {
+      &-#{$item} {
+        &:not(.bgi, .img) {
+          @include mask("icon/#{$item}.svg", center center);
+
+          &:not([class*="bgc-"]) {
+            background-color: #33363d;
+
+            &.hover {
+              &:hover {
+                background-color: var(--primary);
+              }
+            }
+
+            &.active {
+              background-color: var(--primary);
+            }
+          }
+        }
+
+        &.auto {
+          -webkit-mask-size: auto;
+        }
+
+        &.bgi {
+          @include bgi("icon/#{$item}.svg");
+        }
+
+        &.img {
+          @include bgi("icon/#{$item}.png");
+          background-position: center center;
+        }
+      }
+    }
+
+    // icons size
+    &-logo {
+      width: 134px;
+      height: 32px;
+
+      @media (min-width: 1024px) {
+        width: 200px;
+        height: 48px;
+      }
+    }
+  }
+}

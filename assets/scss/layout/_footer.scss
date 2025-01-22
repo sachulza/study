@@ -1,0 +1,256 @@
+.layout-related-site {
+  border-top: 1px solid var(--color-divider-gray-light, #cdd1d5);
+
+  .footer-layout-inner {
+    @include flexColumn {
+      align-items: normal;
+      justify-content: flex-start;
+    }
+    width: 100%;
+    max-width: 1200px;
+
+    @include pc {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    @include pc("max") {
+    }
+    @include tablet {
+    }
+
+    .site-container {
+      @include flexBetween {
+        align-self: stretch;
+        align-items: center;
+      }
+      height: 56px;
+      gap: 8px;
+      padding: 0 16px;
+      color: var(--color-text-basic, #1e2124);
+      border-top: 1px solid var(--color-divider-gray-light, #cdd1d5);
+      // border-bottom: 1px solid var(--color-divider-gray-light, #cdd1d5);
+
+      /* navigation/depth-medium */
+      font-family: var(--typo-font-type, "Pretendard GOV");
+      font-size: var(--font-size-navigation-depth-medium, 17px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 25.5px */
+      letter-spacing: var(--typo-letter-spacing-0, 0px);
+
+      @media (min-width: 1024px) {
+        flex: 1;
+        border-right: 1px solid var(--color-divider-gray-light, #cdd1d5);
+        border-top: none;
+
+        &:first-child {
+          border-left: 1px solid var(--color-divider-gray-light, #cdd1d5);
+        }
+      }
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &::after {
+        display: inline-flex;
+        flex-shrink: 0;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: no-repeat center url(../../assets/images/icon/btn-more.svg);
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.layout-footer-content {
+  border-top: 1px solid var(--color-divider-gray-light, #cdd1d5);
+  background: var(--color-surface-gray-subtler, #f4f5f6);
+
+  .content-inner {
+    @include flexColumn {
+      align-items: normal;
+      justify-content: flex-start;
+    }
+    width: 100%;
+    max-width: 1200px;
+    padding: 24px 16px;
+    gap: 24px;
+
+    @include pc {
+      margin: 0 auto;
+    }
+
+    .content-wrap {
+      @include flexColumn {
+        justify-content: center;
+      }
+      gap: 24px;
+
+      @media (min-width: 769px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .address-wrap {
+        @include flexColumn {
+          justify-content: center;
+        }
+        gap: 16px;
+
+        .address-container {
+          color: #1e2124;
+
+          /* body/medium */
+          font-family: var(--typo-font-type, "Pretendard GOV");
+          font-size: var(--font-size-body-medium, 17px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 25.5px */
+          letter-spacing: var(--typo-letter-spacing-0, 0px);
+        }
+      }
+
+      .tel-wrap {
+        @include flexColumn {
+          justify-content: center;
+          gap: 8px;
+        }
+
+        .tel-container {
+          @include flexColumn {
+            gap: 3px;
+          }
+
+          @media (min-width: 1024px) {
+            flex-direction: row;
+            gap: 8px;
+          }
+
+          .tel-subject {
+            color: var(--color-text-basic, #1e2124);
+
+            /* body/medium-bold */
+            font-family: var(--typo-font-type, "Pretendard GOV");
+            font-size: var(--font-size-body-medium, 17px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 25.5px */
+            letter-spacing: var(--typo-letter-spacing-0, 0px);
+          }
+
+          .tel-desc {
+            @include flexYCenter {
+            }
+            gap: 8px;
+            p {
+              font-family: var(--typo-font-type, "Pretendard GOV");
+              font-size: var(--font-size-body-medium, 17px);
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%; /* 25.5px */
+              letter-spacing: var(--typo-letter-spacing-0, 0px);
+            }
+          }
+
+          .divider {
+            width: 1px;
+            height: 12px;
+            background: var(--color-divider-gray-dark, #6d7882);
+          }
+        }
+      }
+
+      .link-wrap {
+        @include flexColumn {
+          justify-content: center;
+        }
+        gap: 24px;
+
+        .location-wrap {
+          @include flexColumn {
+            justify-content: center;
+          }
+          gap: 4px;
+        }
+
+        .sns-wrap {
+          @include flexYCenter {
+          }
+          gap: 8px;
+
+          .sns-container {
+            @include flexCenter {
+            }
+            padding: 8px;
+            border-radius: var(--radius-max, 1000px);
+            border: 1px solid var(--color-border-gray-light, #cdd1d5);
+            background: var(--color-action-secondary, rgba(255, 255, 255, 0));
+          }
+        }
+      }
+    }
+  }
+
+  .layout-footer-copyright {
+    @include flexColumn {
+    }
+    gap: 20px;
+    padding-top: 16px;
+    border-top: var(--border-width-static-regular, 1px) solid
+      var(--color-divider-gray-light, #cdd1d5);
+
+    @media (min-width: 769px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .link-copy {
+      @include flexYCenter {
+        display: inline-flex;
+        flex-wrap: wrap;
+      }
+      gap: 8px;
+
+      a {
+        color: var(--color-text-basic, #1e2124);
+
+        /* label/small */
+        font-family: var(--typo-font-type, "Pretendard GOV");
+        font-size: var(--font-size-label-small, 15px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 22.5px */
+        letter-spacing: var(--typo-label-small-letter-spacing, 0px);
+        text-decoration: none;
+      }
+
+      .bold {
+        color: var(--color-text-secondary, #052b57);
+        /* body/small-bold */
+        font-family: var(--typo-font-type, "Pretendard GOV");
+        font-size: var(--font-size-body-small, 15px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 22.5px */
+        letter-spacing: var(--typo-letter-spacing-0, 0px);
+      }
+
+      .copyright-all {
+        color: var(--color-text-subtle, #464c53);
+
+        /* body/xsmall */
+        font-family: var(--typo-font-type, "Pretendard GOV");
+        font-size: var(--font-size-body-xsmall, 13px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 19.5px */
+        letter-spacing: var(--typo-letter-spacing-0, 0px);
+      }
+    }
+  }
+}

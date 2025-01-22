@@ -1,0 +1,80 @@
+@import "./header";
+@import "./footer";
+
+// margin/padding
+@for $i from 1 to 50 {
+  .sp-mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .sp-mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+
+// flex
+.flex {
+  @include flex;
+}
+.flexBetween {
+  @include flexBetween;
+}
+.flexXCenter {
+  @include flexYCenter;
+}
+.flexYCenter {
+  @include flexYCenter;
+}
+.flexCenter {
+  @include flexCenter;
+}
+.flexColumn {
+  @include flex($direction: column);
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex1 {
+  flex: 1;
+}
+.flex-none {
+  flex: none;
+}
+
+.layout-contents-wrap {
+  min-height: 100vh;
+}
+
+.layout-contents-center {
+  width: var(--contents-width);
+  margin: 0 auto;
+}
+
+.layout-inner {
+  @include flexColumn {
+    align-items: normal;
+    justify-content: flex-start;
+  }
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (min-width: 1024px) {
+    margin: 0 auto;
+  }
+}

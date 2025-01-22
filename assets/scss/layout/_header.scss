@@ -1,0 +1,101 @@
+.masthead-wrap {
+  @include flexYCenter;
+  align-self: stretch;
+  height: 32px;
+  padding: 0 16px;
+  background-color: #eef2f7;
+
+  .nuri-txt {
+    @include flexYCenter {
+      display: inline-flex;
+    }
+    @include font($bodyS);
+    gap: 8px;
+    color: #1e2124;
+
+    &::before {
+      @include bgi("icon/taegeukgi.svg");
+      display: inline-flex;
+      flex-shrink: 0;
+      content: "";
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.layout-header-wrap {
+  @include flexYCenter;
+  height: 72px;
+  padding: 16px 0;
+
+  .main-container {
+    @include flexBetween {
+      flex: 1;
+    }
+
+    .gov-logo {
+      @include bgi("icon/logo.svg");
+      display: inline-flex;
+      flex-shrink: 0;
+      content: "";
+      width: 134px;
+      height: 32px;
+
+      @media (min-width: 1024px) {
+        width: 200px;
+        height: 48px;
+      }
+    }
+
+    .nav-container {
+      @include flexYCenter {
+        justify-content: flex-end;
+      }
+
+      button {
+        @include font($body);
+        color: var(--color-text-basic, #1e2124);
+      }
+
+      .nav-search {
+        @include flexColumn {
+          align-items: center;
+        }
+        height: 56px;
+        gap: 4px;
+        padding: 4px 12px 0 12px;
+        padding-bottom: 0;
+
+        &::before {
+          @include bgi("icon/search.svg");
+          display: inline-flex;
+          flex-shrink: 0;
+          content: "";
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .nav-menu {
+        @include flexColumn {
+          align-items: center;
+        }
+
+        height: 56px;
+        gap: 4px;
+        padding: 4px 12px 0 12px;
+        padding-bottom: 0;
+
+        &::before {
+          @include bgi("icon/menu.svg");
+          display: inline-flex;
+          flex-shrink: 0;
+          content: "";
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

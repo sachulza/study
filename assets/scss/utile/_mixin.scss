@@ -1,0 +1,151 @@
+@mixin flex($direction: row, $flex: none, $x: initial, $y: initial) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+  flex-direction: $direction;
+  @content;
+}
+@mixin flexColumn {
+  @include flex($direction: column);
+  @content;
+}
+@mixin flexBetween {
+  @include flex($x: space-between, $y: center);
+  @content;
+}
+@mixin flexAround {
+  @include flex($x: space-around, $y: center);
+  @content;
+}
+@mixin flexYCenter {
+  @include flex($x: flex-start, $y: center);
+  @content;
+}
+@mixin flexXCenter {
+  @include flex($x: center, $y: flex-start);
+  @content;
+}
+@mixin flexCenter {
+  @include flex($x: center, $y: center);
+  @content;
+}
+@mixin layoutBetween {
+  @include flexBetween;
+
+  & > div {
+    @include flexYCenter;
+  }
+}
+
+@mixin bgi($img, $bgp: center, $size: contain, $active: false, $file: ".png") {
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: $bgp;
+  image-rendering: -webkit-optimize-contrast;
+
+  @if $active {
+    background-image: url($imgurl + $img + $file);
+
+    &.active {
+      background-image: url($imgurl + $img + "_on" + $file);
+    }
+  } @else {
+    background-image: url($imgurl + $img);
+  }
+}
+
+@mixin mask($img, $bgp: 0 0, $size: contain) {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: $size;
+  -webkit-mask-image: url($imgurl + $img);
+  -webkit-mask-position: $bgp;
+}
+
+// ellipsis
+@mixin ellipsis($line: 1) {
+  @if ($line == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    white-space: initial;
+  }
+  word-break: break-all;
+}
+// hidden
+@mixin hidden {
+  text-indent: -9999em;
+  overflow: hidden;
+}
+
+// center
+@mixin center {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+@mixin scroll($w: 6px, $h: 6px, $dark: false) {
+  &::-webkit-scrollbar-track {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #fafafa;
+  }
+
+  &::-webkit-scrollbar {
+    width: $w;
+    height: $h;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #bdbdbd;
+  }
+
+  @if ($dark) {
+    &::-webkit-scrollbar-track {
+      border: 1px solid var(--grey900);
+      background-color: var(--grey900);
+    }
+
+    &::-webkit-scrollbar {
+      background-color: var(--grey900);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--grey700);
+    }
+  }
+}
+
+// layout
+@mixin contentsCenter {
+  width: var(--contents-width);
+  margin: 0 auto;
+  @content;
+}
+
+// res
+@mixin pc($mm: "min") {
+  @media (#{$mm}-width: $pc) {
+    @content;
+  }
+}
+@mixin tablet($mm: "min") {
+  @media (#{$mm}-width: $tablet) {
+    @content;
+  }
+}
+
+// fonts
+@mixin font($size, $line: 1.5) {
+  font-size: var(--#{$size});
+  line-height: $line;
+}
