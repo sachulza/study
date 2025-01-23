@@ -42,7 +42,7 @@
       <!-- header -->
       <header class="layout-header-wrap">
         <div class="layout-inner flex1">
-          <div class="main-container">
+          <div class="logo-container">
             <a href="#" class="icons-logo bgi"></a>
             <nav class="nav-container">
               <button href="#" class="nav-search">통합검색</button>
@@ -54,14 +54,15 @@
       <!-- //header -->
 
       <!-- notice -->
-      <div class="notice-wrap">
+      <div class="main-notice-wrap">
         <div class="layout-inner flexCenter">
           <div class="notice-container">
-            <div class="icon-emergency">
-              <div></div>
+            <div class="icon-wrap">
+              <!-- <div></div> -->
+              <i class="icons-emergency mid bgi"></i>
               <p>긴급</p>
             </div>
-            <p class="notice-text">
+            <p class="text-container">
               미세먼지 노출 시 철저한 위생관리로 건강관리에 유의바랍니다.
             </p>
           </div>
@@ -120,21 +121,21 @@
 
       <div class="main-gap layout-inner">
         <!-- bookmark -->
-        <section class="bookmark-wrap">
-          <div class="bookmark-title">
+        <section class="main-bookmark-wrap">
+          <div class="title">
             <p class="ui-title-section">자주찾는 메뉴</p>
             <a href="#"><span>설정하기</span></a>
           </div>
-          <div class="bookmark-list-wrap">
-            <ul class="bookmark-grid">
+          <div class="list-wrap">
+            <ul class="array">
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img src="./assets/images/bookmark/01_calendar.svg" alt="" />
                   <p>사업자등록 증명</p>
                 </a>
               </li>
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img
                     src="./assets/images/bookmark/02_new_folder.svg"
                     alt=""
@@ -143,25 +144,25 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img src="./assets/images/bookmark/03_map.svg" alt="" />
                   <p>지방세 납세증명</p>
                 </a>
               </li>
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img src="./assets/images/bookmark/04_identity.svg" alt="" />
                   <p>자동차등록원부</p>
                 </a>
               </li>
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img src="./assets/images/bookmark/05_analytics.svg" alt="" />
                   <p>여권재발금</p>
                 </a>
               </li>
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img
                     src="./assets/images/bookmark/06_location_away.svg"
                     alt=""
@@ -170,13 +171,13 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img src="./assets/images/bookmark/07_bookmarks.svg" alt="" />
                   <p>토지이용 확인</p>
                 </a>
               </li>
               <li>
-                <a href="#" class="ui-container">
+                <a href="#" class="ui-container ui-border-box">
                   <img src="./assets/images/bookmark/08_ecg_heart.svg" alt="" />
                   <p>건강보험</p>
                 </a>
@@ -188,12 +189,12 @@
         <!-- //bookmark -->
 
         <!-- contents -->
-        <section class="contents-wrap">
-          <div class="contents-title">
+        <section class="main-combi-contents-wrap">
+          <div class="title">
             <p class="ui-title-section">복합 컨텐츠</p>
           </div>
-          <div class="media-layout-banner">
-            <article class="banner-main">
+          <div class="contents-wrap">
+            <article class="fixed-content">
               <div class="text-container">
                 <p class="title">행정서식<br />간편이름</p>
                 <p class="desc">
@@ -206,10 +207,10 @@
                 <img src="./assets/images/contents/main_banner_01.png" alt="" />
               </figure>
             </article>
-            <article class="banner-list">
-              <ul class="banner-wrap">
-                <li class="banner-container">
-                  <figure class="banner-img">
+            <article class="card-section-wrap">
+              <ul class="list-wrap">
+                <li class="card-container">
+                  <figure class="card-img">
                     <img
                       src="./assets/images/contents/main_combined_01.png"
                       alt=""
@@ -222,8 +223,8 @@
                   </p>
                   <button class="ui-btn-shortcut">자세히 보기</button>
                 </li>
-                <li class="banner-container">
-                  <figure class="banner-img" style="background: #cee4ee">
+                <li class="card-container">
+                  <figure class="card-img" style="background: #cee4ee">
                     <img
                       src="./assets/images/contents/main_combined_02.png"
                       alt=""
@@ -236,8 +237,8 @@
                   </p>
                   <button class="ui-btn-shortcut">자세히 보기</button>
                 </li>
-                <li class="banner-container">
-                  <figure class="banner-img" style="background: #cee7e5">
+                <li class="card-container">
+                  <figure class="card-img" style="background: #cee7e5">
                     <img
                       src="./assets/images/contents/main_combined_03.png"
                       alt=""
@@ -257,17 +258,17 @@
         <!-- //contents -->
 
         <!-- policy -->
-        <section class="policy">
+        <section class="main-policy-wrap">
           <div class="policy-title">
             <p class="ui-title-section">정책소개</p>
             <button class="ui-btn-detail">더보기</button>
           </div>
-          <ul class="policy-list-wrap">
-            <li class="policy-container">
-              <figure class="policy-img">
+          <ul class="card-list-wrap">
+            <li class="card-container">
+              <figure class="card-img">
                 <img src="./assets/images/policy/01_policy_card.png" alt="" />
               </figure>
-              <div class="policy-text-container">
+              <div class="text-container">
                 <div class="ui-badge mr-auto">뱃지</div>
                 <p class="text-title">생활지원카드</p>
                 <p class="text-desc">
@@ -278,11 +279,11 @@
                 <button class="ui-btn-shortcut">자세히 보기</button>
               </div>
             </li>
-            <li class="policy-container">
-              <figure class="policy-img">
+            <li class="card-container">
+              <figure class="card-img">
                 <img src="./assets/images/policy/02_policy_energy.png" alt="" />
               </figure>
-              <div class="policy-text-container">
+              <div class="text-container">
                 <div class="ui-badge mr-auto">뱃지</div>
                 <p class="text-title">에너지 효율 1등급 환급</p>
                 <p class="text-desc">
@@ -293,11 +294,11 @@
                 <button class="ui-btn-shortcut">자세히 보기</button>
               </div>
             </li>
-            <li class="policy-container">
-              <figure class="policy-img">
+            <li class="card-container">
+              <figure class="card-img">
                 <img src="./assets/images/policy/03_policy_eco.png" alt="" />
               </figure>
-              <div class="policy-text-container">
+              <div class="text-container">
                 <div class="ui-badge mr-auto">뱃지</div>
                 <p class="text-title">에코머니</p>
                 <p class="text-desc">
@@ -313,11 +314,11 @@
         <!-- //policy -->
 
         <!-- news -->
-        <section class="news">
+        <section class="main-news-wrap">
           <div class="news-title">
             <p class="ui-title-section">뉴스</p>
           </div>
-          <div class="news-tab-wrap">
+          <div class="nav-wrap">
             <ul>
               <li>
                 <button class="tab-container">전체</button>
@@ -434,7 +435,7 @@
         <!-- //news -->
 
         <!-- complaint -->
-        <section class="complaint">
+        <section class="main-complaint-wrap">
           <div class="complaint-title">
             <p class="ui-title-section">민원 서비스</p>
             <button class="ui-btn-detail">더보기</button>
@@ -464,33 +465,31 @@
       </div>
 
       <!-- introduction -->
-      <section class="introduction">
-        <div class="introduction-wrap">
-          <div class="layout-inner">
-            <article class="introduction-card">
-              <img
-                src="./assets/images/img_person_1.png"
-                alt=""
-                class="intro-img"
-              />
-              <div class="intro-except-card">
-                <div class="intro-text">
-                  <p class="intro-subject">
-                    안녕하십니까.<br />
-                    고용노동부 장관 김나라입니다.
-                  </p>
-                  <p class="intro-desc">
-                    고용노동부는 국민 누구나 원하는 일자리에서 마음껏 역량을
-                    발휘할 수 있도록 더 많은 일자리를 만들고, 더 든든하고 안전한
-                    일터를 조성하기 위해 노력하고 있습니다.국민 여러분의 땀의
-                    가치가 정당하게 인정받을 수 있도록 언제나 국민의 눈높이에서
-                    정책을 펼쳐나가겠습니다.
-                  </p>
-                </div>
-                <p class="ui-btn-shortcut">자세히 보기</p>
+      <section class="main-introduction-wrap">
+        <div class="layout-inner">
+          <article class="introduction-card">
+            <img
+              src="./assets/images/img_person_1.png"
+              alt=""
+              class="intro-img"
+            />
+            <div class="intro-except-card">
+              <div class="intro-text">
+                <p class="intro-subject">
+                  안녕하십니까.<br />
+                  고용노동부 장관 김나라입니다.
+                </p>
+                <p class="intro-desc">
+                  고용노동부는 국민 누구나 원하는 일자리에서 마음껏 역량을
+                  발휘할 수 있도록 더 많은 일자리를 만들고, 더 든든하고 안전한
+                  일터를 조성하기 위해 노력하고 있습니다.국민 여러분의 땀의
+                  가치가 정당하게 인정받을 수 있도록 언제나 국민의 눈높이에서
+                  정책을 펼쳐나가겠습니다.
+                </p>
               </div>
-            </article>
-          </div>
+              <p class="ui-btn-shortcut">자세히 보기</p>
+            </div>
+          </article>
         </div>
       </section>
       <!-- //introduction -->
@@ -547,7 +546,7 @@
                   <div class="sns-wrap">
                     <a href="" class="sns-container">
                       <span class="sr-only">인스타그램</span>
-                      <i class="icons-instagram img"></i>
+                      <i class="icons-instagram"></i>
                     </a>
                     <a href="" class="sns-container">
                       <span class="sr-only">유튜브</span>

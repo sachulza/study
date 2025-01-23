@@ -20,7 +20,7 @@
     }
   }
 
-  .main-contents-wrap {
+  .testetest-wrap {
     @include flex {
       gap: 40px;
     }
@@ -46,7 +46,7 @@
     }
   }
 
-  .notice-wrap {
+  .main-notice-wrap {
     @include flexXCenter;
     padding: 16px;
     background: #e6e8ea;
@@ -69,7 +69,7 @@
       box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05),
         0px 4px 8px 0px rgba(0, 0, 0, 0.08);
 
-      .icon-emergency {
+      .icon-wrap {
         @include flexCenter {
           flex-shrink: 0;
         }
@@ -90,22 +90,9 @@
           @include font($body);
           font-weight: 700;
         }
-
-        div {
-          @include bgi("icon/emergency.svg");
-          display: inline-flex;
-          flex-shrink: 0;
-          content: "";
-          width: 20px;
-          height: 20px;
-        }
-        img {
-          width: 20px;
-          height: 20px;
-        }
       }
 
-      .notice-text {
+      .text-container {
         @include font(($body, 17px));
         flex-shrink: 1;
         color: #131416;
@@ -196,12 +183,12 @@
     }
   }
 
-  .bookmark-wrap {
+  .main-bookmark-wrap {
     @include flexColumn {
     }
     // padding: 0 16px;
 
-    .bookmark-title {
+    .title {
       @include flexYCenter {
       }
       gap: 10px;
@@ -211,42 +198,34 @@
         }
         gap: 4px;
         padding: 0 2px;
-        border-radius: var(--radius-small3, 4px);
-        border: var(--border-width-static-regular, 1px) solid
-          var(--color-border-transparency, rgba(0, 0, 0, 0));
-        background: var(--color-button-text-fill, rgba(255, 255, 255, 0));
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0);
+        background: rgba(255, 255, 255, 0);
         text-decoration: none;
 
         span {
-          color: var(--color-text-basic, #1e2124);
-          /* label/medium */
-          font-family: var(--typo-font-type, "Pretendard GOV");
-          font-size: var(--font-size-label-medium, 17px);
-          font-style: normal;
+          @include font(($subtitleL, 17px));
+          color: #1e2124;
           font-weight: 400;
-          line-height: 150%; /* 25.5px */
-          letter-spacing: var(--typo-letter-spacing-0, 0px);
         }
 
         &::before {
+          @include bgi("icon/setting.svg");
           display: inline-flex;
           flex-shrink: 0;
           content: "";
           width: 20px;
           height: 20px;
-          background: no-repeat center url(../../assets/images/icon/setting.svg);
-          background-size: contain;
         }
       }
     }
 
-    .bookmark-list-wrap {
+    .list-wrap {
       @include flexColumn {
       }
       gap: 16px;
-      align-self: stretch;
 
-      .bookmark-grid {
+      .array {
         @include flex {
           flex-wrap: wrap;
           justify-content: center;
@@ -263,7 +242,7 @@
         a {
           text-decoration: none;
 
-          @media (min-width: 1024px) {
+          @include pc {
             width: 128px;
             gap: 12px;
           }
@@ -279,7 +258,7 @@
             -webkit-line-clamp: 2;
             align-self: stretch;
             overflow: hidden;
-            color: var(--color-text-basic, #1e2124);
+            color: #1e2124;
             text-align: center;
             text-overflow: ellipsis;
 
@@ -294,30 +273,28 @@
     }
   }
 
-  .contents-wrap {
+  .main-combi-contents-wrap {
     @include flexColumn {
     }
     // padding: 0 16px;
 
-    .contents-title {
+    .title {
       @include flexColumn {
-        align-self: stretch;
-        align-items: flex-start;
       }
     }
 
-    .media-layout-banner {
+    .contents-wrap {
       @include flexColumn {
       }
       gap: 20px;
 
-      @media (min-width: 769px) {
+      @include tablet {
         flex-direction: row;
         overflow: hidden;
       }
     }
 
-    .banner-main {
+    .fixed-content {
       @include flexColumn {
         align-items: flex-start;
         flex-shrink: 0;
@@ -327,41 +304,25 @@
       border-radius: 12px;
       background: #eef2f7;
 
-      @media (min-width: 769px) {
+      @include tablet {
         width: 282px;
       }
 
       .text-container {
         @include flexColumn {
-          align-items: flex-start;
-          align-self: stretch;
         }
         gap: 12px;
 
         .title {
-          align-self: stretch;
-          color: var(--color-text-basic, #1e2124);
-
-          /* heading/medium */
-          font-family: var(--typo-font-type, "Pretendard GOV");
-          font-size: var(--font-size-heading-medium, 22px);
-          font-style: normal;
+          color: #1e2124;
+          @include font(title);
           font-weight: 700;
-          line-height: 150%; /* 33px */
-          letter-spacing: var(--typo-letter-spacing-0, 0px);
         }
 
         .desc {
-          align-self: stretch;
-          color: var(--color-text-subtle, #464c53);
-
-          /* body/medium */
-          font-family: var(--typo-font-type, "Pretendard GOV");
-          font-size: var(--font-size-body-medium, 17px);
-          font-style: normal;
+          @include font(($subtitle, 17px));
+          color: #464c53;
           font-weight: 400;
-          line-height: 150%; /* 25.5px */
-          letter-spacing: var(--typo-letter-spacing-0, 0px);
         }
       }
 
@@ -374,29 +335,28 @@
       }
     }
 
-    .banner-list {
+    .card-section-wrap {
       @include flexYCenter {
-        align-self: stretch;
       }
       overflow-x: hidden;
 
-      .banner-wrap {
+      .list-wrap {
         @include flexYCenter {
-          align-self: stretch;
         }
         width: 876px;
         gap: 16px;
 
-        .banner-container {
+        .card-container {
           @include flexColumn {
             align-items: flex-start;
           }
           width: 242px;
           gap: 16px;
 
-          .banner-img {
-            @include flexCenter;
-            align-self: stretch;
+          .card-img {
+            @include flexCenter {
+              align-self: stretch;
+            }
 
             height: 196px;
             border-radius: 12px;
@@ -409,16 +369,10 @@
 
           .title {
             overflow: hidden;
-            color: var(--color-text-basic, #1e2124);
+            color: #1e2124;
             text-overflow: ellipsis;
-
-            /* heading/xsmall */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-heading-xsmall, 17px);
-            font-style: normal;
+            @include font(($subtitle, 17px));
             font-weight: 700;
-            line-height: 150%; /* 25.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
 
           .desc {
@@ -428,48 +382,40 @@
             align-self: stretch;
 
             overflow: hidden;
-            color: var(--color-text-subtle, #464c53);
+            color: #464c53;
             text-overflow: ellipsis;
 
-            /* body/medium */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-body-medium, 17px);
-            font-style: normal;
+            @include font(($subtitle, 17px));
             font-weight: 400;
-            line-height: 150%; /* 25.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
         }
       }
     }
   }
 
-  .policy {
-    // padding: 0 16px;
-
+  .main-policy-wrap {
     .policy-title {
       @include flexBetween {
       }
     }
 
-    .policy-list-wrap {
+    .card-list-wrap {
       @include flexColumn {
-        align-self: stretch;
       }
       gap: 16px;
 
-      @media (min-width: 769px) {
+      @include tablet {
         flex-direction: row;
         gap: 24px;
       }
 
-      .policy-container {
+      .card-container {
         overflow: hidden;
         border-radius: 12px;
         border: 1px solid #cdd1d5;
         flex: 1;
 
-        .policy-img {
+        .card-img {
           @include flexCenter {
             align-self: stretch;
           }
@@ -481,22 +427,16 @@
           }
         }
 
-        .policy-text-container {
+        .text-container {
           @include flexColumn {
           }
           padding: 24px;
           gap: 16px;
 
           .text-title {
-            color: var(--color-text-basic, #1e2124);
-
-            /* heading/small */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-heading-small, 19px);
-            font-style: normal;
+            color: #1e2124;
+            @include font(($title, 19px));
             font-weight: 700;
-            line-height: 150%; /* 28.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
 
           .text-desc {
@@ -505,42 +445,34 @@
             -webkit-line-clamp: 3;
             align-self: stretch;
             overflow: hidden;
-            color: var(--color-text-subtle, #464c53);
+            color: #464c53;
             text-overflow: ellipsis;
 
-            /* body/medium */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-body-medium, 17px);
-            font-style: normal;
+            @include font(($subtitle, 17px));
             font-weight: 400;
-            line-height: 150%; /* 25.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
         }
       }
     }
   }
 
-  .news {
+  .main-news-wrap {
     @include flexColumn {
-      align-self: stretch;
     }
     // padding: 0 16px;
 
     .news-title {
       @include flexColumn {
-        align-self: stretch;
         align-items: flex-start;
       }
     }
 
     .news-list {
       @include flexColumn {
-        align-self: stretch;
       }
       gap: 16px;
 
-      @media (min-width: 769px) {
+      @include tablet {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
@@ -550,7 +482,7 @@
       }
     }
 
-    .news-tab-wrap {
+    .nav-wrap {
       @include pc {
         @include flexBetween;
       }
@@ -563,11 +495,6 @@
 
         li {
           display: inline-flex;
-          // width: 100%;
-          // @include flexColumn {
-          //   align-self: stretch;
-          //   align-items: flex-start;
-          // }
 
           .tab-container {
             @include flexCenter {
@@ -577,16 +504,11 @@
             min-width: 64px;
             padding: 0 8px;
 
-            color: var(--color-text-secondary, #052b57);
+            color: #052b57;
             text-align: center;
 
-            /* heading/xsmall */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-heading-xsmall, 17px);
-            font-style: normal;
+            @include font(($subtitle, 17px));
             font-weight: 700;
-            line-height: 150%; /* 25.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
         }
       }
@@ -601,10 +523,10 @@
       gap: 12px;
 
       border-radius: var(--radius-xlarge2, 12px);
-      border: 1px solid var(--color-border-gray, #b1b8be);
-      background: var(--color-surface-white-subtle, #fff);
+      border: 1px solid #b1b8be;
+      background: #fff;
 
-      @media (min-width: 769px) {
+      @include tablet {
         height: 234px;
       }
 
@@ -616,7 +538,7 @@
         img {
           width: 132px;
 
-          @media (min-width: 769px) {
+          @include tablet {
             width: 200px;
           }
         }
@@ -635,13 +557,8 @@
             color: var(--color-text-basic, #1e2124);
             text-overflow: ellipsis;
 
-            /* heading/small */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-heading-small, 19px);
-            font-style: normal;
+            @include font(($titleS, 19px));
             font-weight: 700;
-            line-height: 150%; /* 28.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
 
           .news-desc {
@@ -650,23 +567,18 @@
             -webkit-line-clamp: 2;
             align-self: stretch;
             overflow: hidden;
-            color: var(--color-text-subtle, #464c53);
+            color: #464c53;
             text-overflow: ellipsis;
 
-            /* body/medium */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-body-medium, 17px);
-            font-style: normal;
+            @include font(($subtitle, 17px));
             font-weight: 400;
-            line-height: 150%; /* 25.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
         }
       }
     }
   }
 
-  .complaint {
+  .main-complaint-wrap {
     .complaint-title {
       @include flexBetween {
       }
@@ -674,32 +586,24 @@
 
     .complaint-list {
       @include flexColumn {
-        align-self: stretch;
       }
 
       .complaint-container {
         @include flexColumn {
-          // align-self: stretch;
         }
         gap: 12px;
         padding: 24px;
 
         .complaint-text-wrap {
           @include flexColumn {
-            align-self: stretch;
           }
           gap: 8px;
 
           .complaint-subject {
-            color: var(--color-text-basic, #1e2124);
+            color: #1e2124;
 
-            /* heading/small */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-heading-small, 19px);
-            font-style: normal;
+            @include font(($titleS, 19px));
             font-weight: 700;
-            line-height: 150%; /* 28.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
 
           .complaint-desc {
@@ -708,16 +612,11 @@
             -webkit-line-clamp: 3;
             align-self: stretch;
             overflow: hidden;
-            color: var(--color-text-subtle, #464c53);
+            color: #464c53;
             text-overflow: ellipsis;
 
-            /* body/medium */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-body-medium, 17px);
-            font-style: normal;
+            @include font(($subtitle, 17px));
             font-weight: 400;
-            line-height: 150%; /* 25.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
           }
         }
 
@@ -728,87 +627,74 @@
     }
   }
 
-  .introduction {
+  .main-introduction-wrap {
     background: #eef2f7;
-    .introduction-wrap {
-      .introduction-card {
+
+    .introduction-card {
+      @include flexColumn {
+        flex: 1;
+      }
+      padding-top: 48px;
+      padding-bottom: 64px;
+      gap: 24px;
+
+      @include tablet {
+        flex-direction: row;
+        gap: 40px;
+      }
+
+      .intro-img {
+        width: 328px;
+        height: 258px;
+        flex-shrink: 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include tablet {
+          width: 410px;
+          height: 322px;
+        }
+      }
+
+      .intro-except-card {
         @include flexColumn {
+        }
+        gap: 16px;
+
+        @include tablet {
+          padding-top: 24px;
+        }
+      }
+
+      .intro-text {
+        @include flexColumn {
+        }
+        gap: 8px;
+
+        .intro-subject {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
           align-self: stretch;
-          flex: 1;
-        }
-        padding-top: 48px;
-        padding-bottom: 64px;
-        gap: 24px;
+          overflow: hidden;
+          color: #1e2124;
+          text-overflow: ellipsis;
 
-        @media (min-width: 769px) {
-          flex-direction: row;
-          gap: 40px;
+          @include font(titleM);
+          font-weight: 700;
         }
 
-        .intro-img {
-          width: 328px;
-          height: 258px;
-          flex-shrink: 0;
-          margin-left: auto;
-          margin-right: auto;
+        .intro-desc {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          align-self: stretch;
+          overflow: hidden;
+          color: #464c53;
+          text-overflow: ellipsis;
 
-          @media (min-width: 769px) {
-            width: 410px;
-            height: 322px;
-          }
-        }
-
-        .intro-except-card {
-          @include flexColumn {
-          }
-          gap: 16px;
-
-          @media (min-width: 769px) {
-            padding-top: 24px;
-          }
-        }
-
-        .intro-text {
-          @include flexColumn {
-            align-self: stretch;
-          }
-          gap: 8px;
-
-          .intro-subject {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            align-self: stretch;
-            overflow: hidden;
-            color: var(--color-text-basic, #1e2124);
-            text-overflow: ellipsis;
-
-            /* heading/large */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-heading-large, 24px);
-            font-style: normal;
-            font-weight: 700;
-            line-height: 150%; /* 36px */
-            letter-spacing: var(--typo-letter-spacing-1, 1px);
-          }
-
-          .intro-desc {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            align-self: stretch;
-            overflow: hidden;
-            color: var(--color-text-subtle, #464c53);
-            text-overflow: ellipsis;
-
-            /* body/medium */
-            font-family: var(--typo-font-type, "Pretendard GOV");
-            font-size: var(--font-size-body-medium, 17px);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%; /* 25.5px */
-            letter-spacing: var(--typo-letter-spacing-0, 0px);
-          }
+          @include font(($subtitle, 17px));
+          font-weight: 400;
         }
       }
     }

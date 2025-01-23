@@ -10,11 +10,6 @@
   border: 0 !important;
 }
 
-// gap
-.ui-gap-20px {
-  gap: 20px;
-}
-
 // scroll
 .ui-scroll-wrap {
   position: relative;
@@ -31,34 +26,26 @@
 }
 
 .ui-title-section {
-  color: var(--color-text-basic, #1e2124);
-  /* heading/large */
-  font-family: var(--typo-font-type, "Pretendard GOV");
-  font-size: var(--font-size-heading-large, 24px);
-  font-style: normal;
+  color: #1e2124;
+  @include font(titleM);
   font-weight: 700;
-  line-height: 150%; /* 36px */
-  letter-spacing: var(--typo-letter-spacing-1, 1px);
+  letter-spacing: 1px;
 }
 
 .ui-container {
   display: flex;
   width: 156px;
-  padding: var(--padding-8, 24px) var(--padding-5, 12px);
+  padding: 24px 12px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--gap-3, 8px);
-
-  border-radius: var(--radius-xlarge2, 12px);
-  border: 1px solid var(--color-border-gray, #b1b8be);
-  background: var(--color-surface-white-subtle, #fff);
+  gap: 8px;
 }
 
 .ui-border-box {
-  border-radius: var(--radius-xlarge2, 12px);
-  border: 1px solid var(--color-border-gray, #b1b8be);
-  background: var(--color-surface-white-subtle, #fff);
+  border-radius: 12px;
+  border: 1px solid #b1b8be;
+  background: #fff;
 }
 
 .ui-btn-shortcut {
@@ -67,16 +54,11 @@
   padding: 0 2px;
   gap: 4px;
   border-radius: 4px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0);
 
-  color: var(--color-text-basic, #1e2124);
-  /* label/medium */
-  font-family: var(--typo-font-type, "Pretendard GOV");
-  font-size: var(--font-size-label-medium, 17px);
-  font-style: normal;
+  color: #1e2124;
+  @include font(($subtitle, 17px));
   font-weight: 400;
-  line-height: 150%; /* 25.5px */
-  letter-spacing: var(--typo-letter-spacing-0, 0px);
 
   &::after {
     display: inline-flex;
@@ -84,8 +66,7 @@
     content: "";
     width: 20px;
     height: 20px;
-    background: no-repeat center url(../../assets/images/icon/btn-shortcut.svg);
-    background-size: contain;
+    @include bgi("icon/btn-shortcut.svg");
   }
 }
 
@@ -95,16 +76,12 @@
   padding: 0 2px;
   gap: 4px;
   border-radius: 4px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0);
 
-  color: var(--color-text-basic, #1e2124);
-  /* label/medium */
-  font-family: var(--typo-font-type, "Pretendard GOV");
-  font-size: var(--font-size-label-medium, 17px);
-  font-style: normal;
+  color: #1e2124;
+
+  @include font(($subtitle, 17px));
   font-weight: 400;
-  line-height: 150%; /* 25.5px */
-  letter-spacing: var(--typo-letter-spacing-0, 0px);
 
   &::after {
     display: inline-flex;
@@ -112,8 +89,7 @@
     content: "";
     width: 20px;
     height: 20px;
-    background: no-repeat center url(../../assets/images/icon/btn-more.svg);
-    background-size: contain;
+    @include bgi("icon/btn-more.svg");
   }
 }
 
@@ -123,16 +99,11 @@
   padding: 0 2px;
   gap: 4px;
   border-radius: 4px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0);
 
-  color: var(--color-text-basic, #1e2124);
-  /* label/medium */
-  font-family: var(--typo-font-type, "Pretendard GOV");
-  font-size: var(--font-size-label-medium, 17px);
-  font-style: normal;
+  color: #1e2124;
+  @include font(($subtitle, 17px));
   font-weight: 400;
-  line-height: 150%; /* 25.5px */
-  letter-spacing: var(--typo-letter-spacing-0, 0px);
 
   &::after {
     display: inline-flex;
@@ -140,8 +111,7 @@
     content: "";
     width: 20px;
     height: 20px;
-    background: no-repeat center url(../../assets/images/icon/arrow-right.svg);
-    background-size: contain;
+    @include bgi("icon/arrow-right.svg");
   }
 }
 
@@ -154,16 +124,11 @@
   border-radius: 4px;
   background: #ecf2fe;
 
-  color: var(--color-text-primary, #0b50d0);
+  color: #0b50d0;
   text-align: center;
 
-  /* label/small */
-  font-family: var(--typo-font-type, "Pretendard GOV");
-  font-size: var(--font-size-label-small, 15px);
-  font-style: normal;
+  @include font(body);
   font-weight: 400;
-  line-height: 150%; /* 22.5px */
-  letter-spacing: var(--typo-label-small-letter-spacing, 0px);
 }
 
 .ui-deco-none {

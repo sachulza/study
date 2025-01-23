@@ -1,4 +1,5 @@
-$iconsList: "logo", "instagram", "youtube", "twitter", "facebook", "blog";
+$iconsList: "emergency", "logo", "instagram", "youtube", "twitter", "facebook",
+  "blog";
 
 [class*="icons-"] {
   transition: background-color 0.3s;
@@ -81,7 +82,7 @@ $iconsList: "logo", "instagram", "youtube", "twitter", "facebook", "blog";
       width: 134px;
       height: 32px;
 
-      @media (min-width: 1024px) {
+      @include pc {
         width: 200px;
         height: 48px;
       }
