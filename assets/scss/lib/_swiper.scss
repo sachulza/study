@@ -4,7 +4,7 @@
   border-radius: 0;
 }
 .swiper-pagination-bullet-active {
-  background-color: red;
+  background-color: blue;
 }
 
 .swiper-button-next {
@@ -17,5 +17,32 @@
     height: 100%;
     font-size: 0;
     flex: none;
+  }
+}
+
+.swiper-slide {
+  // @include tablet {
+  //   width: 80%;
+  // }
+}
+.swiper-pagination,
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
+
+.swiper-wrapper {
+  display: block;
+}
+
+.swiper-initialized {
+  .swiper-pagination,
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex;
+  }
+
+  .swiper-wrapper {
+    display: flex;
   }
 }

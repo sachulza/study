@@ -2,14 +2,15 @@
   @include flexYCenter;
   align-self: stretch;
   height: 32px;
-  padding: 0 16px;
+  // padding: 0 16px;
   background-color: #eef2f7;
 
   .nuri-txt {
     @include flexYCenter {
       display: inline-flex;
     }
-    @include font($bodyS);
+    @include font(($body, 15px));
+    font-weight: 400;
     gap: 8px;
     color: #1e2124;
 
@@ -42,7 +43,7 @@
       width: 134px;
       height: 32px;
 
-      @media (min-width: 1024px) {
+      @include pc {
         width: 200px;
         height: 48px;
       }
@@ -54,8 +55,9 @@
       }
 
       button {
-        @include font($body);
-        color: var(--color-text-basic, #1e2124);
+        @include font(($body, 15px));
+        color: #1e2124;
+        font-weight: 700;
       }
 
       .nav-search {

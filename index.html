@@ -111,10 +111,10 @@
           </div>
 
           <div class="swiper-pagination"></div>
-        </div>
 
-        <button class="swiper-button-next"></button>
-        <button class="swiper-button-prev"></button>
+          <button class="swiper-button-next"></button>
+          <button class="swiper-button-prev"></button>
+        </div>
       </div>
       <!-- //main visual -->
 
@@ -595,20 +595,36 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-      const swiper = new Swiper(".swiper", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        speed: 400,
-        loop: true,
+      let menuSwiper = undefined;
 
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+      function menuSwiperInit() {
+        if (window.innerWidth > 600 && menuSwiper == undefined) {
+          menuSwiper = new Swiper(".main-visual-swiper .swiper", {
+            spaceBetween: 16,
+            speed: 400,
+            breakpoints: {
+              1024: {
+                slidesPerView: 1,
+              },
+            },
+            navigation: {
+              nextEl: ".main-visual-swiper .swiper-button-next",
+              prevEl: ".main-visual-swiper .swiper-button-prev",
+            },
+            pagination: {
+              el: ".main-visual-swiper .swiper-pagination",
+              clickable: true,
+            },
+          });
+        } else if (window.innerWidth <= 600 && menuSwiper != undefined) {
+          menuSwiper.destroy();
+          menuSwiper = undefined;
+        }
+      }
+      menuSwiperInit();
+
+      window.addEventListener("resize", () => {
+        menuSwiperInit();
       });
     </script>
     <!-- //plug-in js -->

@@ -71,8 +71,8 @@
   }
   width: 100%;
   max-width: 1200px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
 
   @media (min-width: 1024px) {
     margin: 0 auto;
