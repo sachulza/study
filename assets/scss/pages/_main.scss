@@ -20,32 +20,6 @@
     }
   }
 
-  .testetest-wrap {
-    @include flex {
-      gap: 40px;
-    }
-    flex: 1;
-    background-color: #7e7e7e;
-
-    & > * {
-      padding: 20px;
-    }
-
-    .ui-scroll-inner {
-      @include scroll;
-      margin: 20px 10px 20px 20px;
-    }
-
-    .main-aside {
-      width: 200px;
-      background-color: cadetblue;
-    }
-    .main-contents {
-      background-color: coral;
-      flex: 1;
-    }
-  }
-
   .main-notice-wrap {
     @include flexXCenter;
     padding: 16px;
@@ -109,27 +83,39 @@
         align-items: center;
       }
       // height: 718px;
-      padding: 40px 0;
+      padding: 40px 16px;
     }
 
     .slide-wrap {
-      padding: 0 16px;
+      @include flexColumn {
+      }
+
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+
+      @include mobile {
+        padding: 0;
+      }
 
       .slide-container {
         @include flexColumn {
         }
-        // width: 296px;
-        padding: 24px;
+
+        padding: 24px 0px;
         gap: 40px;
 
         @include tablet {
           flex-direction: row;
           align-items: center;
           max-width: 1200px;
+          padding: 24px 80px;
         }
 
         .slide-upper {
-          @include flexColumn;
+          @include flexColumn {
+            flex: 2;
+          }
           gap: 24px;
 
           .text-box {
@@ -171,12 +157,72 @@
         }
 
         .slide-lower {
+          flex: 1;
           margin-left: auto;
 
           img {
-            width: 229px;
-            height: 202px;
+            max-width: 229px;
+            width: 100%;
+            height: 100%;
             flex-shrink: 0;
+          }
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        @include flexCenter;
+        transform: translateY(-50%);
+        width: 64px;
+        height: 64px;
+        border: 1px solid #d7d9db;
+        border-radius: 50%;
+        background-color: #fff;
+
+        @media (max-width: 769px) {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .pagination-wrap {
+        position: relative;
+        @include flexCenter;
+        gap: 8px;
+
+        .swiper-pagination {
+          @include flexCenter {
+          }
+          position: relative;
+          width: auto;
+          height: 36px;
+          padding: 12px;
+          background-color: #fff;
+          border-radius: 100px;
+          border: 1px solid #d7d9db;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+
+          @media (max-width: 769px) {
+            display: block;
+            position: static;
+            @include flexCenter;
+            transform: translateY(2px);
+            width: 36px;
+            height: 36px;
+            border: 1px solid #d7d9db;
+            border-radius: 50%;
+            background-color: #fff;
+          }
+
+          &::after {
+            display: none;
           }
         }
       }
@@ -186,6 +232,7 @@
   .main-bookmark-wrap {
     @include flexColumn {
     }
+
     // padding: 0 16px;
 
     .title {
@@ -224,25 +271,31 @@
       @include flexColumn {
       }
       gap: 16px;
+      width: 100%;
+      padding: 0 64px;
 
       .array {
         @include flex {
-          flex-wrap: wrap;
-          justify-content: center;
+          // flex-wrap: wrap;
+          // justify-content: center;
         }
-        gap: 16px;
 
         @media (min-width: 1024px) {
           flex-wrap: nowrap;
           justify-content: normal;
-          overflow-x: hidden;
-          gap: 24px;
+          // overflow-x: hidden;
+        }
+
+        li {
+          @include flexColumn {
+            align-items: center;
+          }
         }
 
         a {
           text-decoration: none;
 
-          @include pc {
+          @include tablet {
             width: 128px;
             gap: 12px;
           }
@@ -268,7 +321,29 @@
         }
       }
 
+      .swiper-button-prev,
+      .swiper-button-next {
+        @include flexCenter;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        border: 1px solid #d7d9db;
+        border-radius: 50%;
+        background-color: #fff;
+
+        @include mobile {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
       .control-carousel {
+        position: relative;
+        margin-top: 30px;
+        // padding: 10px 0;
       }
     }
   }
@@ -276,7 +351,6 @@
   .main-combi-contents-wrap {
     @include flexColumn {
     }
-    // padding: 0 16px;
 
     .title {
       @include flexColumn {
@@ -286,11 +360,12 @@
     .contents-wrap {
       @include flexColumn {
       }
-      gap: 20px;
+
+      gap: 16px;
 
       @include tablet {
         flex-direction: row;
-        overflow: hidden;
+        justify-content: space-between;
       }
     }
 
@@ -336,21 +411,25 @@
     }
 
     .card-section-wrap {
-      @include flexYCenter {
+      @include flexColumn {
       }
-      overflow-x: hidden;
+      position: relative;
+
+      // overflow-x: hidden;
+      padding: 0 72px;
+      width: 100%;
 
       .list-wrap {
-        @include flexYCenter {
+        @include flex {
         }
-        width: 876px;
-        gap: 16px;
+        // width: 876px;
 
         .card-container {
           @include flexColumn {
+            flex-shrink: 0;
             align-items: flex-start;
           }
-          width: 242px;
+          // width: 100px;
           gap: 16px;
 
           .card-img {
@@ -388,6 +467,23 @@
             @include font(($subtitle, 17px));
             font-weight: 400;
           }
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: block;
+        // position: static;
+        @include flexCenter;
+        transform: translateY(2px);
+        width: 36px;
+        height: 36px;
+        border: 1px solid #d7d9db;
+        border-radius: 50%;
+        background-color: #fff;
+
+        &::after {
+          display: none;
         }
       }
     }

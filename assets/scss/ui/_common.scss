@@ -134,3 +134,21 @@
 .ui-deco-none {
   text-decoration: none;
 }
+
+.ui-prev-icon {
+  @include bgi("icon/arrow-left.svg");
+  display: inline-flex;
+  flex-shrink: 0;
+  content: "";
+  width: 60%;
+  height: 60%;
+}
+
+.ui-next-icon {
+  @include bgi("icon/arrow-right.svg");
+  display: inline-flex;
+  flex-shrink: 0;
+  content: "";
+  width: 60%;
+  height: 60%;
+}

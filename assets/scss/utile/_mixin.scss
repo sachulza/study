@@ -143,6 +143,11 @@
     @content;
   }
 }
+@mixin mobile($mm: "max") {
+  @media (#{$mm}-width: $tablet) {
+    @content;
+  }
+}
 
 // fonts
 @mixin font($size, $line: 1.5) {
