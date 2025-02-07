@@ -217,8 +217,6 @@
     @include flexColumn {
     }
 
-    // padding: 0 16px;
-
     .title {
       @include flexYCenter {
       }
@@ -252,11 +250,18 @@
     }
 
     .list-wrap {
+      position: relative;
       @include flexColumn {
       }
       gap: 24px;
       width: 100%;
       padding: 0 64px;
+
+      .swiper {
+        @include flexColumn;
+        gap: 24px;
+        width: 100%;
+      }
 
       .array {
         @include flex {
@@ -268,12 +273,22 @@
           @include flexCenter;
         }
 
+        @include mobile {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 16px;
+        }
+
         a {
           text-decoration: none;
 
           @include tablet {
             // width: 128px;
             gap: 12px;
+          }
+
+          @media (max-width: 490px) {
+            width: 100%;
           }
 
           img {
@@ -299,6 +314,7 @@
 
       .swiper-button-prev,
       .swiper-button-next {
+        position: absolute;
         @include flexCenter;
         transform: translateY(-50%);
         width: 36px;
@@ -322,59 +338,13 @@
           justify-content: flex-end;
           align-items: center;
         }
-        // padding-top: 24px;
         gap: 8px;
 
         .swiper-pagination {
           position: static;
 
           @include mobile {
-            @include flexCenter;
-            margin: 0;
-            width: auto;
-            height: 36px;
-            padding: 14px 16px;
-            border: 1px solid #d7d9db;
-            border-radius: 100rem;
-            background-color: #fff;
-            font-weight: bold;
-            gap: 4px;
-          }
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-          display: none;
-
-          @include mobile {
-            position: static;
-            @include flexCenter;
-            transform: translateY(0%);
-            width: 36px;
-            height: 36px;
-            margin: 0;
-            border: 1px solid #d7d9db;
-            border-radius: 50%;
-            background-color: #fff;
-          }
-
-          &::after {
             display: none;
-          }
-        }
-        .icon-dummy {
-          display: none;
-
-          @include mobile {
-            position: static;
-            @include flexCenter;
-            transform: translateY(0%);
-            width: 36px;
-            height: 36px;
-            margin: 0;
-            border: 1px solid #d7d9db;
-            border-radius: 50%;
-            background-color: #fff;
           }
         }
       }
@@ -384,6 +354,7 @@
   .main-combi-contents-wrap {
     @include flexColumn {
     }
+    width: 100%;
 
     .title {
       @include flexColumn {
@@ -448,22 +419,42 @@
       }
       position: relative;
       padding: 0 72px;
-      // margin: 0 50px;
-      width: 100%;
+      width: calc(100% - 282px - 16px);
       gap: 24px;
+
+      @include mobile {
+        padding: 0 20px;
+        width: 100%;
+      }
+
+      .swiper {
+        width: 100%;
+        margin: 0;
+      }
 
       .list-wrap {
         @include flex {
         }
         // width: 876px;
 
+        .swiper-slide {
+          padding: 4px;
+
+          @include mobile {
+            width: 80%;
+          }
+        }
+
         .card-container {
           @include flexColumn {
             flex-shrink: 0;
             align-items: flex-start;
           }
-          // width: 100px;
           gap: 16px;
+
+          @include mobile {
+            padding: 20px;
+          }
 
           .card-img {
             @include flexCenter {
@@ -725,7 +716,9 @@
 
       .complaint-container {
         @include flexColumn {
+          justify-content: space-between;
         }
+        height: 246.5px;
         gap: 12px;
         padding: 24px;
 
