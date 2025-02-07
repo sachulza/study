@@ -14,9 +14,8 @@
     }
 
     & > section {
-      @include flexColumn {
-        gap: 24px;
-      }
+      @include flexColumn;
+      gap: 24px;
     }
   }
 
@@ -29,15 +28,12 @@
       @include flex {
         align-items: center;
       }
-
       margin: 0 auto;
-
       gap: 16px;
       padding: 12px;
-
       border-radius: 8px;
       border: 1px solid #cdd1d5;
-      background: #fff;
+      background-color: #fff;
 
       /* shadow2 */
       box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05),
@@ -51,7 +47,7 @@
         padding: 8px;
         gap: 4px;
         border-radius: 6px;
-        background: #de3412;
+        background-color: #de3412;
 
         p {
           display: -webkit-box;
@@ -78,38 +74,28 @@
   .main-visual-swiper {
     background-color: #d8e4f2;
 
-    .visual-swiper {
-      @include flexColumn {
-        align-items: center;
-      }
-      // height: 718px;
-      padding: 40px 16px;
-    }
-
     .slide-wrap {
-      @include flexColumn {
-      }
-
+      @include flexColumn;
       margin: 0 auto;
-      padding: 0 24px;
+      padding-bottom: 32px;
       width: 100%;
 
       @include mobile {
-        padding: 0;
       }
 
       .slide-container {
         @include flexColumn {
         }
-
-        padding: 24px 0px;
+        padding: 40px 40px;
         gap: 40px;
 
         @include tablet {
           flex-direction: row;
-          align-items: center;
+          justify-content: space-between;
           max-width: 1200px;
-          padding: 24px 80px;
+          padding-left: 80px;
+          padding-right: 80px;
+          padding-top: 130px;
         }
 
         .slide-upper {
@@ -118,38 +104,31 @@
           }
           gap: 24px;
 
-          .text-box {
-            @include flexColumn;
-            gap: 20px;
+          p {
+            @include font(titleL);
+            color: #1e2124;
+            font-weight: 700;
+            letter-spacing: 1px;
+          }
 
-            p {
-              @include font(titleL);
-              color: #1e2124;
-              font-weight: 700;
-              letter-spacing: 1px;
-            }
-
-            span {
-              @include font(($subtitleL, 19px));
-              color: #1e2124;
-              font-weight: 400;
-            }
+          span {
+            @include font(($subtitleL, 19px));
+            color: #1e2124;
+            font-weight: 400;
           }
 
           button {
-            @include flexCenter {
-            }
+            @include flexCenter;
             height: 64px;
             min-width: 98px;
             padding: 0px 24px;
             gap: 4px;
             border-radius: 8px;
-            background: #256ef4;
+            background-color: #256ef4;
 
             span {
               color: #fff;
               text-align: center;
-
               @include font(($subtitleL, 19px));
               font-weight: 400;
             }
@@ -161,10 +140,14 @@
           margin-left: auto;
 
           img {
-            max-width: 229px;
+            max-width: 304px;
             width: 100%;
             height: 100%;
             flex-shrink: 0;
+
+            @include mobile {
+              width: 229px;
+            }
           }
         }
       }
@@ -194,11 +177,11 @@
         gap: 8px;
 
         .swiper-pagination {
-          @include flexCenter {
-          }
-          position: relative;
+          position: static;
+          @include flexCenter;
           width: auto;
           height: 36px;
+          margin: 0;
           padding: 12px;
           background-color: #fff;
           border-radius: 100px;
@@ -210,12 +193,13 @@
           display: none;
 
           @media (max-width: 769px) {
-            display: block;
+            display: flex;
             position: static;
             @include flexCenter;
-            transform: translateY(2px);
+            transform: translateY(0);
             width: 36px;
             height: 36px;
+            margin: 0;
             border: 1px solid #d7d9db;
             border-radius: 50%;
             background-color: #fff;
@@ -270,33 +254,25 @@
     .list-wrap {
       @include flexColumn {
       }
-      gap: 16px;
+      gap: 24px;
       width: 100%;
       padding: 0 64px;
 
       .array {
         @include flex {
           // flex-wrap: wrap;
-          // justify-content: center;
-        }
-
-        @media (min-width: 1024px) {
-          flex-wrap: nowrap;
-          justify-content: normal;
-          // overflow-x: hidden;
+          align-items: flex-start;
         }
 
         li {
-          @include flexColumn {
-            align-items: center;
-          }
+          @include flexCenter;
         }
 
         a {
           text-decoration: none;
 
           @include tablet {
-            width: 128px;
+            // width: 128px;
             gap: 12px;
           }
 
@@ -308,7 +284,7 @@
           p {
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 1;
             align-self: stretch;
             overflow: hidden;
             color: #1e2124;
@@ -342,8 +318,65 @@
 
       .control-carousel {
         position: relative;
-        margin-top: 30px;
-        // padding: 10px 0;
+        @include flex {
+          justify-content: flex-end;
+          align-items: center;
+        }
+        // padding-top: 24px;
+        gap: 8px;
+
+        .swiper-pagination {
+          position: static;
+
+          @include mobile {
+            @include flexCenter;
+            margin: 0;
+            width: auto;
+            height: 36px;
+            padding: 14px 16px;
+            border: 1px solid #d7d9db;
+            border-radius: 100rem;
+            background-color: #fff;
+            font-weight: bold;
+            gap: 4px;
+          }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none;
+
+          @include mobile {
+            position: static;
+            @include flexCenter;
+            transform: translateY(0%);
+            width: 36px;
+            height: 36px;
+            margin: 0;
+            border: 1px solid #d7d9db;
+            border-radius: 50%;
+            background-color: #fff;
+          }
+
+          &::after {
+            display: none;
+          }
+        }
+        .icon-dummy {
+          display: none;
+
+          @include mobile {
+            position: static;
+            @include flexCenter;
+            transform: translateY(0%);
+            width: 36px;
+            height: 36px;
+            margin: 0;
+            border: 1px solid #d7d9db;
+            border-radius: 50%;
+            background-color: #fff;
+          }
+        }
       }
     }
   }
@@ -414,10 +447,10 @@
       @include flexColumn {
       }
       position: relative;
-
-      // overflow-x: hidden;
       padding: 0 72px;
+      // margin: 0 50px;
       width: 100%;
+      gap: 24px;
 
       .list-wrap {
         @include flex {
@@ -485,6 +518,10 @@
         &::after {
           display: none;
         }
+      }
+
+      .swiper-pagination {
+        position: static;
       }
     }
   }
@@ -683,6 +720,8 @@
     .complaint-list {
       @include flexColumn {
       }
+      width: 100%;
+      gap: 24px;
 
       .complaint-container {
         @include flexColumn {
@@ -715,9 +754,56 @@
             font-weight: 400;
           }
         }
+      }
 
-        .upr-margin-8px {
-          margin-top: 8px;
+      .control-carousel {
+        position: relative;
+        @include flex {
+          justify-content: flex-end;
+          align-items: center;
+        }
+        gap: 8px;
+
+        .swiper-pagination {
+          position: static;
+          @include flexCenter;
+          margin: 0;
+          width: auto;
+          height: 36px;
+          padding: 14px 16px;
+          border: 1px solid #d7d9db;
+          border-radius: 100rem;
+          background-color: #fff;
+          font-weight: bold;
+          gap: 4px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          position: static;
+          @include flexCenter;
+          transform: translateY(0%);
+          width: 36px;
+          height: 36px;
+          margin: 0;
+          border: 1px solid #d7d9db;
+          border-radius: 50%;
+          background-color: #fff;
+
+          &::after {
+            display: none;
+          }
+        }
+        .icon-dummy {
+          position: static;
+          @include flexCenter;
+          transform: translateY(0%);
+          width: 36px;
+          height: 36px;
+          margin: 0;
+          border: 1px solid #d7d9db;
+          border-radius: 50%;
+          background-color: #fff;
         }
       }
     }

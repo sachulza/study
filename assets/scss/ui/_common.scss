@@ -152,3 +152,24 @@
   width: 60%;
   height: 60%;
 }
+
+.ui-icon-dummy {
+  position: static;
+  @include flexCenter;
+  transform: translateY(0%);
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border: 1px solid #d7d9db;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.ui-icon-more {
+  @include bgi("icon/btn-more.svg");
+  display: inline-flex;
+  flex-shrink: 0;
+  content: "";
+  width: 60%;
+  height: 60%;
+}
