@@ -173,3 +173,9 @@
   width: 60%;
   height: 60%;
 }
+
+.ui-gnb-sub-title {
+  @include flexYCenter;
+  gap: 16px;
+  height: 56px;
+}

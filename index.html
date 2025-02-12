@@ -21,7 +21,7 @@
 
     <title>UI mobile</title>
   </head>
-  <body>
+  <body class="">
     <!-- 
     class naming : 
         - 공통적으로 쓰는 큰 틀 레이아웃 (layout)
@@ -29,6 +29,8 @@
         - 특정 페이지만 사용 시 (page)
         - 특이 케이스 (main, sub)
     -->
+
+    <div class="gnb-backdrop"></div>
 
     <div class="page-main-wrap">
       <div class="masthead-wrap">
@@ -41,7 +43,7 @@
 
       <!-- header -->
       <header class="layout-header-wrap">
-        <div class="layout-inner flex1">
+        <div class="layout-inner">
           <div class="logo-container">
             <a href="#" class="icons-logo bgi"></a>
             <nav class="nav-container">
@@ -50,8 +52,336 @@
             </nav>
           </div>
         </div>
-        <nav class="gnb-wrap"></nav>
       </header>
+      <!-- gnb desktop -->
+      <nav class="gnb-desktop-wrap">
+        <ul class="gnb-menu layout-inner">
+          <li>
+            <button type="button" class="gnb-main-trigger" data-trigger="gnb">
+              민원
+            </button>
+            <div class="gnb-toggle-wrap">
+              <div class="layout-inner">
+                <div class="gnb-main-list" data-has-submenu="true">
+                  <ul class="toggle-menu">
+                    <li>
+                      <button class="gnb-sub-trigger active" data-trigger="gnb">
+                        2depth 1
+                      </button>
+                      <div class="gnb-sub-list active">
+                        <div class="gnb-sub-content">
+                          <h2 class="ui-gnb-sub-title">
+                            2Depth title
+                            <a href="" class="title-link">
+                              <span>바로가기</span>
+                              <i></i>
+                            </a>
+                          </h2>
+                          <ul>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="gnb-sub-banner">
+                          <span
+                            class="ui-badge"
+                            style="background-color: #256ef4; color: #fff"
+                            >신규서비스</span
+                          >
+                          <button>메뉴명</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <button class="gnb-sub-trigger" data-trigger="gnb">
+                        2depth 2
+                      </button>
+                      <div class="gnb-sub-list gnb-row">
+                        <div class="gnb-sub-content">
+                          <h2 class="ui-gnb-sub-title">2Depth title</h2>
+                          <ul>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="gnb-sub-banner">
+                          <span
+                            class="ui-badge"
+                            style="background-color: #256ef4; color: #fff"
+                            >신규서비스</span
+                          >
+                          <button>메뉴명</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        class="gnb-sub-trigger is-link"
+                        href=""
+                        data-trigger="gnb"
+                      >
+                        2depth 3
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="gnb-sub-trigger is-link external-link"
+                        href=""
+                        data-trigger="gnb"
+                      >
+                        2depth 4
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button type="button" class="gnb-main-trigger" data-trigger="gnb">
+              서비스신청
+            </button>
+            <div class="gnb-toggle-wrap">
+              <div class="layout-inner">
+                <div class="gnb-main-list" data-has-submenu="true">
+                  <ul class="toggle-menu">
+                    <li>
+                      <button class="gnb-sub-trigger active" data-trigger="gnb">
+                        2depth 1
+                      </button>
+                      <div class="gnb-sub-list active">
+                        <div class="gnb-sub-content">
+                          <h2 class="ui-gnb-sub-title">
+                            2Depth title
+                            <a href="" class="title-link">
+                              <span>바로가기</span>
+                              <i></i>
+                            </a>
+                          </h2>
+                          <ul>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="gnb-sub-banner">
+                          <span
+                            class="ui-badge"
+                            style="background-color: #256ef4; color: #fff"
+                            >신규서비스</span
+                          >
+                          <button>메뉴명</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <button class="gnb-sub-trigger" data-trigger="gnb">
+                        2depth 2
+                      </button>
+                      <div class="gnb-sub-list gnb-row">
+                        <div class="gnb-sub-content">
+                          <h2 class="ui-gnb-sub-title">2Depth title</h2>
+                          <ul>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                            <li>
+                              <button type="button">Last depth</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="gnb-sub-banner">
+                          <span
+                            class="ui-badge"
+                            style="background-color: #256ef4; color: #fff"
+                            >신규서비스</span
+                          >
+                          <button>메뉴명</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        class="gnb-sub-trigger is-link"
+                        href=""
+                        data-trigger="gnb"
+                      >
+                        2depth 3
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="gnb-sub-trigger is-link external-link"
+                        href=""
+                        data-trigger="gnb"
+                      >
+                        2depth 4
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- //gnb desktop -->
+
       <!-- //header -->
 
       <!-- notice -->
@@ -59,7 +389,6 @@
         <div class="layout-inner flexCenter">
           <div class="notice-container">
             <div class="icon-wrap">
-              <!-- <div></div> -->
               <i class="icons-emergency mid bgi"></i>
               <p>긴급</p>
             </div>
@@ -859,12 +1188,11 @@
     </div>
 
     <!-- js -->
+    <script defer src="./assets/js/ui-gnb.js"></script>
     <!-- plug-in js -->
-    <!-- <script src="/assets/js/lib/swiper-bundle.min.js"></script> -->
-    <!-- <script src="/assets/js/ui.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./assets/js/ui.js"></script>
+    <script src="./assets/js/ui-swiper.js"></script>
     <!-- //plug-in js -->
     <!-- //js -->
   </body>
