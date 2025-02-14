@@ -42,7 +42,6 @@
         @include flexCenter {
           flex-shrink: 0;
         }
-        width: 66px;
         padding: 8px;
         gap: 4px;
         border-radius: 6px;
@@ -468,28 +467,6 @@
               height: 119px;
             }
           }
-
-          .title {
-            overflow: hidden;
-            color: #1e2124;
-            text-overflow: ellipsis;
-            @include font(($subtitle, 17px));
-            font-weight: 700;
-          }
-
-          .desc {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            align-self: stretch;
-
-            overflow: hidden;
-            color: #464c53;
-            text-overflow: ellipsis;
-
-            @include font(($subtitle, 17px));
-            font-weight: 400;
-          }
         }
       }
 
@@ -532,48 +509,41 @@
         gap: 24px;
       }
 
-      .card-container {
-        overflow: hidden;
-        border-radius: 12px;
-        border: 1px solid #cdd1d5;
-        flex: 1;
+      .card-img {
+        @include flexCenter {
+          align-self: stretch;
+        }
+        height: 167px;
+        background: #dfe8f4;
 
-        .card-img {
-          @include flexCenter {
-            align-self: stretch;
-          }
-          height: 167px;
-          background: #dfe8f4;
+        img {
+          max-height: 110px;
+        }
+      }
 
-          img {
-            max-height: 110px;
-          }
+      .text-container {
+        @include flexColumn {
+        }
+        padding: 24px;
+        gap: 16px;
+
+        .text-title {
+          color: #1e2124;
+          @include font(($title, 19px));
+          font-weight: 700;
         }
 
-        .text-container {
-          @include flexColumn {
-          }
-          padding: 24px;
-          gap: 16px;
+        .text-desc {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          align-self: stretch;
+          overflow: hidden;
+          color: #464c53;
+          text-overflow: ellipsis;
 
-          .text-title {
-            color: #1e2124;
-            @include font(($title, 19px));
-            font-weight: 700;
-          }
-
-          .text-desc {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            align-self: stretch;
-            overflow: hidden;
-            color: #464c53;
-            text-overflow: ellipsis;
-
-            @include font(($subtitle, 17px));
-            font-weight: 400;
-          }
+          @include font(($subtitle, 17px));
+          font-weight: 400;
         }
       }
     }
@@ -591,17 +561,36 @@
     }
 
     .news-list {
-      @include flexColumn {
-      }
-      gap: 16px;
+      display: none;
 
-      @include tablet {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        align-items: center;
-        row-gap: 16px;
-        column-gap: 16px;
+      &.active {
+        @include flexColumn;
+        gap: 16px;
+        @include tablet {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
+          align-items: center;
+          row-gap: 16px;
+          column-gap: 16px;
+        }
+      }
+
+      .news-height {
+        height: 100%;
+      }
+
+      figure {
+        @include flex {
+          flex: 1;
+        }
+        max-width: 150px;
+        margin: 32px;
+        margin-right: 0;
+
+        img {
+          width: 100%;
+        }
       }
     }
 
@@ -619,9 +608,10 @@
         li {
           display: inline-flex;
 
-          .tab-container {
+          .news-tab-container {
             @include flexCenter {
             }
+            position: relative;
             white-space: nowrap;
             height: 48px;
             min-width: 64px;
@@ -632,69 +622,31 @@
 
             @include font(($subtitle, 17px));
             font-weight: 700;
-          }
-        }
-      }
-    }
-    .news-container {
-      @include flexColumn {
-        justify-content: space-between;
-        align-self: stretch;
-      }
 
-      padding: 24px;
-      gap: 12px;
+            &:hover {
+              background-color: #eef2f7;
+            }
 
-      border-radius: var(--radius-xlarge2, 12px);
-      border: 1px solid #b1b8be;
-      background: #fff;
+            &::before {
+              position: absolute;
+              display: inline-flex;
+              content: "";
+              bottom: 0;
+              left: 50%;
+              width: 0;
+              height: 4px;
+              background-color: #063a74;
+              transition: 0.4s ease-in-out;
+            }
 
-      @include tablet {
-        height: 234px;
-      }
+            &.active {
+              display: flex;
 
-      .article-container {
-        @include flex {
-        }
-        gap: 16px;
-
-        img {
-          width: 132px;
-
-          @include tablet {
-            width: 200px;
-          }
-        }
-
-        .article-only {
-          @include flexColumn {
-          }
-          gap: 8px;
-
-          .news-subject {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-
-            overflow: hidden;
-            color: var(--color-text-basic, #1e2124);
-            text-overflow: ellipsis;
-
-            @include font(($titleS, 19px));
-            font-weight: 700;
-          }
-
-          .news-desc {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            align-self: stretch;
-            overflow: hidden;
-            color: #464c53;
-            text-overflow: ellipsis;
-
-            @include font(($subtitle, 17px));
-            font-weight: 400;
+              &::before {
+                left: 0;
+                width: 100%;
+              }
+            }
           }
         }
       }
@@ -712,6 +664,10 @@
       }
       width: 100%;
       gap: 24px;
+
+      li {
+        height: 280px;
+      }
 
       .complaint-container {
         @include flexColumn {

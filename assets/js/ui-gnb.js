@@ -225,4 +225,41 @@ const krds_mainMenuPC = {
   },
 };
 
+/* news tab 제작 */
+
+function newsTab(wrapperSelector) {
+  const wrapper = document.querySelector(wrapperSelector);
+  if (!wrapper) return;
+
+  wrapper.querySelectorAll("button[id^='news-tab']").forEach((tab) => {
+    tab.addEventListener("click", function () {
+      let index = this.id.replace("news-tab", ""); // 'news-tab ##'에서 숫자만 추출
+
+      // 모든 .news-list와 .news-tab-container 요소에서 'active' 클래스 제거
+      wrapper.querySelectorAll(".news-list").forEach((element) => {
+        element.classList.remove("active");
+      });
+      wrapper.querySelectorAll(".news-tab-container").forEach((container) => {
+        container.classList.remove("active");
+      });
+
+      // 클릭한 탭에 해당하는 .news-list 요소에 'active' 클래스 추가
+      let targetNews = wrapper.querySelectorAll(".news-list")[index - 1];
+      let targetContainer = wrapper.querySelectorAll(".news-tab-container")[
+        index - 1
+      ];
+
+      if (targetNews) {
+        targetNews.classList.add("active");
+      }
+      if (targetContainer) {
+        targetContainer.classList.add("active");
+      }
+    });
+  });
+}
+
+// 'main-news-wrap' 내부에서만 작동
+newsTab(".main-news-wrap");
+
 krds_mainMenuPC.init();
