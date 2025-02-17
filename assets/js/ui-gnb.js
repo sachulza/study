@@ -259,6 +259,69 @@ function newsTab(wrapperSelector) {
   });
 }
 
+/*** 드롭박스 ***/
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".globe, .support");
+  const dropBoxes = document.querySelectorAll(".drop-box");
+
+  document.addEventListener("click", function (event) {
+    let isInsideDropdown = false;
+
+    buttons.forEach((button) => {
+      const dropdown = button.querySelector(".drop-box");
+
+      if (button.contains(event.target)) {
+        // 현재 클릭한 버튼의 드롭다운을 열거나 닫기
+        const isActive = dropdown.classList.contains("active");
+        closeAllDropdowns(); // 다른 드롭다운은 닫기
+        if (!isActive) {
+          dropdown.classList.add("active"); // 현재 버튼의 드롭다운만 열기
+        }
+        isInsideDropdown = true;
+      }
+    });
+
+    dropBoxes.forEach((dropBox) => {
+      if (dropBox.contains(event.target)) {
+        dropBox.classList.add("active");
+        isInsideDropdown = true;
+      }
+    });
+
+    // 드롭박스 내부의 a 태그 클릭 시 active 클래스 추가
+    if (event.target.matches(".drop-box li a")) {
+      const clickedLink = event.target;
+      const parentDropBox = clickedLink.closest(".drop-box");
+
+      // 같은 drop-box 내부의 다른 a 태그에서 active 제거
+      parentDropBox.querySelectorAll("a").forEach((link) => {
+        link.classList.remove("active");
+      });
+
+      // 클릭한 a 태그에 active 추가
+      clickedLink.classList.add("active");
+      isInsideDropdown = true;
+    }
+
+    if (!isInsideDropdown) {
+      closeAllDropdowns();
+    }
+  });
+
+  // ESC 키를 누르면 drop-box 닫기
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeAllDropdowns();
+    }
+  });
+
+  function closeAllDropdowns() {
+    document.querySelectorAll(".drop-box").forEach((dropdown) => {
+      dropdown.classList.remove("active");
+    });
+  }
+});
+
 // 'main-news-wrap' 내부에서만 작동
 newsTab(".main-news-wrap");
 

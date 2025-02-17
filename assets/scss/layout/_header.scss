@@ -32,7 +32,7 @@
 .layout-header-wrap {
   @include flexYCenter;
   padding: 8px 0;
-  z-index: 70;
+  z-index: 71;
   background-color: #fff;
 
   @include pc {
@@ -53,14 +53,13 @@
       @include flexYCenter;
       gap: 12px;
 
-      .globe {
-        @include flexYCenter;
-        gap: 0.4rem;
-        padding: 0 0.2rem;
-        font-size: 1.5rem;
-        border-radius: 0.6rem;
-        border: 1px solid transparent;
+      button {
+        &:hover {
+          background-color: #eef2f7;
+        }
+      }
 
+      .globe {
         &::before {
           @include bgi("icon/globe.svg");
           display: inline-flex;
@@ -69,19 +68,11 @@
           width: 16px;
           height: 16px;
         }
-
-        &::after {
-          @include bgi("icon/arrow-right.svg");
-          display: inline-flex;
-          flex-shrink: 0;
-          content: "";
-          width: 16px;
-          height: 16px;
-          transform: rotate(90deg);
-        }
       }
 
+      .globe,
       .support {
+        position: relative;
         @include flexYCenter;
         gap: 0.4rem;
         padding: 0 0.2rem;
@@ -97,6 +88,72 @@
           width: 16px;
           height: 16px;
           transform: rotate(90deg);
+        }
+
+        .drop-box {
+          position: absolute;
+          display: none;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          border: 0.1rem solid #cdd1d5;
+          border-radius: 0.8rem;
+          background-color: #fff;
+          margin-top: 1.6rem;
+          padding: 0.8rem;
+          min-width: 20rem;
+
+          &.spt {
+            min-width: 13rem;
+          }
+
+          &.active {
+            display: block;
+          }
+
+          &::before {
+            position: absolute;
+            display: inline-flex;
+            content: "";
+            bottom: 100%;
+            left: 50%;
+            transform: rotate(-45deg);
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-bottom: -0.6rem;
+            margin-left: -0.6rem;
+            border-top: 0.1rem solid;
+            border-right: 0.1rem solid;
+            border-color: #cdd1d5;
+            background-color: #fff;
+          }
+
+          li {
+            text-align: left;
+            width: 100%;
+            border-radius: 0.6rem;
+
+            &:hover {
+              background-color: #eef2f7;
+            }
+
+            a {
+              @include flexYCenter;
+              font-size: 1.7rem;
+              width: 100%;
+              height: 4.8rem;
+              padding: 0 1.6rem;
+              word-break: keep-all;
+              word-wrap: break-word;
+              color: #052b57;
+
+              &.active {
+                font-weight: 700;
+                border-radius: 0.6rem;
+                background-color: #eef2f7;
+              }
+            }
+          }
         }
       }
 
@@ -145,6 +202,10 @@
         @include font(($body, 1.7rem));
         color: #1e2124;
         font-weight: 700;
+
+        &:hover {
+          background-color: #eef2f7;
+        }
       }
 
       .nav-search {
