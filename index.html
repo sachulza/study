@@ -1443,7 +1443,64 @@
     </div>
 
     <!-- modal wrap -->
-    <div class="modal-wrap"></div>
+    <div class="modal-wrap">
+      <section class="modal-adjust-display">
+        <div class="ui-card-container" style="position: relative">
+          <div class="modal-header">글자·화면 표시 설정</div>
+          <div class="modal-content-wrap">
+            <div class="scale-set">
+              <h3 class="content-title">글자·화면 표시 설정</h3>
+              <ul>
+                <li>
+                  <label>
+                    <input type="radio" name="scale" checked />작게</label
+                  >
+                </li>
+                <li>
+                  <label><input type="radio" name="scale" />중간</label>
+                </li>
+                <li>
+                  <label> <input type="radio" name="scale" />조금 크게</label>
+                </li>
+                <li>
+                  <label><input type="radio" name="scale" />크게</label>
+                </li>
+                <li>
+                  <label> <input type="radio" name="scale" />가장 크게</label>
+                </li>
+              </ul>
+            </div>
+            <div class="display-mode">
+              <h3 class="content-title">화면 표시 모드</h3>
+              <ul>
+                <li class="light-mode">
+                  <label>
+                    <input type="radio" name="view-mode" checked />기본 (밝은
+                    배경)
+                  </label>
+                </li>
+                <li class="dark-mode">
+                  <label>
+                    <input type="radio" name="view-mode" />선명하게 (어두운
+                    배경)
+                  </label>
+                </li>
+                <li class="default-mode">
+                  <label>
+                    <input type="radio" name="view-mode" />시스템 설정
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-btn-wrap">
+            <button class="ui-btn-confirm medium white">초기화</button>
+            <button class="ui-btn-confirm medium blue">닫기</button>
+          </div>
+          <button class="modal-close"></button>
+        </div>
+      </section>
+    </div>
     <!-- //modal wrap -->
 
     <!-- js -->

@@ -182,10 +182,12 @@ button {
 }
 
 html {
+  position: relative;
   font-size: 62.5%;
 }
 
 body {
+  position: relative;
   font-family: "Pretendard GOV";
   font-size: 1.7rem;
   line-height: 1.5;

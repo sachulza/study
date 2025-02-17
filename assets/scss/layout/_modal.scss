@@ -1,0 +1,136 @@
+label {
+  cursor: pointer;
+}
+
+.modal-wrap {
+  // position: absolute;
+  // top: 0;
+  z-index: 1000;
+
+  .modal-adjust-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 76rem;
+    min-height: 26.4rem;
+    z-index: 1010;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.15s 0.3s, z-index 0s 0.3s, opacity 0.2s;
+
+    &.shown {
+      visibility: visible;
+      transition-delay: 0s;
+      opacity: 1;
+    }
+
+    .modal-header {
+      font-size: 2.4rem;
+      font-weight: 700;
+      padding: 5.6rem 4rem 0 4rem;
+    }
+
+    .modal-content-wrap {
+      @include flex;
+      gap: 2.4rem;
+      padding: 1.6rem 4rem 0.8rem 4rem;
+
+      .scale-set {
+        @include flexColumn;
+        gap: 2rem;
+        min-width: 24rem;
+
+        ul {
+          @include flexColumn;
+          gap: 2rem;
+        }
+      }
+    }
+
+    .display-mode {
+      @include flexColumn;
+      gap: 2rem;
+
+      ul {
+        @include flexColumn;
+        gap: 2rem;
+
+        li {
+          @include flexYCenter;
+        }
+
+        .light-mode {
+          &::before {
+            @include bgi("display-mode/screen-light.png");
+            display: inline-block;
+            flex-shrink: 0;
+            content: "";
+            width: 12rem;
+            height: 6.4rem;
+            border-radius: 0.8rem;
+            margin-right: 1.6rem;
+          }
+        }
+
+        .dark-mode {
+          &::before {
+            @include bgi("display-mode/screen-dark.png");
+            display: inline-block;
+            flex-shrink: 0;
+            content: "";
+            width: 12rem;
+            height: 6.4rem;
+            border-radius: 0.8rem;
+            margin-right: 1.6rem;
+          }
+        }
+
+        .default-mode {
+          &::before {
+            @include bgi("display-mode/screen-default.png");
+            display: inline-block;
+            flex-shrink: 0;
+            content: "";
+            width: 12rem;
+            height: 6.4rem;
+            border-radius: 0.8rem;
+            margin-right: 1.6rem;
+          }
+        }
+      }
+    }
+
+    .content-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #131416;
+    }
+
+    .modal-btn-wrap {
+      @include flex {
+        justify-content: flex-end;
+      }
+      gap: 0.8rem;
+      padding: 1.6rem 4rem 4rem 4rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      @include flexCenter;
+      top: 2.4rem;
+      right: 2.4rem;
+      transition: none;
+
+      &::before {
+        @include bgi("icon/close.svg");
+        display: inline-block;
+        flex-shrink: 0;
+        content: "";
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+  }
+}
