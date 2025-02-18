@@ -15,12 +15,13 @@ label {
     display: inline-block;
     width: 76rem;
     min-height: 26.4rem;
-    z-index: 1010;
+    z-index: -1;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.15s 0.3s, z-index 0s 0.3s, opacity 0.2s;
 
     &.shown {
+      z-index: 1010;
       visibility: visible;
       transition-delay: 0s;
       opacity: 1;
@@ -131,6 +132,301 @@ label {
         width: 2.4rem;
         height: 2.4rem;
       }
+    }
+  }
+
+  .modal-search-wrap {
+    @include flexColumn {
+      align-items: center;
+    }
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #eef2f7;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.15s 0.3s, z-index 0s 0.3s, opacity 0.2s;
+
+    &.shown {
+      z-index: 1010;
+      visibility: visible;
+      transition-delay: 0s;
+      opacity: 1;
+    }
+
+    .search-wrap {
+      position: relative;
+      @include flexColumn;
+      min-width: 76rem;
+      max-width: 79.2rem;
+      padding: 16rem 0 8rem;
+    }
+
+    .search-header {
+      position: relative;
+      @include flexColumn;
+
+      gap: 1.2rem;
+      width: 100%;
+
+      .search-title {
+        @include flexYCenter {
+          justify-content: space-between;
+          flex: 1;
+        }
+        width: 100%;
+
+        label {
+          font-size: 2.4rem;
+          font-weight: 700;
+          letter-spacing: 0.1rem;
+          line-height: 1;
+        }
+
+        .search-help {
+          @include flexYCenter;
+          color: #1e2124;
+
+          &::after {
+            @include bgi("icon/btn-shortcut.svg");
+            display: inline-flex;
+            flex-shrink: 0;
+            content: "";
+            width: 1.8rem;
+            height: 1.8rem;
+            margin-left: 1rem;
+          }
+        }
+      }
+
+      .search-input {
+        @include flexColumn;
+        position: relative;
+        gap: 1.6rem;
+        width: 100%;
+        padding: 0 0.4rem 4rem 0.4rem;
+
+        .search-box {
+          height: 8rem;
+          width: 100%;
+          padding: 0 7.2rem 0 2.4rem;
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: #464c53;
+          border: 0.1rem solid #58616a;
+          border-radius: 1rem;
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+
+        .search-run {
+          @include flexCenter {
+            display: inline-flex;
+            flex: 1;
+          }
+          position: absolute;
+          right: 1.6rem;
+          top: 0;
+          transform: translateY(50%);
+
+          i {
+            @include bgi("icon/search.svg");
+            display: inline-block;
+            flex-shrink: 0;
+            content: "";
+            width: 4rem;
+            height: 4rem;
+          }
+        }
+
+        .search-option {
+          @include flexYCenter {
+            flex: 1;
+          }
+          font-size: 1.7rem;
+
+          &::before {
+            @include bgi("icon/search-plus.svg");
+            display: inline-block;
+            flex-shrink: 0;
+            content: "";
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+
+    .search-record-wrap {
+      @include flex {
+        flex: 1;
+      }
+      border-top: 0.1rem solid #d6e0eb;
+      width: 100%;
+      padding-top: 4rem;
+
+      .popular-word-wrap {
+        @include flexColumn {
+          flex: 1;
+        }
+        width: 100%;
+        height: 100%;
+        padding: 0 2.4rem;
+        counter-reset: item;
+
+        ol {
+          @include flexColumn;
+          gap: 1.6rem;
+
+          li {
+            @include flex;
+            counter-increment: item;
+            gap: 0.8rem;
+
+            &::before {
+              display: inline-flex;
+              content: counter(item);
+              width: 2rem;
+            }
+
+            .rank-up {
+              @include flexCenter;
+              gap: 0.2rem;
+              margin-left: auto;
+              width: 4.3rem;
+              font-size: 1.5rem;
+              color: #d63d4a;
+
+              &::before {
+                display: inline-flex;
+                content: "";
+                width: 0;
+                height: 0;
+                border-bottom: 0.6rem solid #d63d4a;
+                border-left: 0.4rem solid transparent;
+                border-right: 0.4rem solid transparent;
+              }
+            }
+
+            .rank-down {
+              @include flexCenter;
+              gap: 0.2rem;
+              margin-left: auto;
+              width: 4.3rem;
+              font-size: 1.5rem;
+              color: #096ab3;
+
+              &::before {
+                display: inline-flex;
+                content: "";
+                width: 0;
+                height: 0;
+                border-top: 0.6rem solid #096ab3;
+                border-left: 0.4rem solid transparent;
+                border-right: 0.4rem solid transparent;
+              }
+            }
+
+            .rank-same {
+              @include flexCenter;
+              gap: 0.2rem;
+              margin-left: auto;
+              width: 4.3rem;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .recent-word-wrap {
+        @include flexColumn {
+          flex: 1;
+        }
+        width: 100%;
+        height: 100%;
+        padding: 0 2.4rem;
+        border-left: 0.1rem solid #d6e0eb;
+
+        ul {
+          @include flexColumn;
+          gap: 1.6rem;
+
+          li {
+            @include flexYCenter {
+              justify-content: space-between;
+            }
+            gap: 0.8rem;
+
+            button {
+              @include bgi("icon/delete-fill.svg");
+              display: inline-block;
+              flex-shrink: 0;
+              content: "";
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+        }
+
+        .delete-word {
+          @include flexYCenter;
+          margin-top: auto;
+          margin-right: auto;
+          gap: 0.8rem;
+          font-size: inherit;
+          font-weight: inherit;
+
+          &::after {
+            @include bgi("icon/delete-fill.svg");
+            display: inline-block;
+            flex-shrink: 0;
+            content: "";
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-close {
+  position: absolute;
+  @include flexCenter;
+  transition: none;
+
+  &.small {
+    top: 2.4rem;
+    right: 2.4rem;
+
+    &::before {
+      @include bgi("icon/close.svg");
+      display: inline-block;
+      flex-shrink: 0;
+      content: "";
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  &.medium {
+    top: 8rem;
+    right: 8rem;
+
+    &::before {
+      @include bgi("icon/close.svg");
+      display: inline-block;
+      flex-shrink: 0;
+      content: "";
+      width: 4rem;
+      height: 4rem;
     }
   }
 }

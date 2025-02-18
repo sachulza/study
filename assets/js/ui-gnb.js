@@ -326,7 +326,43 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const settingButton = document.querySelector(".layout-header-wrap .setting");
   const modalSection = document.querySelector(".modal-adjust-display");
-  const closeButton = document.querySelector(".modal-close");
+  const closeButton = document.querySelector(
+    ".modal-adjust-display .modal-close"
+  );
+  const mainContent = document.querySelector(".page-main-wrap");
+
+  // 스크롤 비활성화 함수
+  function disableScroll() {
+    document.body.style.overflow = "hidden";
+  }
+
+  // 스크롤 활성화 함수
+  function enableScroll() {
+    document.body.style.overflow = "";
+  }
+
+  // 모달 열기
+  settingButton.addEventListener("click", function () {
+    modalSection.classList.add("shown");
+    mainContent.setAttribute("inert", ""); // 메인 콘텐츠 비활성화
+    disableScroll(); // 스크롤 막기
+  });
+
+  // 모달 닫기
+  closeButton.addEventListener("click", function () {
+    modalSection.classList.remove("shown");
+    mainContent.removeAttribute("inert"); // 메인 콘텐츠 활성화
+    enableScroll(); // 스크롤 다시 활성화
+  });
+});
+
+/*** 모달 - 전체 검색 ***/
+document.addEventListener("DOMContentLoaded", function () {
+  const settingButton = document.querySelector(
+    ".layout-header-wrap .nav-search"
+  );
+  const modalSection = document.querySelector(".modal-search-wrap");
+  const closeButton = document.querySelector(".modal-search-wrap .modal-close");
   const mainContent = document.querySelector(".page-main-wrap");
 
   // 스크롤 비활성화 함수
