@@ -226,7 +226,6 @@ const krds_mainMenuPC = {
 };
 
 /* news tab 제작 */
-
 function newsTab(wrapperSelector) {
   const wrapper = document.querySelector(wrapperSelector);
   if (!wrapper) return;
@@ -261,16 +260,17 @@ function newsTab(wrapperSelector) {
 
 /*** 드롭박스 ***/
 document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".globe, .support");
+  const buttons = document.querySelectorAll(".globe, .support, .nav-mypage");
   const dropBoxes = document.querySelectorAll(".drop-box");
 
   document.addEventListener("click", function (event) {
     let isInsideDropdown = false;
 
     buttons.forEach((button) => {
-      const dropdown = button.querySelector(".drop-box");
+      const parentBox = button.closest(".util-btn-box, .nav-btn-box");
+      const dropdown = parentBox ? parentBox.querySelector(".drop-box") : null;
 
-      if (button.contains(event.target)) {
+      if (dropdown && button.contains(event.target)) {
         // 현재 클릭한 버튼의 드롭다운을 열거나 닫기
         const isActive = dropdown.classList.contains("active");
         closeAllDropdowns(); // 다른 드롭다운은 닫기
@@ -303,6 +303,11 @@ document.addEventListener("DOMContentLoaded", function () {
       isInsideDropdown = true;
     }
 
+    // 드롭다운 내부의 특정 버튼 클릭 시 닫히지 않도록 예외 처리
+    if (event.target.closest(".time-extend-btn, .drop-logout")) {
+      isInsideDropdown = true;
+    }
+
     if (!isInsideDropdown) {
       closeAllDropdowns();
     }
@@ -321,6 +326,162 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+/*** 모바일 - 메인메뉴 ***/
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".nav-menu");
+  const backdrop = document.querySelector(".gnb-backdrop-mobile");
+  const mobileMenu = document.querySelector(".menu-mobile-wrap");
+  const body = document.body;
+
+  if (!menuButton || !backdrop || !mobileMenu) return;
+
+  // 전체메뉴 버튼 클릭 시
+  menuButton.addEventListener("click", function () {
+    backdrop.classList.add("active");
+    mobileMenu.classList.add("is-open");
+    body.classList.add("is-gnb-mobile");
+  });
+
+  // 닫기 버튼 클릭 시 원래 상태로 복구
+  document.addEventListener("click", function (event) {
+    if (event.target.closest(".modal-close.mobile-main-menu")) {
+      backdrop.classList.remove("active");
+      mobileMenu.classList.remove("is-open");
+      body.classList.remove("is-gnb-mobile");
+    }
+  });
+
+  // 3Depth 서브메뉴 클릭 시 (보조금24란 클릭)
+  document.addEventListener("click", function (event) {
+    const submenuTrigger = event.target.closest(".submenu-trigger.has-depth3");
+    if (submenuTrigger) {
+      event.preventDefault(); // a 태그 기본 동작 방지
+      const depth3Wrap = document.querySelector(".mobile-depth3-wrap");
+      if (depth3Wrap) {
+        // is-open 클래스를 토글
+        depth3Wrap.classList.toggle("is-open");
+      }
+    }
+  });
+
+  // 4Depth 서브메뉴 추가
+  document.addEventListener("click", function (event) {
+    const depth4Trigger = event.target.closest(".depth3-trigger.has-depth4");
+    if (depth4Trigger) {
+      event.preventDefault(); // a 태그 기본 동작 방지
+      const depth4Wrap = depth4Trigger.nextElementSibling;
+      if (depth4Wrap && depth4Wrap.classList.contains("depth4-wrap")) {
+        depth4Wrap.classList.add("is-open");
+      }
+    }
+  });
+
+  // 4Depth 서브메뉴 제거 (btn-prev 버튼 클릭 시)
+  const btnPrev = document.querySelector(".btn-prev");
+  if (btnPrev) {
+    btnPrev.addEventListener("click", function () {
+      const depth4Wrap = document.querySelector(".depth4-wrap.is-open");
+      if (depth4Wrap) {
+        depth4Wrap.classList.remove("is-open"); // 'is-open' 클래스 제거
+      }
+    });
+  }
+
+  // depth4-header 내의 modal-close 버튼 클릭 시, 4Depth 서브메뉴 제거
+  const modalClose = document.querySelector(
+    ".depth4-header .modal-close.mobile-main-menu"
+  );
+  if (modalClose) {
+    modalClose.addEventListener("click", function () {
+      const depth4Wrap = document.querySelector(".depth4-wrap.is-open");
+      if (depth4Wrap) {
+        depth4Wrap.classList.remove("is-open"); // 'is-open' 클래스 제거
+      }
+    });
+  }
+
+  // mobileMenu에서 is-open 클래스 제거 시 모든 상태 초기화
+  mobileMenu.addEventListener("transitionend", function () {
+    if (!mobileMenu.classList.contains("is-open")) {
+      // 모든 서브메뉴 초기화
+      const depth3Wrap = document.querySelector(".mobile-depth3-wrap");
+      if (depth3Wrap) {
+        depth3Wrap.classList.remove("is-open");
+      }
+
+      const depth4Wrap = document.querySelector(".depth4-wrap.is-open");
+      if (depth4Wrap) {
+        depth4Wrap.classList.remove("is-open");
+      }
+    }
+  });
+});
+
+/*** mobile 스크롤 활성화 ***/
+$(".page-indicator > ul > li > a").click(function (e) {
+  var href = $(this).attr("href");
+
+  var targetTop = $(href).offset().top;
+
+  /*
+  // 한번에 가도록 하는 방법
+  $(window).scrollTop(targetTop);
+  */
+
+  $("html").stop().animate({ scrollTop: targetTop }, 300);
+
+  e.preventDefault();
+});
+
+function Page__updateIndicatorActive() {
+  var scrollTop = $(window).scrollTop();
+
+  // 역순으로 검색해야 편하다
+  $($(".page").get().reverse()).each(function (index, node) {
+    var $node = $(this);
+    var offsetTop = parseInt($node.attr("data-offset-top"));
+
+    if (scrollTop >= offsetTop) {
+      // 기존 녀석에게 활성화 풀고
+      $(".page-indicator > ul > li.active").removeClass("active");
+      // 해당하는 녀석에게 활성화 넣고
+
+      var currentPageIndex = $node.index();
+      $(".page-indicator > ul > li").eq(currentPageIndex).addClass("active");
+
+      $("html").attr("data-current-page-index", currentPageIndex);
+
+      return false; // 더 이상 다른 페이지를 검사하지 않는다.
+    }
+  });
+}
+
+// 각 페이지의 offsetTop 속성을 업데이트
+function Page__updateOffsetTop() {
+  $(".page").each(function (index, node) {
+    var $page = $(node);
+    var offsetTop = $page.offset().top;
+
+    $page.attr("data-offset-top", offsetTop);
+  });
+
+  // 계산이 바뀌었으니까, 다시 상태 업데이트
+  Page__updateIndicatorActive();
+}
+
+function Page__init() {
+  Page__updateOffsetTop();
+}
+
+// 초기화
+Page__init();
+
+// 화면이 리사이즈 할 때 마다, offsetTop을 다시계산
+$(window).resize(Page__updateOffsetTop);
+
+// 스크롤이 될 때 마다, 인디케이터의 상태를 갱신
+$(window).scroll(Page__updateIndicatorActive);
 
 /*** 모달 - 화면 변경 ***/
 document.addEventListener("DOMContentLoaded", function () {
