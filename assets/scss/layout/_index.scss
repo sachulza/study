@@ -71,11 +71,13 @@
     justify-content: flex-start;
   }
   width: 100%;
-  max-width: 1200px;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+  max-width: 1248px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @include pc {
     margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }

@@ -27,7 +27,7 @@
 
 .ui-title-section {
   color: #1e2124;
-  @include font(titleM);
+  font-size: 3.2rem;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -135,7 +135,7 @@
   color: #0b50d0;
   text-align: center;
 
-  @include font(body);
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
@@ -182,10 +182,30 @@
   height: 60%;
 }
 
+.ui-icon-play {
+  @include bgi("icon/swiper-play.svg");
+  display: inline-flex;
+  flex-shrink: 0;
+  content: "";
+  width: 60%;
+  height: 60%;
+}
+
+.ui-icon-stop {
+  @include bgi("icon/swiper-stop.svg");
+  display: inline-flex;
+  flex-shrink: 0;
+  content: "";
+  width: 60%;
+  height: 60%;
+}
+
 .ui-gnb-sub-title {
   @include flexYCenter;
+  font-size: 2.4rem;
   gap: 16px;
   height: 56px;
+  padding: 0 0.4rem;
 }
 
 .ui-card-container {
@@ -221,6 +241,15 @@
   font-weight: 700;
   line-height: 1.5;
   color: #1e2124;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  &.only-one {
+    -webkit-line-clamp: 1;
+  }
 }
 
 .ui-card-desc {

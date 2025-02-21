@@ -491,6 +491,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ".modal-adjust-display .modal-close"
   );
   const mainContent = document.querySelector(".page-main-wrap");
+  const modalCloseBtn = document.querySelector(".ui-btn-confirm.medium.blue"); // 닫기 버튼 추가
+  const modalResetBtn = document.querySelector(".ui-btn-confirm.medium.white"); // 초기화 버튼 추가
 
   // 스크롤 비활성화 함수
   function disableScroll() {
@@ -509,11 +511,117 @@ document.addEventListener("DOMContentLoaded", function () {
     disableScroll(); // 스크롤 막기
   });
 
-  // 모달 닫기
+  // 모달 닫기 (닫기 버튼)
   closeButton.addEventListener("click", function () {
+    closeModal();
+  });
+
+  modalCloseBtn.addEventListener("click", function () {
+    // 추가된 닫기 버튼
+    closeModal();
+  });
+
+  // 모달 닫기 (ESC 키)
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      // ESC 키
+      closeModal();
+    }
+  });
+
+  // 모달 닫기 (모달 배경 클릭)
+  modalSection.addEventListener("click", function (event) {
+    if (event.target === modalSection) {
+      // 모달 배경 영역 클릭 시
+      closeModal();
+    }
+  });
+
+  // 초기화 버튼 클릭 이벤트 리스너
+  modalResetBtn.addEventListener("click", function () {
+    resetModal();
+    closeModal();
+  });
+
+  // 모달 닫기 함수 (재사용 가능)
+  function closeModal() {
     modalSection.classList.remove("shown");
-    mainContent.removeAttribute("inert"); // 메인 콘텐츠 활성화
-    enableScroll(); // 스크롤 다시 활성화
+    mainContent.removeAttribute("inert");
+    enableScroll();
+  }
+
+  // 초기화 함수
+  function resetModal() {
+    // 요소들이 존재하는지 확인하고 초기화
+    const scaleNormal = document.getElementById("scale-level-normal");
+    const viewModeLight = document.querySelector(
+      'input[name="view-mode"][value="기본 (밝은 배경)"]'
+    );
+    if (scaleNormal) {
+      scaleNormal.checked = true;
+      body.style.zoom = "1.0";
+    }
+    if (viewModeLight) {
+      viewModeLight.checked = true;
+      body.classList.remove("dark-mode", "default-mode");
+    }
+    // 모달 닫기
+    closeModal();
+  }
+
+  /*** 모달 줌 기능 */
+  const scaleSmall = document.getElementById("scale-level-small");
+  const scaleNormal = document.getElementById("scale-level-normal");
+  const scaleLarge = document.getElementById("scale-level-large");
+  const scaleXlarge = document.getElementById("scale-level-xlarge");
+  const scaleXxlarge = document.getElementById("scale-level-xxlarge");
+
+  // body 요소 가져오기
+  const body = document.body;
+
+  // 각 라디오 버튼에 이벤트 리스너 추가
+  scaleSmall.addEventListener("change", () => {
+    body.style.zoom = "0.9";
+  });
+
+  scaleNormal.addEventListener("change", () => {
+    body.style.zoom = "1.0";
+  });
+
+  scaleLarge.addEventListener("change", () => {
+    body.style.zoom = "1.1";
+  });
+
+  scaleXlarge.addEventListener("change", () => {
+    body.style.zoom = "1.3";
+  });
+
+  scaleXxlarge.addEventListener("change", () => {
+    body.style.zoom = "1.5";
+  });
+
+  // 화면 표시 모드 라디오 버튼 (기존 코드와 동일)
+  const viewModeRadios = document.querySelectorAll('input[name="view-mode"]');
+
+  viewModeRadios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      const selectedMode = document.querySelector(
+        'input[name="view-mode"]:checked'
+      ).value;
+      switch (selectedMode) {
+        case "기본 (밝은 배경)":
+          body.classList.remove("dark-mode", "default-mode");
+          break;
+        case "선명하게 (어두운 배경)":
+          body.classList.add("dark-mode");
+          body.classList.remove("default-mode");
+          break;
+        case "시스템 설정":
+          body.classList.add("default-mode");
+          body.classList.remove("dark-mode");
+          break;
+      }
+    });
   });
 });
 

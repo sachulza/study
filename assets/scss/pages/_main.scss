@@ -5,11 +5,13 @@
   .main-gap {
     @include flexColumn;
     gap: 40px;
-    padding: 40px 0;
+    padding-top: 40px;
+    padding-bottom: 4.8rem;
 
-    @include tablet {
+    @include pc {
       gap: 64px;
-      padding: 64px 0;
+      padding-top: 40px;
+      padding-bottom: 6.4rem;
     }
 
     & > section {
@@ -74,7 +76,9 @@
     height: 100%;
 
     .slide-wrap {
-      @include flexColumn;
+      @include flexColumn {
+        justify-content: space-between;
+      }
       margin: 0 auto;
       padding-bottom: 32px;
       width: 100%;
@@ -105,10 +109,14 @@
           gap: 24px;
 
           p {
-            @include font(titleL);
+            font-size: 3.6rem;
             color: #1e2124;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.1rem;
+
+            @media (max-width: 769px) {
+              font-size: 2.4rem;
+            }
           }
 
           span {
@@ -208,6 +216,15 @@
           &::after {
             display: none;
           }
+        }
+
+        .autoplay-button {
+          @include bgi("icon/btn-more.svg");
+          display: inline-flex;
+          flex-shrink: 0;
+          content: "";
+          width: 60%;
+          height: 60%;
         }
       }
     }
@@ -768,17 +785,34 @@
       }
       padding-top: 48px;
       padding-bottom: 64px;
+      padding-inline: 10.2rem;
       gap: 24px;
+
+      @media (max-width: 1024px) {
+        padding-inline: 0;
+      }
 
       @include tablet {
         flex-direction: row;
         gap: 40px;
       }
 
+      .intro-img-box {
+        border-radius: 1.2rem;
+
+        @media (max-width: 769px) {
+          width: 100%;
+          height: 32.2rem;
+          flex-shrink: 0;
+          overflow: hidden;
+        }
+      }
+
       .intro-img {
-        width: 328px;
-        height: 258px;
-        flex-shrink: 0;
+        // width: 328px;
+        // height: 258px;
+        width: 100%;
+        height: auto;
         margin-left: auto;
         margin-right: auto;
 
@@ -811,9 +845,12 @@
           overflow: hidden;
           color: #1e2124;
           text-overflow: ellipsis;
-
-          @include font(titleM);
+          font-size: 3.2rem;
           font-weight: 700;
+
+          @media (max-width: 769px) {
+            font-size: 2.4rem;
+          }
         }
 
         .intro-desc {

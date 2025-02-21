@@ -20,6 +20,21 @@ label {
     opacity: 0;
     transition: visibility 0.15s 0.3s, z-index 0s 0.3s, opacity 0.2s;
 
+    @media (max-width: 769px) {
+      width: 100%;
+    }
+
+    label {
+      @include flexYCenter;
+      gap: 0.8rem;
+
+      input {
+        margin: unset;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
     &.shown {
       z-index: 1010;
       visibility: visible;
@@ -36,12 +51,16 @@ label {
     .modal-content-wrap {
       @include flex;
       gap: 2.4rem;
-      padding: 1.6rem 4rem 0.8rem 4rem;
+      padding: 2.4rem 4rem 0.8rem 4rem;
 
       .scale-set {
         @include flexColumn;
-        gap: 2rem;
+        gap: 0.8rem;
         min-width: 24rem;
+
+        @media (max-width: 1024px) {
+          display: none;
+        }
 
         ul {
           @include flexColumn;
@@ -52,7 +71,7 @@ label {
 
     .display-mode {
       @include flexColumn;
-      gap: 2rem;
+      gap: 0.8rem;
 
       ul {
         @include flexColumn;
@@ -104,6 +123,7 @@ label {
     }
 
     .content-title {
+      margin-bottom: 0.8rem;
       font-size: 1.5rem;
       font-weight: 700;
       color: #131416;
@@ -452,7 +472,7 @@ label {
 .modal-close {
   position: absolute;
   @include flexCenter;
-  transition: none;
+  transition: 0.4s ease-in-out;
 
   &.small {
     top: 2.4rem;

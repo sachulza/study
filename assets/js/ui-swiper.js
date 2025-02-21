@@ -1,27 +1,65 @@
-function MySliderMainVisual() {
-  let swiper = new Swiper(".main-visual-swiper .swiper", {
-    // Optional parameters
-    slidesPerView: 1,
+document.addEventListener("DOMContentLoaded", function () {
+  function MySliderMainVisual() {
+    let swiper = new Swiper(".main-visual-swiper .swiper", {
+      // Optional parameters
+      slidesPerView: 1,
+      loop: true,
 
-    loop: true,
+      // If we need pagination
+      pagination: {
+        el: ".main-visual-swiper .swiper-pagination",
+        clickable: true,
+      },
 
-    // If we need pagination
-    pagination: {
-      el: ".main-visual-swiper .swiper-pagination",
-      clickable: true,
-    },
+      // Navigation arrows
+      navigation: {
+        nextEl: ".main-visual-swiper .swiper-button-next",
+        prevEl: ".main-visual-swiper .swiper-button-prev",
+      },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: ".main-visual-swiper .swiper-button-next",
-      prevEl: ".main-visual-swiper .swiper-button-prev",
-    },
+      autoHeight: true,
+      observer: true,
+      observeParents: true,
 
-    autoHeight: true,
-    observer: true,
-    observeParents: true,
-  });
-}
+      // Auto play 설정
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Auto play 버튼 제어
+    const playButton = document.getElementById("main-visual-play-button");
+    const stopButton = document.getElementById("main-visual-stop-button");
+    let isAutoplayEnabled = true;
+
+    playButton.addEventListener("click", () => {
+      swiper.autoplay.start();
+      playButton.style.display = "none";
+      stopButton.style.display = "inline-block";
+      isAutoplayEnabled = true;
+    });
+
+    stopButton.addEventListener("click", () => {
+      swiper.autoplay.stop();
+      playButton.style.display = "inline-block";
+      stopButton.style.display = "none";
+      isAutoplayEnabled = false;
+    });
+
+    // 초기 상태 설정
+    if (isAutoplayEnabled) {
+      playButton.style.display = "none";
+      stopButton.style.display = "inline-block";
+    } else {
+      playButton.style.display = "inline-block";
+      stopButton.style.display = "none";
+    }
+  }
+
+  // 슬라이더 초기화 호출
+  MySliderMainVisual();
+});
 
 function MySliderBookmark() {
   let ww = window.innerWidth;
@@ -148,12 +186,46 @@ function MySliderComplaint() {
       },
     },
 
+    autoHeight: true,
     observer: true,
     observeParents: true,
+
+    // Auto play 설정
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
   });
+
+  // Auto play 버튼 제어
+  const playButton = document.getElementById("complain-play-button");
+  const stopButton = document.getElementById("complain-stop-button");
+  let isAutoplayEnabled = true;
+
+  playButton.addEventListener("click", () => {
+    swiper.autoplay.start();
+    playButton.style.display = "none";
+    stopButton.style.display = "inline-block";
+    isAutoplayEnabled = true;
+  });
+
+  stopButton.addEventListener("click", () => {
+    swiper.autoplay.stop();
+    playButton.style.display = "inline-block";
+    stopButton.style.display = "none";
+    isAutoplayEnabled = false;
+  });
+
+  // 초기 상태 설정
+  if (isAutoplayEnabled) {
+    playButton.style.display = "none";
+    stopButton.style.display = "inline-block";
+  } else {
+    playButton.style.display = "inline-block";
+    stopButton.style.display = "none";
+  }
 }
 
-MySliderMainVisual();
 MySliderBookmark();
 MySliderContents();
 MySliderComplaint();

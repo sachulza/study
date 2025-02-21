@@ -9,7 +9,7 @@
 .masthead-wrap {
   @include flexYCenter;
   align-self: stretch;
-  height: 32px;
+  min-height: 3.2rem;
   background-color: #eef2f7;
   z-index: 70;
 
@@ -17,7 +17,7 @@
     @include flexYCenter {
       display: inline-flex;
     }
-    @include font(($body, 15px));
+    font-size: 1.5rem;
     font-weight: 400;
     gap: 8px;
     color: #1e2124;
@@ -31,6 +31,15 @@
       height: 24px;
     }
   }
+}
+
+.layout-header-gnb-wrap {
+  @include flexColumn;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 70;
+  transition: 0.4s ease-in-out;
 }
 
 .layout-header-wrap {
@@ -139,6 +148,10 @@
       height: 100%;
       gap: 0.8rem;
 
+      @media (max-width: 769px) {
+        gap: 0;
+      }
+
       .nav-btn-box {
         @include flexYCenter;
         position: relative;
@@ -147,6 +160,12 @@
           @include font(($body, 1.7rem));
           color: #1e2124;
           font-weight: 700;
+
+          @media (max-width: 769px) {
+            font-size: 1.5rem;
+            word-break: keep-all;
+            word-wrap: break-word;
+          }
 
           &:hover {
             background-color: #eef2f7;
@@ -946,7 +965,7 @@
       padding: 0 8px;
       gap: 8px;
       height: 56px;
-      @include font(($titleS, 19px));
+      font-size: 1.9rem;
       font-weight: 700;
       color: #464c53;
       transition: 0.4s ease-in-out;
@@ -997,10 +1016,17 @@
       position: absolute;
       width: 100%;
       left: 0;
-      margin-top: 1px;
+      margin-top: 0.1rem;
       background-color: #fff;
       margin-left: auto;
       margin-right: auto;
+
+      .layout-inner {
+        transition: 0.4s ease-in-out;
+        @media (max-width: 1200px) {
+          padding-left: 0;
+        }
+      }
 
       &.is-open {
         @include flex {
@@ -1025,11 +1051,13 @@
           width: 100%;
           padding: 16px 24px;
           color: inherit;
-          @include font(($subtitle, 17px));
+          font-size: 1.7rem;
           text-decoration: none;
 
           &.active {
             background-color: #fff;
+            font-weight: 700;
+            color: #052b57;
           }
 
           &::after {
