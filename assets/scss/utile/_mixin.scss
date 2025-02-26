@@ -144,7 +144,7 @@
   }
 }
 @mixin mobile($mm: "max") {
-  @media (#{$mm}-width: $tablet) {
+  @media (#{$mm}-width: $mobile) {
     @content;
   }
 }

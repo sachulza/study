@@ -108,6 +108,7 @@ button {
   cursor: pointer;
   font-size: inherit;
   font-family: inherit;
+  line-height: inherit;
 }
 
 @font-face {
@@ -190,7 +191,8 @@ html {
 body {
   position: relative;
   font-family: "Pretendard GOV";
-  font-size: 1.7rem;
+  font-size: var(--font-size-body-medium);
+  color: var(--color-text-basic);
   line-height: 1.5;
 }
 

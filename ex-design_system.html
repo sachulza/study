@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input,
+      button {
+        all: unset;
+      }
+      .input-wrap {
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+        padding: 0 8px;
+
+        input {
+          border: 0;
+          width: 100%;
+          padding: 10px;
+        }
+      }
+      input:disabled {
+        user-select: none;
+        pointer-events: none;
+      }
+      input:invalid {
+        border-color: red;
+      }
+      input:valid {
+        border-color: greenyellow;
+      }
+
+      :root {
+        /* text */
+        --display-large: 60px;
+        --display-medium: 44px;
+        --display-small: 28px;
+
+        .pc-only {
+          display: none;
+        }
+
+        @media (min-width: 800px) {
+          .pc-only {
+            display: block;
+          }
+
+          .grid {
+            display: grid;
+          }
+          .col-3 {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 800px) {
+          --display-large: 40px;
+        }
+      }
+
+      .txt-display-large {
+        font-size: var(--display-large);
+      }
+      .txt-display-medium {
+        font-size: var(--display-medium);
+      }
+      .txt-display-small {
+        font-size: var(--display-small);
+      }
+      [class*="txt-display"] {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>디자인 시스템</h1>
+
+      <h2>텍스트트</h2>
+      <hr />
+      <div class="pc-only">pc only</div>
+      <div class="grid col-3 res-block">
+        <div class="txt-display-large">Display-large</div>
+        <div class="txt-display-medium">Display-medium</div>
+        <div class="txt-display-small">Display-small</div>
+      </div>
+
+      <h2>버튼</h2>
+      <hr />
+      <div>
+        <button type="button">기본 버튼</button>
+        <button type="button">기본 버튼</button>
+      </div>
+
+      <h2>인풋</h2>
+      <hr />
+      <div>
+        <form>
+          <label for="login">로그인</label>
+          <div class="input-wrap">
+            <input
+              type="text"
+              placeholder="입력해주세요."
+              required
+              id="login"
+            />
+            <button>❌</button>
+          </div>
+          <button type="submit">로그인</button>
+        </form>
+        <input type="text" placeholder="입력해주세요." required />
+        <input
+          type="text"
+          placeholder="입력해주세요."
+          value="텍스트"
+          disabled
+        />
+        <input
+          type="text"
+          placeholder="입력해주세요."
+          value="텍스트"
+          readonly
+        />
+      </div>
+    </div>
+  </body>
+</html>
