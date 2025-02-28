@@ -388,3 +388,91 @@ h6,
     }
   }
 }
+
+// select
+.com-select-wrap {
+  @include flexColumn;
+  gap: var(--gap-3, 8px);
+
+  .form-tit {
+    font-size: var(--font-size-label-small, 15px);
+  }
+
+  .form-hint {
+    font-size: var(--font-size-body-xsmall, 13px);
+    color: var(--color-text-subtle);
+  }
+
+  .form-alert {
+    @include flexYCenter;
+    gap: var(--gap-2, 4px);
+    font-size: var(--font-size-body-xsmall, 13px);
+    color: var(--color-text-information);
+
+    &::before {
+      @include bgi("icon/info-blue.svg");
+      display: inline-flex;
+      flex-shrink: 0;
+      content: "";
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .form-content {
+    position: relative;
+    @include flexColumn {
+      // align-self: flex-start;
+    }
+    min-width: 150px;
+
+    &::after {
+      position: absolute;
+      display: inline-flex;
+      top: 50%;
+      right: var(--padding-6, 16px);
+      transform: translateY(-50%);
+      @include bgi("icon/arrow-down.svg");
+      flex-shrink: 0;
+      content: "";
+      width: 24px;
+      height: 24px;
+    }
+
+    select {
+      padding: 0 var(--padding-10, 40px) 0 var(--padding-6, 16px);
+      border: 1px solid var(--color-input-border);
+      border-radius: var(--radius-medium-1, 6px);
+
+      appearance: none; /* 브라우저 기본 스타일 제거 */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      &:disabled {
+        color: red;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-input-border-active);
+        border-color: var(--color-input-border-active);
+        transition: 0.1s ease-in-out;
+      }
+
+      option {
+      }
+    }
+
+    .form-select {
+      &.large {
+        height: var(--size-height-8, 56px);
+        border-radius: var(--radius-medium-3, 8px);
+      }
+
+      &.completed {
+      }
+
+      &.is-error {
+      }
+    }
+  }
+}

@@ -703,9 +703,13 @@ button {
   --color-text-subtle: #464c53;
   --color-text-primary: #0b50d0;
   --color-text-basic: #1e2124;
+  --color-text-disabled: #8a949e;
+  --color-text-information: #096ab3;
   --color-button-secondary-border: #256ef4;
   --color-button-tertiary-border: #58616a;
   --color-element-disabled-light: #cdd1d5;
+  --color-input-border: #58616a;
+  --color-input-border-active: #256ef4;
   --color-button-primary-fill: #256ef4;
   --color-button-primary-fill-hover: #0b50d0;
   --color-button-secondary-fill: #ecf2fe;
@@ -5410,6 +5414,85 @@ h6,
   }
 }
 
+.com-select-wrap {
+  display: flex;
+  justify-content: initial;
+  align-items: initial;
+  flex-direction: column;
+  gap: var(--gap-3, 8px);
+}
+.com-select-wrap .form-tit {
+  font-size: var(--font-size-label-small, 15px);
+}
+.com-select-wrap .form-hint {
+  font-size: var(--font-size-body-xsmall, 13px);
+  color: var(--color-text-subtle);
+}
+.com-select-wrap .form-alert {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: var(--gap-2, 4px);
+  font-size: var(--font-size-body-xsmall, 13px);
+  color: var(--color-text-information);
+}
+.com-select-wrap .form-alert::before {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  background-image: url("/assets/images/icon/info-blue.svg");
+  display: inline-flex;
+  flex-shrink: 0;
+  content: "";
+  width: 16px;
+  height: 16px;
+}
+.com-select-wrap .form-content {
+  position: relative;
+  display: flex;
+  justify-content: initial;
+  align-items: initial;
+  flex-direction: column;
+  min-width: 150px;
+}
+.com-select-wrap .form-content::after {
+  position: absolute;
+  display: inline-flex;
+  top: 50%;
+  right: var(--padding-6, 16px);
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  background-image: url("/assets/images/icon/arrow-down.svg");
+  flex-shrink: 0;
+  content: "";
+  width: 24px;
+  height: 24px;
+}
+.com-select-wrap .form-content select {
+  padding: 0 var(--padding-10, 40px) 0 var(--padding-6, 16px);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-medium-1, 6px);
+  appearance: none; /* 브라우저 기본 스타일 제거 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.com-select-wrap .form-content select:disabled {
+  color: red;
+}
+.com-select-wrap .form-content select:focus {
+  outline: 2px solid var(--color-input-border-active);
+  border-color: var(--color-input-border-active);
+  transition: 0.1s ease-in-out;
+}
+.com-select-wrap .form-content .form-select.large {
+  height: var(--size-height-8, 56px);
+  border-radius: var(--radius-medium-3, 8px);
+}
 .basic-pattern-wrap {
   padding: 50px 0;
   border-bottom: 3px solid black;

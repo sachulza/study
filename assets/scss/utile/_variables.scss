@@ -309,11 +309,15 @@ $colors: (
   --color-text-subtle: #464c53;
   --color-text-primary: #0b50d0;
   --color-text-basic: #1e2124;
+  --color-text-disabled: #8a949e;
+  --color-text-information: #096ab3;
 
   // border color
   --color-button-secondary-border: #256ef4;
   --color-button-tertiary-border: #58616a;
   --color-element-disabled-light: #cdd1d5;
+  --color-input-border: #58616a;
+  --color-input-border-active: #256ef4;
 
   // button color
   --color-button-primary-fill: #256ef4;
