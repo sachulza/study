@@ -14,6 +14,7 @@
   &.with-flex {
     @include flex;
     gap: var(--gap-5);
+    flex-flow: wrap;
   }
 }
 
@@ -118,15 +119,17 @@ h6,
 .com-btn {
   @include flex {
     align-self: flex-start;
+    flex-shrink: 0;
   }
   align-items: center;
   justify-content: center;
   text-align: center;
   line-height: 150%;
+  // width: 100%;
 
   // size
   &.small {
-    height: var(--size-height-6);
+    height: var(--size-height-6, 40px);
     border-radius: var(--radius-medium-1);
     padding: 0 var(--padding-5);
     gap: var(--gap-2);
@@ -149,6 +152,15 @@ h6,
     padding: 0 var(--padding-7);
     gap: var(--gap-2);
     min-width: 90px;
+    font-size: var(--font-size-label-large);
+  }
+
+  &.xlarge {
+    height: var(--size-height-9, 64px);
+    border-radius: var(--radius-medium-3, 8px);
+    padding: 0 var(--padding-8, 24px);
+    gap: var(--gap-2);
+    min-width: 98px;
     font-size: var(--font-size-label-large);
   }
 
@@ -250,7 +262,7 @@ h6,
         display: none;
       }
 
-      li:nth-child(2) {
+      li:nth-child(2):not(:last-child) {
         &::before {
           display: inline-flex;
           flex-shrink: 0;
@@ -272,10 +284,6 @@ h6,
 .com-step-indicator-wrap {
   ol {
     @include flex;
-
-    @include mobile {
-      padding: var(--padding-8, 24px);
-    }
 
     li {
       position: relative;
@@ -393,6 +401,7 @@ h6,
 .com-select-wrap {
   @include flexColumn;
   gap: var(--gap-3, 8px);
+  width: 100%;
 
   .form-tit {
     font-size: var(--font-size-label-small, 15px);
@@ -448,14 +457,18 @@ h6,
       -webkit-appearance: none;
       -moz-appearance: none;
 
+      font-size: var(--font-size-label-large, 19px);
+      color: var(--color-text-disabled);
+      transition: 0.1s ease-in-out;
+
       &:disabled {
-        color: red;
       }
 
       &:focus {
         outline: 2px solid var(--color-input-border-active);
         border-color: var(--color-input-border-active);
         transition: 0.1s ease-in-out;
+        color: var(--color-text-basic);
       }
 
       option {
@@ -473,6 +486,49 @@ h6,
 
       &.is-error {
       }
+    }
+  }
+}
+
+//help panel
+
+.com-help-panel-wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  & > button {
+    position: relative;
+    right: var(--padding-10, 40px);
+    top: var(--padding-10, 40px);
+    z-index: 150;
+  }
+
+  .help-panel-wrap {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    z-index: 101;
+    width: 390px;
+    padding: var(--padding-10, 40px);
+    border-left: 1px solid var(--color-border-gray);
+    background-color: var(--color-surface-gray-subtler);
+
+    @include mobile {
+      padding: var(--padding-6, 16px) var(--padding-8, 24px)
+        var(--padding-8, 24px);
+    }
+
+    &.is-open {
+      @include flexColumn;
+      visibility: visible;
+      transition: 0.4s ease-in-out;
+      transform: unset;
     }
   }
 }

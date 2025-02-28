@@ -34,8 +34,12 @@
   }
 }
 
+.layout-page-breadcrumb {
+  padding: var(--padding-8) 0 var(--padding-10);
+}
+
 // 약관 동의
-.approval-wrap {
+.page-approval-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,6 +122,110 @@
             margin: 0;
             width: 20px;
             height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 전입신고
+.page-transfer-wrap {
+  @include flexColumn;
+  gap: var(--gap-10);
+  max-width: 792px;
+  padding-bottom: 64px;
+
+  @include mobile {
+    gap: var(--gap-8);
+    width: unset;
+    padding-bottom: 40px;
+  }
+
+  .transfer-step {
+    @include flexColumn;
+    gap: var(--gap-9);
+
+    @include mobile {
+      gap: var(--gap-7);
+    }
+
+    .step-txt {
+      @include flexYCenter;
+      font-size: var(--font-size-body-medium, 17px);
+      color: var(--color-text-subtle);
+      gap: 0.5rem;
+
+      .active {
+        color: var(--color-text-primary);
+        font-weight: 700;
+      }
+    }
+
+    .transfer-content-title {
+      @include flexColumn;
+      gap: var(--gap-9);
+
+      @include mobile {
+        gap: var(--gap-7);
+      }
+    }
+
+    .transfter-content-wrap {
+      @include flexColumn;
+      gap: var(--gap-7);
+
+      .layout-transfer-content-inner {
+        @include flexColumn;
+        padding: var(--padding-10);
+
+        .inner-tit {
+          @include flexColumn;
+          gap: var(--gap-7);
+
+          @include mobile {
+            gap: var(--gap-6);
+          }
+
+          .select-wrap {
+            @include flexYCenter {
+            }
+            gap: var(--gap-5);
+
+            @include mobile {
+              flex-direction: column;
+            }
+
+            & > button {
+              @include mobile {
+                width: 100%;
+              }
+            }
+          }
+
+          .content-container {
+            padding: var(--padding-9, 32px);
+            border-radius: var(--radius-xlarge-1, 12px);
+            background-color: var(--color-surface-gray-subtler);
+            font-size: var(--font-size-body-large, 19px);
+            text-align: center;
+            color: var(--color-text-subtle);
+
+            @include mobile {
+              padding: var(--padding-8, 24px);
+            }
+          }
+        }
+      }
+
+      .submit-button-wrap {
+        @include flexYCenter;
+        gap: var(--gap-5, 16px);
+
+        @include mobile {
+          flex-direction: column;
+          & > button {
+            width: 100%;
           }
         }
       }
