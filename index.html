@@ -3,14 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+
+    <style>
+      .page-index-list li ::before {
+        content: "⸰";
+        padding-right: 8px;
+      }
+    </style>
+
+    <title>study-index</title>
   </head>
   <body>
-    <ul>
-      <li><a href="/main.html">메인</a></li>
-      <li><a href="/design-system.html">디자인 시스템</a></li>
-      <li><a href="/design-pattern.html">디자인 패턴</a></li>
-      <li><a href="/ex-design_system.html">디자인 시스템 참고</a></li>
-    </ul>
+    <div class="page-whole-wrap">
+      <div class="design-style-wrap">
+        <h1>🐳 Study-index</h1>
+        <!-- page -->
+        <h2>page</h2>
+        <ul class="part-container page-index-list tit-heading-medium">
+          <li><a href="/main.html">메인</a></li>
+          <li><a href="/design-system.html">디자인 시스템</a></li>
+        </ul>
+        <!-- //page -->
+
+        <!-- design-pattern -->
+        <h2>design-pattern</h2>
+        <ul class="part-container page-index-list tit-heading-medium">
+          <li><a href="/pattern-agree.html">약관동의</a></li>
+          <li><a href="/pattern-transfer.html">전입신고</a></li>
+        </ul>
+        <!-- //design-pattern -->
+      </div>
+    </div>
   </body>
 </html>

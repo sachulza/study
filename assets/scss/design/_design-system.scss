@@ -1,4 +1,39 @@
+.page-whole-wrap {
+  background-color: #eee;
+  padding: 80px 32px;
+
+  @include mobile {
+    padding: 80px 16px;
+  }
+}
+
 .design-style-wrap {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 60px;
+  border-radius: 40px;
+  max-width: 1232px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 4px solid #1e1e1e;
+  }
+
+  & > h2 {
+    margin: 60px 0 24px;
+
+    &::before {
+      content: "📒";
+    }
+  }
+
+  .part-container {
+    min-height: 120px;
+    padding: 20px 40px;
+  }
 }
 
 .basic-pattern-wrap {
@@ -16,9 +51,6 @@
     gap: var(--gap-5);
     flex-flow: wrap;
   }
-}
-
-:root {
 }
 
 [class*="txt-display"] {
@@ -115,7 +147,29 @@ h6,
   }
 }
 
-// button
+/* 예약어 */
+/* 
+  page - 페이지
+  template - 공통 레이아웃
+  layout - 레이아웃
+  com - 컴포넌트
+  ui - 로컬 레이아웃 (재 사용이 용이한 것, 재 사용을 할 것 같은 것)
+*/
+
+/* components */
+// tooltip
+.tooltip-wrap {
+}
+
+// modal
+.modal-wrap {
+}
+
+// popup
+.popup-wrap {
+}
+
+// btn
 .com-btn {
   @include flex {
     align-self: flex-start;
@@ -125,7 +179,6 @@ h6,
   justify-content: center;
   text-align: center;
   line-height: 150%;
-  // width: 100%;
 
   // size
   &.small {
@@ -191,6 +244,27 @@ h6,
 
     &:hover {
       background-color: var(--color-button-tertiary-fill-hover);
+    }
+  }
+}
+
+.com-btn-close {
+  @include flexCenter;
+  transition: none;
+
+  &::before {
+    @include bgi("icon/close.svg");
+    display: inline-block;
+    flex-shrink: 0;
+    content: "";
+    width: 24px;
+    height: 24px;
+  }
+
+  &.large {
+    &::before {
+      width: 40px;
+      height: 40px;
     }
   }
 }
@@ -290,6 +364,7 @@ h6,
       @include flexColumn {
         flex: 1;
       }
+      min-width: 20px;
 
       & > span {
         position: relative;
@@ -316,7 +391,7 @@ h6,
           position: absolute;
           @include flexCenter;
           content: "";
-          top: 9px;
+          top: 8px;
           left: 1px;
           right: 0;
           height: 3px;
@@ -328,6 +403,10 @@ h6,
             background-color: var(--color-element-gray);
           }
         }
+      }
+
+      &:last-child {
+        flex: none;
       }
 
       &.done {
@@ -490,8 +569,118 @@ h6,
   }
 }
 
-//help panel
+// modal
+.com-modal-wrap {
+  &.large {
+    max-width: 760px;
+    min-height: 296px;
 
+    @include mobile {
+      max-height: 80vh;
+    }
+  }
+
+  &.medium {
+    max-width: 560px;
+    min-height: 296px;
+
+    @include mobile {
+    }
+  }
+
+  &.small {
+    max-width: 400px;
+    min-height: 264px;
+
+    @include mobile {
+    }
+  }
+
+  // position: fixed;
+  // top: 20vh;
+  // margin: auto;
+
+  @include flexColumn;
+  padding: var(--padding-8);
+  border: 1px solid var(--color-border-gray);
+  border-radius: var(--radius-xlarge-1, 12px);
+  background-color: var(--color-surface-white-subtler);
+
+  @include mobile {
+    padding: var(--padding-7);
+    min-width: 320px;
+  }
+
+  .modal-inner {
+    @include flexColumn {
+      flex: 1;
+    }
+    height: 100%;
+
+    .close-box {
+      @include flexYCenter {
+        justify-content: flex-end;
+      }
+    }
+
+    .modal-content-container {
+      @include flexColumn {
+        flex: 1;
+      }
+      height: 100%;
+      padding: var(--padding-3) var(--padding-6);
+      gap: var(--gap-5);
+
+      @include mobile {
+        padding: var(--padding-3) var(--padding-2);
+      }
+
+      .modal-desc-wrap {
+        @include flexColumn;
+        position: relative;
+        overflow-y: auto;
+        max-height: 50vh;
+      }
+    }
+
+    .modal-btn-container {
+      @include flexYCenter;
+      padding: var(--padding-6, 16px);
+      gap: var(--gap-3, 8px);
+      margin-top: auto;
+      flex-wrap: wrap;
+
+      @include mobile {
+        flex-direction: column;
+        padding: var(--padding-6, 16px) var(--padding-2, 4px);
+      }
+
+      .modal-checkbox {
+        @include flexYCenter;
+        margin-right: auto;
+        gap: var(--gap-3, 8px);
+
+        input {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .modal-btn-box {
+        @include flexYCenter {
+        }
+        gap: var(--gap-3);
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+//help panel
 .com-help-panel-wrap {
   position: absolute;
   right: 0;

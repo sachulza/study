@@ -4,7 +4,7 @@
 }
 
 // 레이아웃
-.layout-page-approval-wrap {
+.layout-page-agree-wrap {
   //mobile
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   }
 }
 
-.layout-page-approval-wrap {
+.layout-page-agree-wrap {
   //mobile
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
 }
 
 // 약관 동의
-.page-approval-wrap {
+.page-agree-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +59,7 @@
       height: var(--size-height-5);
     }
 
-    .approval-checkbox-txt {
+    .agree-checkbox-txt {
       @include flexColumn;
       gap: var(--gap-3);
 
