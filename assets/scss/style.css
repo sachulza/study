@@ -726,6 +726,8 @@ button {
   --color-element-gray: #6d7882;
   --color-element-gray-light: #e6e8ea;
   --color-element-primary: #256ef4;
+  --color-element-secondary-light: #d6e0eb;
+  --color-element-secondary-lighter: #eef2f7;
 }
 
 [class*=icons-] {
@@ -5047,6 +5049,16 @@ label {
 }
 .design-style-wrap > h2 {
   margin: 60px 0 24px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 1px;
+  color: var(--color-text-subtle);
+  font-size: var(--heading-xlarge);
+}
+@media (max-width: 768px) {
+  .design-style-wrap > h2 {
+    font-size: var(--heading-xlarge-mobile);
+  }
 }
 .design-style-wrap > h2::before {
   content: "📒";
@@ -5572,16 +5584,14 @@ h6,
   transition: 0.1s ease-in-out;
   color: var(--color-text-basic);
 }
-.com-select-wrap .form-content .form-select.large {
+.com-select-wrap .form-content .form-selecter.large {
   height: var(--size-height-8, 56px);
   border-radius: var(--radius-medium-3, 8px);
 }
 .com-modal-wrap {
-  display: flex;
-  justify-content: initial;
-  align-items: initial;
-  flex-direction: column;
   padding: var(--padding-8);
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid var(--color-border-gray);
   border-radius: var(--radius-xlarge-1, 12px);
   background-color: var(--color-surface-white-subtler);
@@ -5606,6 +5616,7 @@ h6,
 @media (max-width: 768px) {
   .com-modal-wrap {
     padding: var(--padding-7);
+    width: calc(100% - 40px);
     min-width: 320px;
   }
 }
@@ -5633,6 +5644,18 @@ h6,
   height: 100%;
   padding: var(--padding-3) var(--padding-6);
   gap: var(--gap-5);
+  overflow-y: auto;
+  max-height: 50vh;
+}
+.com-modal-wrap .modal-inner .modal-content-container::-webkit-scrollbar {
+  width: 8px;
+}
+.com-modal-wrap .modal-inner .modal-content-container::-webkit-scrollbar-track {
+  background-color: var(--color-element-secondary-lighter); /*스크롤바 뒷 배경 색상*/
+}
+.com-modal-wrap .modal-inner .modal-content-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-element-secondary-light); /* 스크롤바 색상 */
+  border-radius: var(--radius-xsmall-1); /* 스크롤바 둥근 테두리 */
 }
 @media (max-width: 768px) {
   .com-modal-wrap .modal-inner .modal-content-container {
@@ -5645,8 +5668,7 @@ h6,
   align-items: initial;
   flex-direction: column;
   position: relative;
-  overflow-y: auto;
-  max-height: 50vh;
+  font-size: var(--font-size-body-medium);
 }
 .com-modal-wrap .modal-inner .modal-btn-container {
   display: flex;
@@ -5671,6 +5693,7 @@ h6,
   flex-direction: row;
   margin-right: auto;
   gap: var(--gap-3, 8px);
+  font-size: var(--font-size-label-medium);
 }
 .com-modal-wrap .modal-inner .modal-btn-container .modal-checkbox input {
   display: inline-flex;

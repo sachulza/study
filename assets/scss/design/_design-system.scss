@@ -24,6 +24,14 @@
 
   & > h2 {
     margin: 60px 0 24px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 1px;
+    color: var(--color-text-subtle);
+    font-size: var(--heading-xlarge);
+    @include mobile {
+      font-size: var(--heading-xlarge-mobile);
+    }
 
     &::before {
       content: "📒";
@@ -554,7 +562,7 @@ h6,
       }
     }
 
-    .form-select {
+    .form-selecter {
       &.large {
         height: var(--size-height-8, 56px);
         border-radius: var(--radius-medium-3, 8px);
@@ -596,18 +604,17 @@ h6,
     }
   }
 
-  // position: fixed;
-  // top: 20vh;
-  // margin: auto;
-
-  @include flexColumn;
+  // @include flexColumn;
   padding: var(--padding-8);
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid var(--color-border-gray);
   border-radius: var(--radius-xlarge-1, 12px);
   background-color: var(--color-surface-white-subtler);
 
   @include mobile {
     padding: var(--padding-7);
+    width: calc(100% - 40px);
     min-width: 320px;
   }
 
@@ -631,6 +638,26 @@ h6,
       padding: var(--padding-3) var(--padding-6);
       gap: var(--gap-5);
 
+      overflow-y: auto;
+      max-height: 50vh;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: var(
+          --color-element-secondary-lighter
+        ); /*스크롤바 뒷 배경 색상*/
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(
+          --color-element-secondary-light
+        ); /* 스크롤바 색상 */
+        border-radius: var(--radius-xsmall-1); /* 스크롤바 둥근 테두리 */
+      }
+
       @include mobile {
         padding: var(--padding-3) var(--padding-2);
       }
@@ -638,8 +665,7 @@ h6,
       .modal-desc-wrap {
         @include flexColumn;
         position: relative;
-        overflow-y: auto;
-        max-height: 50vh;
+        font-size: var(--font-size-body-medium);
       }
     }
 
@@ -659,6 +685,7 @@ h6,
         @include flexYCenter;
         margin-right: auto;
         gap: var(--gap-3, 8px);
+        font-size: var(--font-size-label-medium);
 
         input {
           display: inline-flex;
