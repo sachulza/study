@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>design-system</title>
-
+    <!-- 부트스트랩 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,6 +17,17 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- 코드박스 -->
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <!-- scss 적용 -->
     <link rel="stylesheet" href="./assets/scss/style.css" />
   </head>
   <body>
@@ -24,12 +35,62 @@
       <div class="design-style-wrap">
         <h1>👿 디자인 시스템</h1>
 
+        <div class="accordion">
+          <button class="accordion-button">코드작성탬플릿</button>
+          <div class="accordion-content">
+            <div class="code-box">
+              <button class="copy-button">코드 복사</button>
+              <pre>
+                <code class="language-javascript">
+&lt;!-- &#xCF54;&#xB4DC; &#xBCF5;&#xC0AC; --&gt;
+&lt;div class=&quot;accordion&quot;&gt;
+ &lt;button class=&quot;accordion-button&quot;&gt;&#xCF54;&#xB4DC;&#xC791;&#xC131;&#xD0EC;&#xD50C;&#xB9BF;&lt;/button&gt;
+ &lt;div class=&quot;accordion-content&quot;&gt;
+  &lt;div class=&quot;code-box&quot;&gt;
+   &lt;button class=&quot;copy-button&quot;&gt;&#xCF54;&#xB4DC; &#xBCF5;&#xC0AC;&lt;/button&gt;
+   &lt;pre&gt;
+    &lt;code class=&quot;language-javascript&quot;&gt;
+    // &#xCF54;&#xB4DC;&#xB97C; &#xC785;&#xB825;&#xD574;&#xC8FC;&#xC138;&#xC694;
+     &#xCF54;&#xB4DC;&#xC791;&#xC131;
+    &lt;/code&gt;
+   &lt;/pre&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- //&#xCF54;&#xB4DC; &#xBCF5;&#xC0AC; --&gt;                  
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+
         <h2>font</h2>
         <div class="part-container">
           <div class="txt-display-large">Display-large: 60px-44px</div>
           <div class="txt-display-medium">Display-medium: 44px-32px</div>
           <div class="txt-display-small">Display-small: 36px-28px</div>
+
+          <!-- 코드 복사 -->
+
+          <div class="accordion">
+            <button class="accordion-button">폰트 디스플레이 종합</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+                  <code class="language-javascript">
+                    &lt;div class=&quot;txt-display-large&quot;&gt;Display-large: 60px-44px&lt;/div&gt;
+                    &lt;div class=&quot;txt-display-medium&quot;&gt;Display-medium: 44px-32px&lt;/div&gt;
+                    &lt;div class=&quot;txt-display-small&quot;&gt;Display-small: 36px-28px&lt;/div&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- //코드 복사 -->
         </div>
+
         <div class="part-container">
           <h2 class="tit-heading-xlarge">heading-xlarge: 40px-28px</h2>
           <h3 class="tit-heading-large">heading-large: 32px-24px</h3>
@@ -37,11 +98,31 @@
           <h5 class="tit-heading-small">heading-small: 19px</h5>
           <h6 class="tit-heading-xsmall">heading-xsmall: 17px</h6>
           <h6 class="tit-heading-xxsmall">heading-xxsmall: 15px</h6>
+          <!-- 코드 복사 -->
+          <div class="accordion">
+            <button class="accordion-button">폰트 헤딩 종합</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+                  <code class="language-javascript">
+                    &lt;h2 class=&quot;tit-heading-xlarge&quot;&gt;heading-xlarge: 40px-28px&lt;/h2&gt;
+                    &lt;h3 class=&quot;tit-heading-large&quot;&gt;heading-large: 32px-24px&lt;/h3&gt;
+                    &lt;h4 class=&quot;tit-heading-medium&quot;&gt;heading-medium: 24px-22px&lt;/h4&gt;
+                    &lt;h5 class=&quot;tit-heading-small&quot;&gt;heading-small: 19px&lt;/h5&gt;
+                    &lt;h6 class=&quot;tit-heading-xsmall&quot;&gt;heading-xsmall: 17px&lt;/h6&gt;
+                    &lt;h6 class=&quot;tit-heading-xxsmall&quot;&gt;heading-xxsmall: 15px&lt;/h6&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
 
         <h2>btn</h2>
         <!-- button -->
-        <div class="part-container with-padding with-flex">
+        <div class="part-container with-flex">
           <button class="com-btn small secondary">small secondary</button>
           <button class="com-btn medium primary">medium primary</button>
           <button class="com-btn large tertiary">large tertiary</button>
@@ -49,12 +130,34 @@
 
           <button class="com-btn-close">24px</button>
           <button class="com-btn-close large">40px</button>
+
+          <!-- 코드 복사 -->
+          <div class="accordion">
+            <button class="accordion-button">버튼 종합</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+                  <code class="language-javascript">
+                    &lt;button class=&quot;com-btn small secondary&quot;&gt;small secondary&lt;/button&gt;
+                    &lt;button class=&quot;com-btn medium primary&quot;&gt;medium primary&lt;/button&gt;
+                    &lt;button class=&quot;com-btn large tertiary&quot;&gt;large tertiary&lt;/button&gt;
+                    &lt;button class=&quot;com-btn xlarge secondary&quot;&gt;xlarge secondary&lt;/button&gt;
+          
+                    &lt;button class=&quot;com-btn-close&quot;&gt;24px&lt;/button&gt;
+                    &lt;button class=&quot;com-btn-close large&quot;&gt;40px&lt;/button&gt;
+                </code>
+                        </pre>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
         <!-- // button -->
 
         <h2>Breadcrumb</h2>
         <!-- input check box -->
-        <div class="part-container with-padding">
+        <div class="part-container">
           <nav class="com-breadcrumb-wrap">
             <ol class="breadcrumb">
               <li class="home">
@@ -80,12 +183,52 @@
               </li>
             </ol>
           </nav>
+
+          <!-- 코드 복사 -->
+          <div class="accordion">
+            <button class="accordion-button">브레드크럼 코드</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+                          <code class="language-javascript">
+                            &lt;nav class=&quot;com-breadcrumb-wrap&quot;&gt;
+                            &lt;ol class=&quot;breadcrumb&quot;&gt;
+                              &lt;li class=&quot;home&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;txt&quot;&gt;&#xD648;&lt;/a&gt;
+                              &lt;/li&gt;
+                              &lt;li&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;txt&quot;&gt;depth1&lt;/a&gt;
+                              &lt;/li&gt;
+                              &lt;li&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;txt&quot;&gt;depth2&lt;/a&gt;
+                              &lt;/li&gt;
+                              &lt;li&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;txt&quot;&gt;depth3&lt;/a&gt;
+                              &lt;/li&gt;
+                              &lt;li&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;txt&quot;&gt;depth4&lt;/a&gt;
+                              &lt;/li&gt;
+                              &lt;li&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;txt&quot;&gt;depth5&lt;/a&gt;
+                              &lt;/li&gt;
+                              &lt;li&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;txt&quot;&gt;depth6&lt;/a&gt;
+                              &lt;/li&gt;
+                            &lt;/ol&gt;
+                          &lt;/nav&gt;
+                          </code>
+                        </pre>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
         <!-- // input check box -->
 
         <h2>Step indicator</h2>
         <!-- step indicator -->
-        <div class="part-container with-padding">
+        <div class="part-container">
           <div class="com-step-indicator-wrap">
             <ol>
               <li class="done">
@@ -120,12 +263,62 @@
               </li>
             </ol>
           </div>
+
+          <!-- 코드 복사 -->
+          <div class="accordion">
+            <button class="accordion-button">단계 표시기 코드</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+     <code class="language-javascript">
+     // 코드를 입력해주세요
+     &lt;div class=&quot;com-step-indicator-wrap&quot;&gt;
+     &lt;ol&gt;
+       &lt;li class=&quot;done&quot;&gt;
+         &lt;span&gt;
+           &lt;i class=&quot;step&quot;&gt;1&#xB2E8;&#xACC4;&lt;/i&gt;
+           &lt;span class=&quot;step-tit&quot;&gt;&#xB2E8;&#xACC4; &#xB808;&#xC774;&#xBE14;&lt;/span&gt;
+         &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li class=&quot;done&quot;&gt;
+         &lt;span&gt;
+           &lt;i class=&quot;step&quot;&gt;2&#xB2E8;&#xACC4;&lt;/i&gt;
+           &lt;span class=&quot;step-tit&quot;&gt;&#xB2E8;&#xACC4; &#xB808;&#xC774;&#xBE14;&lt;/span&gt;
+         &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li class=&quot;active&quot;&gt;
+         &lt;span&gt;
+           &lt;i class=&quot;step&quot;&gt;3&#xB2E8;&#xACC4;&lt;/i&gt;
+           &lt;span class=&quot;step-tit&quot;&gt;&#xB2E8;&#xACC4; &#xB808;&#xC774;&#xBE14;&lt;/span&gt;
+         &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li class=&quot;&quot;&gt;
+         &lt;span&gt;
+           &lt;i class=&quot;step&quot;&gt;4&#xB2E8;&#xACC4;&lt;/i&gt;
+           &lt;span class=&quot;step-tit&quot;&gt;&#xB2E8;&#xACC4; &#xB808;&#xC774;&#xBE14;&lt;/span&gt;
+         &lt;/span&gt;
+       &lt;/li&gt;
+       &lt;li class=&quot;&quot;&gt;
+         &lt;span&gt;
+           &lt;i class=&quot;step&quot;&gt;5&#xB2E8;&#xACC4;&lt;/i&gt;
+           &lt;span class=&quot;step-tit&quot;&gt;&#xB2E8;&#xACC4; &#xB808;&#xC774;&#xBE14;&lt;/span&gt;
+         &lt;/span&gt;
+       &lt;/li&gt;
+     &lt;/ol&gt;
+   &lt;/div&gt;
+     </code>
+    </pre>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
         <!-- //step indicator -->
 
         <h2>Select</h2>
         <!-- select -->
-        <div class="part-container with-padding">
+        <div class="part-container">
           <div class="com-select-wrap">
             <div class="form-tit">
               <label for="select-name">레이블 large</label>
@@ -142,395 +335,409 @@
             </div>
             <div class="form-alert">메시지를 입력해 주세요</div>
           </div>
+
+          <!-- 코드 복사 -->
+          <div class="accordion">
+            <button class="accordion-button">셀렉트 코드</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+     <code class="language-javascript">
+      &lt;div class=&quot;com-select-wrap&quot;&gt;
+      &lt;div class=&quot;form-tit&quot;&gt;
+        &lt;label for=&quot;select-name&quot;&gt;&#xB808;&#xC774;&#xBE14; large&lt;/label&gt;
+        &lt;!-- id &#xC720;&#xBB34;&#xB97C; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694; --&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-hint&quot;&gt;&#xC785;&#xB825;&#xC2DC; &#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;&lt;/div&gt;
+      &lt;div class=&quot;form-content&quot;&gt;
+        &lt;select id=&quot;select-name&quot; class=&quot;form-selecter large&quot;&gt;
+          &lt;option value=&quot;&quot; disabled selected&gt;&#xC120;&#xD0DD;&#xD574;&#xC8FC;&#xC138;&#xC694;&lt;/option&gt;
+          &lt;option value=&quot;&quot;&gt;&#xD56D;&#xBAA9;1&lt;/option&gt;
+          &lt;option value=&quot;&quot;&gt;&#xD56D;&#xBAA9;2&lt;/option&gt;
+          &lt;option value=&quot;&quot;&gt;&#xD56D;&#xBAA9;3&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-alert&quot;&gt;&#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC785;&#xB825;&#xD574; &#xC8FC;&#xC138;&#xC694;&lt;/div&gt;
+    &lt;/div&gt;
+     </code>
+    </pre>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
         <!-- //select -->
 
         <h2>Modal</h2>
         <!-- modal -->
 
-        <!-- button - id와 target을 입력하세요 -->
-        <button
-          type="button"
-          class="com-btn medium secondary"
-          data-bs-toggle="modal"
-          data-bs-target="#modal-large"
-        >
-          large size
-        </button>
-        <br />
-        <button
-          type="button"
-          class="com-btn medium secondary"
-          data-bs-toggle="modal"
-          data-bs-target="#modal-medium"
-        >
-          medium size
-        </button>
-        <br />
-        <button
-          type="button"
-          class="com-btn medium secondary"
-          data-bs-toggle="modal"
-          data-bs-target="#modal-small"
-        >
-          small size
-        </button>
-        <br />
-
-        <!-- modal : large size -->
-        <div
-          class="modal fade"
-          id="modal-large"
-          tabindex="-1"
-          aria-labelledby="modal-large-label"
-          aria-hidden="true"
-        >
-          <div class="com-modal-wrap large">
-            <div class="modal-inner">
-              <div class="close-box">
-                <button
-                  class="com-btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-content-container">
-                <h4 class="tit-heading-medium" id="modal-large-label">
-                  Large size
-                </h4>
-                <div class="modal-desc-wrap">
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                </div>
-              </div>
-
-              <div class="modal-btn-container">
-                <div class="modal-checkbox">
-                  <input type="checkbox" />
-                  오늘 하루 보지 않기
-                </div>
-                <div class="modal-btn-box">
-                  <button
-                    class="com-btn medium tertiary"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    버튼
-                  </button>
-                  <button class="com-btn medium primary">버튼</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-dialog"></div>
-        </div>
-        <!-- //modal : large size -->
-
-        <!-- modal : medium size -->
-        <div
-          class="modal fade"
-          id="modal-medium"
-          tabindex="-1"
-          aria-labelledby="modal-medium-label"
-          aria-hidden="true"
-        >
-          <div class="com-modal-wrap medium">
-            <div class="modal-inner">
-              <div class="close-box">
-                <button
-                  class="com-btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-content-container">
-                <h4 class="tit-heading-medium" id="modal-medium-label">
-                  Medium size
-                </h4>
-                <div class="modal-desc-wrap">
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                </div>
-              </div>
-
-              <div class="modal-btn-container">
-                <div class="modal-checkbox">
-                  <input type="checkbox" />
-                  오늘 하루 보지 않기
-                </div>
-                <div class="modal-btn-box">
-                  <button
-                    class="com-btn medium tertiary"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    버튼
-                  </button>
-                  <button class="com-btn medium primary">버튼</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-dialog"></div>
-        </div>
-        <!-- //modal : medium size -->
-
-        <!-- modal : small size -->
-        <div
-          class="modal fade"
-          id="modal-small"
-          tabindex="-1"
-          aria-labelledby="modal-small-label"
-          aria-hidden="true"
-        >
-          <div class="com-modal-wrap small">
-            <div class="modal-inner">
-              <div class="close-box">
-                <button
-                  class="com-btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-content-container">
-                <h4 class="tit-heading-medium" id="modal-small-label">
-                  Small size
-                </h4>
-                <div class="modal-desc-wrap">
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                </div>
-              </div>
-
-              <div class="modal-btn-container">
-                <div class="modal-checkbox">
-                  <input type="checkbox" />
-                  오늘 하루 보지 않기
-                </div>
-                <div class="modal-btn-box">
-                  <button
-                    class="com-btn medium tertiary"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    버튼
-                  </button>
-                  <button class="com-btn medium primary">버튼</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-dialog"></div>
-        </div>
-        <!-- //modal : small size -->
-
-        <!-- modal : previous things -->
-        <div class="part-container with-padding">
-          <div class="com-modal-wrap large">
-            <div class="modal-inner">
-              <div class="close-box">
-                <button class="com-btn-close"></button>
-              </div>
-              <div class="modal-content-container">
-                <h4 class="tit-heading-medium">Large size</h4>
-                <div class="modal-desc-wrap">
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                </div>
-              </div>
-
-              <div class="modal-btn-container">
-                <div class="modal-checkbox">
-                  <input type="checkbox" />
-                  오늘 하루 보지 않기
-                </div>
-                <div class="modal-btn-box">
-                  <button class="com-btn medium tertiary">버튼</button>
-                  <button class="com-btn medium primary">버튼</button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="part-container">
+          <!-- button - id와 target을 입력하세요 -->
+          <button
+            type="button"
+            class="com-btn medium secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-large"
+          >
+            large size - click
+          </button>
           <br />
-          <div class="com-modal-wrap medium">
-            <div class="modal-inner">
-              <div class="close-box">
-                <button class="com-btn-close"></button>
-              </div>
-              <div class="modal-content-container">
-                <h4 class="tit-heading-medium">Medium size</h4>
-                <div class="modal-desc-wrap">
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                </div>
-              </div>
-              <div class="modal-btn-container">
-                <div class="modal-checkbox">
-                  <input type="checkbox" />
-                  오늘 하루 보지 않기
-                </div>
-                <div class="modal-btn-box">
-                  <button class="com-btn medium tertiary">버튼</button>
-                  <button class="com-btn medium primary">버튼</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button
+            type="button"
+            class="com-btn medium secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-medium"
+          >
+            medium size - click
+          </button>
           <br />
-          <div class="com-modal-wrap small">
-            <div class="modal-inner">
-              <div class="close-box">
-                <button class="com-btn-close"></button>
-              </div>
-              <div class="modal-content-container">
-                <h4 class="tit-heading-medium">Small size</h4>
-                <div class="modal-desc-wrap">
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                  대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
-                  포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
+          <button
+            type="button"
+            class="com-btn medium secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-small"
+          >
+            small size - click
+          </button>
+          <br />
+
+          <!-- modal : large size -->
+          <div class="com-modal-wrap">
+            <div
+              class="modal fade"
+              id="modal-large"
+              tabindex="-1"
+              aria-labelledby="modal-large-label"
+              aria-hidden="true"
+            >
+              <div class="modal-wrap large">
+                <div class="modal-inner">
+                  <div class="close-box">
+                    <button
+                      class="com-btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-content-container">
+                    <h4 class="tit-heading-medium" id="modal-large-label">
+                      Large size
+                    </h4>
+                    <div class="modal-desc-wrap">
+                      대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
+                      포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다.
+                    </div>
+                  </div>
+
+                  <div class="modal-btn-container">
+                    <div class="modal-checkbox">
+                      <input type="checkbox" />
+                      오늘 하루 보지 않기
+                    </div>
+                    <div class="modal-btn-box">
+                      <button
+                        class="com-btn medium tertiary"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        버튼
+                      </button>
+                      <button class="com-btn medium primary">버튼</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="modal-btn-container">
-                <div class="modal-checkbox">
-                  <input type="checkbox" />
-                  오늘 하루 보지 않기
+              <div class="modal-dialog"></div>
+            </div>
+          </div>
+
+          <!-- //modal : large size -->
+
+          <!-- modal : medium size -->
+          <div class="com-modal-wrap">
+            <div
+              class="modal fade"
+              id="modal-medium"
+              tabindex="-1"
+              aria-labelledby="modal-medium-label"
+              aria-hidden="true"
+            >
+              <div class="modal-wrap medium">
+                <div class="modal-inner">
+                  <div class="close-box">
+                    <button
+                      class="com-btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-content-container">
+                    <h4 class="tit-heading-medium" id="modal-medium-label">
+                      Medium size
+                    </h4>
+                    <div class="modal-desc-wrap">
+                      대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
+                      포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다.
+                    </div>
+                  </div>
+
+                  <div class="modal-btn-container">
+                    <div class="modal-checkbox">
+                      <input type="checkbox" />
+                      오늘 하루 보지 않기
+                    </div>
+                    <div class="modal-btn-box">
+                      <button
+                        class="com-btn medium tertiary"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        버튼
+                      </button>
+                      <button class="com-btn medium primary">버튼</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="modal-btn-box">
-                  <button class="com-btn medium tertiary">버튼</button>
-                  <button class="com-btn medium primary">버튼</button>
+              </div>
+              <div class="modal-dialog"></div>
+            </div>
+          </div>
+
+          <!-- //modal : medium size -->
+
+          <!-- modal : small size -->
+          <div class="com-modal-wrap">
+            <div
+              class="modal fade"
+              id="modal-small"
+              tabindex="-1"
+              aria-labelledby="modal-small-label"
+              aria-hidden="true"
+            >
+              <div class="modal-wrap small">
+                <div class="modal-inner">
+                  <div class="close-box">
+                    <button
+                      class="com-btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-content-container">
+                    <h4 class="tit-heading-medium" id="modal-small-label">
+                      Small size
+                    </h4>
+                    <div class="modal-desc-wrap">
+                      대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
+                      포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한
+                      정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+                      있습니다.
+                    </div>
+                  </div>
+
+                  <div class="modal-btn-container">
+                    <div class="modal-checkbox">
+                      <input type="checkbox" />
+                      오늘 하루 보지 않기
+                    </div>
+                    <div class="modal-btn-box">
+                      <button
+                        class="com-btn medium tertiary"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        버튼
+                      </button>
+                      <button class="com-btn medium primary">버튼</button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="modal-dialog"></div>
+            </div>
+          </div>
+
+          <!-- //modal : small size -->
+
+          <!-- //modal -->
+
+          <!-- 코드 복사 -->
+          <div class="accordion">
+            <button class="accordion-button">버튼 - large size</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+   <code class="language-javascript">
+   // 코드를 입력해주세요
+   &lt;button type=&quot;button&quot; class=&quot;com-btn medium secondary&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#modal-large&quot;&gt;
+    large size - click
+   &lt;/button&gt;
+   </code>
+  </pre>
               </div>
             </div>
           </div>
+
+          <div class="accordion">
+            <button class="accordion-button">모달창 - large size</button>
+            <div class="accordion-content">
+              <div class="code-box">
+                <button class="copy-button">코드 복사</button>
+                <pre>
+   <code class="language-javascript">
+   // 코드를 입력해주세요
+   &lt;div class=&quot;com-modal-wrap&quot;&gt;
+   &lt;div
+     class=&quot;modal fade&quot;
+     id=&quot;modal-large&quot;
+     tabindex=&quot;-1&quot;
+     aria-labelledby=&quot;modal-large-label&quot;
+     aria-hidden=&quot;true&quot;
+   &gt;
+     &lt;div class=&quot;modal-wrap large&quot;&gt;
+       &lt;div class=&quot;modal-inner&quot;&gt;
+         &lt;div class=&quot;close-box&quot;&gt;
+           &lt;button
+             class=&quot;com-btn-close&quot;
+             data-bs-dismiss=&quot;modal&quot;
+             aria-label=&quot;Close&quot;
+           &gt;&lt;/button&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;modal-content-container&quot;&gt;
+           &lt;h4 class=&quot;tit-heading-medium&quot; id=&quot;modal-large-label&quot;&gt;
+             Large size
+           &lt;/h4&gt;
+           &lt;div class=&quot;modal-desc-wrap&quot;&gt;
+             &#xB300;&#xD654; &#xC0C1;&#xC790;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC791;&#xC5C5;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xB9AC;&#xACE0; &#xC911;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB97C;
+             &#xD3EC;&#xD568;&#xD558;&#xAC70;&#xB098; &#xACB0;&#xC815;&#xC774; &#xD544;&#xC694;&#xD558;&#xAC70;&#xB098; &#xC5EC;&#xB7EC; &#xC791;&#xC5C5;&#xC744; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+           &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;div class=&quot;modal-btn-container&quot;&gt;
+           &lt;div class=&quot;modal-checkbox&quot;&gt;
+             &lt;input type=&quot;checkbox&quot; /&gt;
+             &#xC624;&#xB298; &#xD558;&#xB8E8; &#xBCF4;&#xC9C0; &#xC54A;&#xAE30;
+           &lt;/div&gt;
+           &lt;div class=&quot;modal-btn-box&quot;&gt;
+             &lt;button
+               class=&quot;com-btn medium tertiary&quot;
+               data-bs-dismiss=&quot;modal&quot;
+               aria-label=&quot;Close&quot;
+             &gt;
+               &#xBC84;&#xD2BC;
+             &lt;/button&gt;
+             &lt;button class=&quot;com-btn medium primary&quot;&gt;&#xBC84;&#xD2BC;&lt;/button&gt;
+           &lt;/div&gt;
+         &lt;/div&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;modal-dialog&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+   </code>
+  </pre>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
-        <!-- //modal -->
 
         <h2>Help panel</h2>
         <!-- help panel -->
-        <div class="part-container with-padding" style="position: relative">
+        <div class="part-container" style="position: relative">
           Help panel
           <div class="com-help-panel-wrap">
             <button class="com-btn small tertiary">도움말</button>
@@ -540,5 +747,52 @@
         <!-- //help panel -->
       </div>
     </div>
+
+    <!-- 코드박스 -->
+    <script>
+      const accordionButtons = document.querySelectorAll(".accordion-button");
+
+      accordionButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          button.classList.toggle("active");
+          const content = button.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      });
+
+      const copyButtons = document.querySelectorAll(".copy-button");
+
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const code = button.parentElement.querySelector("code");
+          const text = code.textContent;
+          navigator.clipboard
+            .writeText(text)
+            .then(() => {
+              alert("코드가 복사되었습니다!");
+            })
+            .catch((err) => {
+              console.error("복사에 실패했습니다.", err);
+            });
+        });
+      });
+
+      const codeElements = document.querySelectorAll(".code-box pre code");
+
+      codeElements.forEach((codeElement) => {
+        let code = codeElement.textContent;
+        if (!code.startsWith(" ")) {
+          code = code.replace(/^/gm, " "); // 각 줄 시작 부분에 공백 추가
+          codeElement.textContent = code;
+        }
+      });
+
+      hljs.highlightAll();
+    </script>
+    <!-- //코드박스 -->
   </body>
 </html>
