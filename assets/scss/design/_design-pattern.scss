@@ -79,6 +79,137 @@
       }
       gap: var(--gap-5);
 
+      .com-modal-wrap {
+        .modal-content-container {
+          gap: var(--gap-7);
+
+          @include mobile {
+            gap: var(--gap-5, 16px);
+          }
+        }
+
+        .modal-header-wrap {
+          @include flexColumn;
+          gap: var(--gap-3);
+
+          .tit-heading-medium {
+            position: relative;
+
+            .swiper-btn-container {
+              position: absolute;
+              bottom: 0;
+              right: var(--gap-3, 8px);
+              @include flexYCenter;
+              gap: var(--gap-3, 8px);
+              margin-top: var(--gap-5);
+
+              @include mobile {
+                position: unset;
+              }
+
+              .swiper-button-prev {
+                position: static;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                transform: translateY(0%);
+                width: 40px;
+                height: 40px;
+                margin: 0;
+                border: 1px solid #d7d9db;
+                border-radius: 50%;
+                background-color: #fff;
+
+                &:hover {
+                  background-color: var(--color-button-tertiary-fill-hover);
+                }
+              }
+              .swiper-button-next {
+                position: static;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                transform: translateY(0%);
+                width: 40px;
+                height: 40px;
+                margin: 0;
+                border: 1px solid #d7d9db;
+                border-radius: 50%;
+                background-color: #fff;
+
+                &:hover {
+                  background-color: var(--color-button-tertiary-fill-hover);
+                }
+              }
+            }
+          }
+        }
+
+        .modal-desc-wrap {
+          padding: var(--padding-8, 24px);
+          @include flexColumn;
+          gap: var(--gap-5, 16px);
+
+          .page-agree-modal-ol {
+            @include flexColumn;
+            gap: var(--gap-5, 16px);
+            counter-reset: item;
+
+            & > li {
+              counter-increment: item;
+              // list-style-position: inside;
+
+              &::before {
+                display: inline-flex;
+                content: counter(item) ".";
+                padding-right: var(--padding-2, 4px);
+              }
+            }
+
+            .page-agree-modal-ul {
+              @include flexColumn;
+              gap: var(--gap-4, 12px);
+              padding-top: var(--padding-3, 8px);
+
+              & > li {
+                position: relative;
+                @include flex;
+                padding-left: var(--gap-4);
+
+                &::before {
+                  position: relative;
+                  vertical-align: middle;
+                  padding-right: var(--padding-3, 8px);
+                  display: inline-flex;
+                  content: "•";
+                }
+              }
+
+              .ul-inner-ul {
+                @include flexColumn;
+                gap: var(--gap-4, 12px);
+                list-style-position: inside;
+
+                & > li {
+                  position: relative;
+                  @include flex;
+                  gap: var(--gap-4);
+
+                  &::before {
+                    position: relative;
+                    vertical-align: middle;
+                    display: inline-flex;
+                    content: "-";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
       .radio-container-wrap {
         //mobile
         @include flexColumn;
@@ -134,6 +265,8 @@
   @include flexColumn;
   gap: var(--gap-10);
   max-width: 792px;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 64px;
 
   @include mobile {

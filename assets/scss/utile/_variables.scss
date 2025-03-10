@@ -308,9 +308,11 @@ $colors: (
   --color-text-bolder: #131416;
   --color-text-subtle: #464c53;
   --color-text-primary: #0b50d0;
+  --color-text-secondary: #052b57;
   --color-text-basic: #1e2124;
   --color-text-disabled: #8a949e;
   --color-text-information: #096ab3;
+  --color-text-accordion-active: #052b57;
 
   // border color
   --color-button-secondary-border: #256ef4;
@@ -319,6 +321,8 @@ $colors: (
   --color-input-border: #58616a;
   --color-input-border-active: #256ef4;
   --color-border-gray: #b1b8be;
+  --color-border-help-gray: #cdd1d5;
+  --color-divider-gray-light: #cdd1d5;
 
   // button color
   --color-button-primary-fill: #256ef4;
@@ -327,6 +331,7 @@ $colors: (
   --color-button-secondary-fill-hover: #d8e5fd;
   --color-button-tertiary-fill: rgba(255, 255, 255, 0);
   --color-button-tertiary-fill-hover: #f4f5f6;
+  --color-button-tab-bottom-active: #063a74;
 
   // background color
   --color-surface-secondary-subtler: #eef2f7;
