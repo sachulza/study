@@ -1,73 +1,28 @@
-/** 코드박스 복사 script */
-
-const codeBoxCopy = {
-  init() {},
-};
-
-codeBoxCopy.init();
-
-const accordionButtons = document.querySelectorAll(
-  ".cbox-accordion .accordion-button"
-);
-
-accordionButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.toggle("active");
-    const content = button.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-});
-
-const copyButtons = document.querySelectorAll(".copy-button");
-
-copyButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const code = button.parentElement.querySelector("code");
-    const text = code.textContent;
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        alert("코드가 복사되었습니다!");
-      })
-      .catch((err) => {
-        console.error("복사에 실패했습니다.", err);
-      });
-  });
-});
-
-const codeElements = document.querySelectorAll(".code-box pre code");
-
-codeElements.forEach((codeElement) => {
-  let code = codeElement.textContent;
-  if (!code.startsWith(" ")) {
-    code = code.replace(/^/gm, " "); // 각 줄 시작 부분에 공백 추가
-    codeElement.textContent = code;
-  }
-});
-
-hljs.highlightAll();
-
 /** help panel tab */
 const helpPanelTab = {
   init() {
     document.addEventListener("DOMContentLoaded", function () {
-      const helpOpenButton = document.querySelector(".help-open");
-      const helpFoldButton = document.querySelector(".help-fold");
-      const helpPanelWrap = document.querySelector(".help-panel-wrap");
+      const helpOpenButtons = document.querySelectorAll(".help-open");
+      const helpFoldButtons = document.querySelectorAll(".help-fold");
+      const helpPanelWraps = document.querySelectorAll(".help-panel-wrap");
 
-      if (helpOpenButton && helpPanelWrap) {
-        helpOpenButton.addEventListener("click", function () {
-          helpPanelWrap.classList.add("is-open");
+      if (helpOpenButtons.length > 0 && helpPanelWraps.length > 0) {
+        helpOpenButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            helpPanelWraps.forEach(function (panel) {
+              panel.classList.add("is-open");
+            });
+          });
         });
       }
 
-      if (helpFoldButton && helpPanelWrap) {
-        helpFoldButton.addEventListener("click", function () {
-          helpPanelWrap.classList.remove("is-open");
+      if (helpFoldButtons.length > 0 && helpPanelWraps.length > 0) {
+        helpFoldButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            helpPanelWraps.forEach(function (panel) {
+              panel.classList.remove("is-open");
+            });
+          });
         });
       }
     });
@@ -75,3 +30,88 @@ const helpPanelTab = {
 };
 
 helpPanelTab.init();
+
+/** tool tip */
+document.addEventListener("DOMContentLoaded", function () {
+  const tooltipWraps = document.querySelectorAll(".com-tooltip-wrap");
+
+  tooltipWraps.forEach((currentTooltipWrap) => {
+    const openButton = currentTooltipWrap.querySelector(".btn-tooltip-open");
+    const closeButton = currentTooltipWrap.querySelector(".btn-tooltip-close");
+    const popover = currentTooltipWrap.querySelector(".tooltip-popover");
+
+    // 접근성 향상을 위한 속성 설정
+    openButton.setAttribute("aria-haspopup", "true");
+    openButton.setAttribute("aria-expanded", "false");
+    popover.setAttribute("aria-hidden", "true");
+
+    openButton.addEventListener("click", function (event) {
+      tooltipWraps.forEach((otherTooltipWrap) => {
+        if (otherTooltipWrap !== currentTooltipWrap) {
+          const otherPopover =
+            otherTooltipWrap.querySelector(".tooltip-popover");
+          otherPopover.classList.remove("active");
+          otherTooltipWrap
+            .querySelector(".btn-tooltip-open")
+            .setAttribute("aria-expanded", "false");
+          otherTooltipWrap
+            .querySelector(".tooltip-popover")
+            .setAttribute("aria-hidden", "true");
+        }
+      });
+
+      popover.classList.add("active");
+      openButton.setAttribute("aria-expanded", "true");
+      popover.setAttribute("aria-hidden", "false");
+      event.stopPropagation();
+    });
+
+    closeButton.addEventListener("click", function () {
+      popover.classList.remove("active");
+      openButton.setAttribute("aria-expanded", "false");
+      popover.setAttribute("aria-hidden", "true");
+    });
+
+    document.addEventListener("click", function (event) {
+      if (
+        popover.classList.contains("active") &&
+        !popover.contains(event.target) &&
+        event.target !== openButton
+      ) {
+        popover.classList.remove("active");
+        openButton.setAttribute("aria-expanded", "false");
+        popover.setAttribute("aria-hidden", "true");
+      }
+    });
+
+    // 키보드 접근성
+    openButton.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openButton.click();
+      }
+    });
+
+    closeButton.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        closeButton.click();
+      }
+    });
+  });
+
+  // Esc 키 이벤트 핸들러
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      const activePopover = document.querySelector(".tooltip-popover.active");
+      if (activePopover) {
+        activePopover.classList.remove("active");
+        const openButton = activePopover
+          .closest(".com-tooltip-wrap")
+          .querySelector(".btn-tooltip-open");
+        openButton.setAttribute("aria-expanded", "false");
+        activePopover.setAttribute("aria-hidden", "true");
+      }
+    }
+  });
+});

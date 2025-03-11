@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>design-system</title>
+
     <!-- 부트스트랩 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -16,6 +17,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <!-- //부트스트랩 -->
 
     <!-- 코드박스 -->
     <link
@@ -1020,14 +1022,431 @@
               </div>
             </div>
           </div>
+          <br />
+          <br />
+          <!-- 코드 복사 -->
+          <div class="cbox-accordion">
+            <div class="accordion">
+              <button class="accordion-button">도움말 패널</button>
+              <div class="accordion-content">
+                <div class="code-box">
+                  <button class="copy-button">코드 복사</button>
+                  <pre>
+      <code class="language-javascript">
+        &lt;div class=&quot;com-help-panel-wrap&quot;&gt;
+        &lt;button class=&quot;com-btn small tertiary help-open&quot;&gt;&#xB3C4;&#xC6C0;&#xB9D0;&lt;/button&gt;
+        &lt;div class=&quot;help-panel-wrap&quot;&gt;
+          &lt;div class=&quot;panel-tab-container&quot;&gt;
+            &lt;button class=&quot;com-btn small tertiary help-fold&quot;&gt;
+              &#xC811;&#xC5B4;&#xB450;&#xAE30;
+            &lt;/button&gt;
+            &lt;nav&gt;
+              &lt;ul class=&quot;help-tab-list nav&quot; role=&quot;tablist&quot;&gt;
+                &lt;li id=&quot;help-tab-01&quot; class=&quot;nav-item&quot;&gt;
+                  &lt;button
+                    type=&quot;button&quot;
+                    class=&quot;panel-tab-btn tit-heading-xsmall nav-link active&quot;
+                    data-bs-toggle=&quot;tab&quot;
+                    data-bs-target=&quot;#help-panel-01&quot;
+                    type=&quot;button&quot;
+                    role=&quot;tab&quot;
+                    aria-controls=&quot;help-panel-01&quot;
+                    aria-selected=&quot;true&quot;
+                  &gt;
+                    &#xB3C4;&#xC6C0;
+                  &lt;/button&gt;
+                &lt;/li&gt;
+                &lt;li id=&quot;help-tab-02&quot; class=&quot;nav-item&quot;&gt;
+                  &lt;button
+                    type=&quot;button&quot;
+                    class=&quot;panel-tab-btn tit-heading-xsmall nav-link&quot;
+                    data-bs-toggle=&quot;tab&quot;
+                    data-bs-target=&quot;#help-panel-02&quot;
+                    type=&quot;button&quot;
+                    role=&quot;tab&quot;
+                    aria-controls=&quot;help-panel-02&quot;
+                    aria-selected=&quot;false&quot;
+                  &gt;
+                    &#xB530;&#xB77C;&#xD558;&#xAE30;
+                  &lt;/button&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/nav&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;tab-contents-wrap&quot;&gt;
+            &lt;section id=&quot;help-panel-01&quot; class=&quot;help-panel-container active&quot;&gt;
+              &lt;div class=&quot;contents-header-wrap&quot;&gt;
+                &lt;h5 class=&quot;tit-heading-small&quot;&gt;
+                  &#xC804;&#xC790;&#xBB38;&#xC11C;&#xC9C0;&#xAC11;
+                  &lt;button class=&quot;btn-tip&quot;&gt;&lt;/button&gt;
+                &lt;/h5&gt;
+                &lt;div class=&quot;contents-desc&quot;&gt;
+                  &#xC804;&#xC790;&#xBB38;&#xC11C;&#xC9C0;&#xAC11;&#xC5D0;&#xC11C;&#xB294; &#xC804;&#xC790;&#xC99D;&#xBA85;&#xC11C; &#xCD9C;&#xB825;&#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA70;,
+                  &#xC2A4;&#xB9C8;&#xD2B8;&#xD3F0; &#xD654;&#xBA74;&#xC744; &#xCEA1;&#xCCD0;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB9CC;,
+                  &#xBC1C;&#xAE09;&#xBC1B;&#xC740; &#xC804;&#xC790;&#xC99D;&#xBA85;&#xC11C;&#xB97C; &#xC5F4;&#xB78C;&#xC6A9;&#xC73C;&#xB85C; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&#xD560; &#xC218;&#xB294; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+                &lt;/div&gt;
+                &lt;div class=&quot;contents-link-wrap&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;link-page&quot;
+                    &gt;&#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&lt;/a
+                  &gt;
+                  &lt;a href=&quot;#&quot; class=&quot;link-page&quot;&gt;iOS&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;&lt;/a&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;contents-related-wrap&quot;&gt;
+                &lt;div class=&quot;contents-wrap&quot;&gt;
+                  &lt;h6 class=&quot;tit-heading-xsmall&quot;&gt;&#xAD00;&#xB828;&#xC11C;&#xBE44;&#xC2A4;/&#xBBFC;&#xC6D0;&lt;/h6&gt;
+                  &lt;ul class=&quot;link-list&quot;&gt;
+                    &lt;li&gt;
+                      &lt;a href=&quot;#&quot;&gt;&#xC601;&#xBB38; &#xC8FC;&#xBBFC;&#xB4F1;&#xB85D;&#xD45C;&#xB4F1;&#xBCF8;&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;a href=&quot;#&quot;&gt;&#xC601;&#xBB38; &#xC8FC;&#xBBFC;&#xB4F1;&#xB85D;&#xD45C;&#xCD08;&#xBCF8;&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;a href=&quot;#&quot;&gt;&#xC8FC;&#xBBFC;&#xB4F1;&#xB85D;&#xD45C;&#xB4F1;&#xBCF8;&lt;/a&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;contents-wrap&quot;&gt;
+                  &lt;h6 class=&quot;tit-heading-xsmall&quot;&gt;&#xAE30;&#xD0C0; &#xBB38;&#xC758;/&#xB3C4;&#xC6C0;&#xB9D0;&lt;/h6&gt;
+                  &lt;div class=&quot;faq-list&quot;&gt;
+                    &lt;a href=&quot;#&quot;&gt;
+                      &lt;i class=&quot;complain-icon&quot;&gt;&lt;/i&gt;
+                      &#xBBFC;&#xC6D0;&#xC2E0;&#xCCAD; &#xAD00;&#xB828; &#xBB38;&#xC758; &#xC804;&#xD654; &#xBC88;&#xD638; &#xCC3E;&#xAE30;&lt;/a
+                    &gt;
+                    &lt;a href=&quot;#&quot;&gt;
+                      &lt;i class=&quot;faq-icon&quot;&gt;&lt;/i&gt;
+                      &#xC790;&#xC8FC; &#xBB3B;&#xB294; &#xC9C8;&#xBB38; &#xD655;&#xC778;&#xD558;&#xAE30;&lt;/a
+                    &gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;help-panel-02&quot; class=&quot;help-panel-container&quot;&gt;
+              &lt;div class=&quot;contents-header-wrap&quot;&gt;
+                &lt;h5 class=&quot;tit-heading-small&quot;&gt;
+                  &#xC2E4;&#xC2B5;&#xC744; &#xC9C4;&#xD589;&#xD560; &#xB0B4;&#xC6A9;&#xC744; &#xC120;&#xD0DD;&#xD574;&#xC8FC;&#xC138;&#xC694;.
+                &lt;/h5&gt;
+                &lt;div class=&quot;contents-desc&quot;&gt;
+                  &#xC120;&#xD0DD;&#xD55C; &#xC2E0;&#xCCAD; &#xB0B4;&#xC6A9;&#xC744; &#xB2E8;&#xACC4;&#xBCC4;&#xB85C; &#xC54C;&#xB824;&#xB4DC;&#xB9BD;&#xB2C8;&#xB2E4;.
+                &lt;/div&gt;
+                &lt;div class=&quot;contents-link-wrap&quot;&gt;
+                  &lt;a href=&quot;#&quot; class=&quot;link-move&quot;
+                    &gt;&#xC790;&#xC8FC; &#xBB3B;&#xB294; &#xC9C8;&#xBB38; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD558;&#xAE30;&lt;/a
+                  &gt;
+                  &lt;a href=&quot;#&quot; class=&quot;link-down&quot;&gt;&#xBB38;&#xC11C; &#xBC84;&#xC804; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC; &#xBC1B;&#xAE30;&lt;/a&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div
+                class=&quot;contents-accordian-wrap accordion accordion-flush&quot;
+              &gt;
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                  &lt;h2 class=&quot;accordion-header&quot; id=&quot;headingOne&quot;&gt;
+                    &lt;button
+                      class=&quot;accordion-button collapsed&quot;
+                      type=&quot;button&quot;
+                      data-bs-toggle=&quot;collapse&quot;
+                      data-bs-target=&quot;#collapseOne&quot;
+                      aria-expanded=&quot;true&quot;
+                      aria-controls=&quot;collapseOne&quot;
+                    &gt;
+                      &#xC720;&#xC758; &#xC0AC;&#xD56D; &#xD655;&#xC778;&#xD558;&#xAE30;
+                    &lt;/button&gt;
+                  &lt;/h2&gt;
+                  &lt;div
+                    id=&quot;collapseOne&quot;
+                    class=&quot;accordion-collapse collapse&quot;
+                    aria-labelledby=&quot;headingOne&quot;
+                    data-bs-parent=&quot;#accordionExample&quot;
+                  &gt;
+                    &lt;div class=&quot;accordion-body&quot;&gt;
+                      &#xC774; &#xB2E8;&#xACC4;&#xC758; &#xC2E4;&#xC2B5;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C; &#xB0B4;&#xC6A9;&#xC744; &#xC548;&#xB0B4;&#xD569;&#xB2C8;&#xB2E4;.
+                      &lt;ul&gt;
+                        &lt;li&gt;&#xC774;&#xC0AC; &#xC804;&#xC5D0; &#xC0B4;&#xB358; &#xACF3; &#xC8FC;&#xC18C;&#xD655;&#xC778;&lt;/li&gt;
+                        &lt;li&gt;
+                          &#xD604;&#xC7AC; &#xAC00;&#xC871; &#xAD6C;&#xC131;&#xC6D0; &#xC911; &#xD568;&#xAED8; &#xC774;&#xC0AC;&#xAC08; &#xC0AC;&#xB78C; &#xC815;&#xBCF4; &#xC120;&#xD0DD;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                      &lt;button class=&quot;com-btn small secondary&quot;&gt;
+                        &#xC2E4;&#xC2B5; &#xC2DC;&#xC791;&#xD558;&#xAE30;
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                  &lt;h2 class=&quot;accordion-header&quot; id=&quot;headingTwo&quot;&gt;
+                    &lt;button
+                      class=&quot;accordion-button collapsed&quot;
+                      type=&quot;button&quot;
+                      data-bs-toggle=&quot;collapse&quot;
+                      data-bs-target=&quot;#collapseTwo&quot;
+                      aria-expanded=&quot;false&quot;
+                      aria-controls=&quot;collapseTwo&quot;
+                    &gt;
+                      &#xC774;&#xC0AC; &#xC804; &#xC0B4;&#xB358; &#xACF3; &#xC815;&#xBCF4; &#xC785;&#xB825;&#xD558;&#xAE30;
+                    &lt;/button&gt;
+                  &lt;/h2&gt;
+                  &lt;div
+                    id=&quot;collapseTwo&quot;
+                    class=&quot;accordion-collapse collapse&quot;
+                    aria-labelledby=&quot;headingTwo&quot;
+                    data-bs-parent=&quot;#accordionExample&quot;
+                  &gt;
+                    &lt;div class=&quot;accordion-body&quot;&gt;
+                      &#xC774; &#xB2E8;&#xACC4;&#xC758; &#xC2E4;&#xC2B5;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C; &#xB0B4;&#xC6A9;&#xC744; &#xC548;&#xB0B4;&#xD569;&#xB2C8;&#xB2E4;.
+                      &lt;ul&gt;
+                        &lt;li&gt;&#xC774;&#xC0AC; &#xC804;&#xC5D0; &#xC0B4;&#xB358; &#xACF3; &#xC8FC;&#xC18C;&#xD655;&#xC778;&lt;/li&gt;
+                        &lt;li&gt;
+                          &#xD604;&#xC7AC; &#xAC00;&#xC871; &#xAD6C;&#xC131;&#xC6D0; &#xC911; &#xD568;&#xAED8; &#xC774;&#xC0AC;&#xAC08; &#xC0AC;&#xB78C; &#xC815;&#xBCF4; &#xC120;&#xD0DD;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                      &lt;button class=&quot;com-btn small secondary&quot;&gt;
+                        &#xC2E4;&#xC2B5; &#xC2DC;&#xC791;&#xD558;&#xAE30;
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                  &lt;h2 class=&quot;accordion-header&quot; id=&quot;headingThree&quot;&gt;
+                    &lt;button
+                      class=&quot;accordion-button collapsed&quot;
+                      type=&quot;button&quot;
+                      data-bs-toggle=&quot;collapse&quot;
+                      data-bs-target=&quot;#collapseThree&quot;
+                      aria-expanded=&quot;false&quot;
+                      aria-controls=&quot;collapseThree&quot;
+                    &gt;
+                      &#xC774;&#xC0AC; &#xC628; &#xACF3; &#xC815;&#xBCF4; &#xD655;&#xC778;&#xD558;&#xAE30;
+                    &lt;/button&gt;
+                  &lt;/h2&gt;
+                  &lt;div
+                    id=&quot;collapseThree&quot;
+                    class=&quot;accordion-collapse collapse&quot;
+                    aria-labelledby=&quot;headingThree&quot;
+                    data-bs-parent=&quot;#accordionExample&quot;
+                  &gt;
+                    &lt;div class=&quot;accordion-body&quot;&gt;
+                      &#xC774; &#xB2E8;&#xACC4;&#xC758; &#xC2E4;&#xC2B5;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C; &#xB0B4;&#xC6A9;&#xC744; &#xC548;&#xB0B4;&#xD569;&#xB2C8;&#xB2E4;.
+                      &lt;ul&gt;
+                        &lt;li&gt;&#xC774;&#xC0AC; &#xC804;&#xC5D0; &#xC0B4;&#xB358; &#xACF3; &#xC8FC;&#xC18C;&#xD655;&#xC778;&lt;/li&gt;
+                        &lt;li&gt;
+                          &#xD604;&#xC7AC; &#xAC00;&#xC871; &#xAD6C;&#xC131;&#xC6D0; &#xC911; &#xD568;&#xAED8; &#xC774;&#xC0AC;&#xAC08; &#xC0AC;&#xB78C; &#xC815;&#xBCF4; &#xC120;&#xD0DD;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                      &lt;button class=&quot;com-btn small secondary&quot;&gt;
+                        &#xC2E4;&#xC2B5; &#xC2DC;&#xC791;&#xD558;&#xAE30;
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;accordion-item&quot;&gt;
+                  &lt;h2 class=&quot;accordion-header&quot; id=&quot;headingFour&quot;&gt;
+                    &lt;button
+                      class=&quot;accordion-button collapsed&quot;
+                      type=&quot;button&quot;
+                      data-bs-toggle=&quot;collapse&quot;
+                      data-bs-target=&quot;#collapseFour&quot;
+                      aria-expanded=&quot;false&quot;
+                      aria-controls=&quot;collapseFour&quot;
+                    &gt;
+                      &#xBD80;&#xAC00;&#xC11C;&#xBE44;&#xC2A4; &#xC2E0;&#xCCAD;&#xD558;&#xAE30;
+                    &lt;/button&gt;
+                  &lt;/h2&gt;
+                  &lt;div
+                    id=&quot;collapseFour&quot;
+                    class=&quot;accordion-collapse collapse&quot;
+                    aria-labelledby=&quot;headingFour&quot;
+                    data-bs-parent=&quot;#accordionExample&quot;
+                  &gt;
+                    &lt;div class=&quot;accordion-body&quot;&gt;
+                      &#xC774; &#xB2E8;&#xACC4;&#xC758; &#xC2E4;&#xC2B5;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C; &#xB0B4;&#xC6A9;&#xC744; &#xC548;&#xB0B4;&#xD569;&#xB2C8;&#xB2E4;.
+                      &lt;ul&gt;
+                        &lt;li&gt;&#xC774;&#xC0AC; &#xC804;&#xC5D0; &#xC0B4;&#xB358; &#xACF3; &#xC8FC;&#xC18C;&#xD655;&#xC778;&lt;/li&gt;
+                        &lt;li&gt;
+                          &#xD604;&#xC7AC; &#xAC00;&#xC871; &#xAD6C;&#xC131;&#xC6D0; &#xC911; &#xD568;&#xAED8; &#xC774;&#xC0AC;&#xAC08; &#xC0AC;&#xB78C; &#xC815;&#xBCF4; &#xC120;&#xD0DD;
+                        &lt;/li&gt;
+                      &lt;/ul&gt;
+                      &lt;button class=&quot;com-btn small secondary&quot;&gt;
+                        &#xC2E4;&#xC2B5; &#xC2DC;&#xC791;&#xD558;&#xAE30;
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/section&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      </code>
+     </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
 
         <!-- //help panel -->
+
+        <!-- tool tip -->
+        <h2>Tool tip</h2>
+
+        <div class="part-container with-flex with-column-center">
+          <div class="com-tooltip-wrap">
+            <p class="tooltip-txt">상단 표시 - 좌측 화살표 (기본값)</p>
+            <div class="tooltip-action">
+              <button type="button" class="btn-tooltip-open">
+                <div class="sr-only"></div>
+                <i class="icon-tooltip"></i>
+              </button>
+              <div class="tooltip-popover" role="tooltip">
+                <h6 class="tit-heading-xsmall">툴팁 제목</h6>
+                <div class="tooltip-content-container">
+                  툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기
+                  버튼을 포함한 대화형 요소를 사용하지 않습니다.툴팁은 150자
+                  내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한
+                  대화형 요소를 사용하지 않습니다.본문을 가리지 않도록
+                  주의합니다.
+                </div>
+                <button
+                  type="button"
+                  class="com-btn-close btn-tooltip-close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="com-tooltip-wrap">
+            <p class="tooltip-txt">상단 표시 - 중앙 화살표</p>
+            <div class="tooltip-action">
+              <button type="button" class="btn-tooltip-open">
+                <div class="sr-only"></div>
+                <i class="icon-tooltip"></i>
+              </button>
+              <div class="tooltip-popover center" role="tooltip">
+                <h6 class="tit-heading-xsmall">툴팁 제목</h6>
+                <div class="tooltip-content-container">
+                  툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기
+                  버튼을 포함한 대화형 요소를 사용하지 않습니다.툴팁은 150자
+                  내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한
+                  대화형 요소를 사용하지 않습니다.본문을 가리지 않도록
+                  주의합니다.
+                </div>
+                <button
+                  type="button"
+                  class="com-btn-close btn-tooltip-close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="com-tooltip-wrap">
+            <p class="tooltip-txt">상단 표시 - 우측 화살표</p>
+            <div class="tooltip-action">
+              <button type="button" class="btn-tooltip-open">
+                <div class="sr-only"></div>
+                <i class="icon-tooltip"></i>
+              </button>
+              <div class="tooltip-popover right" role="tooltip">
+                <h6 class="tit-heading-xsmall">툴팁 제목</h6>
+                <div class="tooltip-content-container">
+                  툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기
+                  버튼을 포함한 대화형 요소를 사용하지 않습니다.툴팁은 150자
+                  내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한
+                  대화형 요소를 사용하지 않습니다.본문을 가리지 않도록
+                  주의합니다.
+                </div>
+                <button
+                  type="button"
+                  class="com-btn-close btn-tooltip-close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="com-tooltip-wrap">
+            <p class="tooltip-txt">하단 표시 - 좌측 화살표</p>
+            <div class="tooltip-action">
+              <button type="button" class="btn-tooltip-open">
+                <div class="sr-only"></div>
+                <i class="icon-tooltip"></i>
+              </button>
+              <div class="tooltip-popover bottom" role="tooltip">
+                <h6 class="tit-heading-xsmall">툴팁 제목</h6>
+                <div class="tooltip-content-container">
+                  툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기
+                  버튼을 포함한 대화형 요소를 사용하지 않습니다.툴팁은 150자
+                  내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한
+                  대화형 요소를 사용하지 않습니다.본문을 가리지 않도록
+                  주의합니다.
+                </div>
+                <button
+                  type="button"
+                  class="com-btn-close btn-tooltip-close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="com-tooltip-wrap">
+            <p class="tooltip-txt">상단 표시 - 중앙 화살표</p>
+            <div class="tooltip-action">
+              <button type="button" class="btn-tooltip-open">
+                <div class="sr-only"></div>
+                <i class="icon-tooltip"></i>
+              </button>
+              <div class="tooltip-popover center bottom" role="tooltip">
+                <h6 class="tit-heading-xsmall">툴팁 제목</h6>
+                <div class="tooltip-content-container">
+                  툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기
+                  버튼을 포함한 대화형 요소를 사용하지 않습니다.툴팁은 150자
+                  내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한
+                  대화형 요소를 사용하지 않습니다.본문을 가리지 않도록
+                  주의합니다.
+                </div>
+                <button
+                  type="button"
+                  class="com-btn-close btn-tooltip-close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="com-tooltip-wrap">
+            <p class="tooltip-txt">하단 표시 - 우측 화살표</p>
+            <div class="tooltip-action">
+              <button type="button" class="btn-tooltip-open">
+                <div class="sr-only"></div>
+                <i class="icon-tooltip"></i>
+              </button>
+              <div class="tooltip-popover bottom right" role="tooltip">
+                <h6 class="tit-heading-xsmall">툴팁 제목</h6>
+                <div class="tooltip-content-container">
+                  툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기
+                  버튼을 포함한 대화형 요소를 사용하지 않습니다.툴팁은 150자
+                  내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한
+                  대화형 요소를 사용하지 않습니다.본문을 가리지 않도록
+                  주의합니다.
+                </div>
+                <button
+                  type="button"
+                  class="com-btn-close btn-tooltip-close"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //tool tip -->
       </div>
     </div>
 
-    <!-- 코드박스 -->
-    <script defer src="./assets/js/com-script.js"></script>
+    <!-- 코드박스-->
+    <script defer src="./assets/js/design-system-codebox.js"></script>
     <!-- //코드박스 -->
+
+    <!-- system 스크립트 -->
+    <script defer src="./assets/js/com-script.js"></script>
+    <!-- //system 스크립트 -->
   </body>
 </html>

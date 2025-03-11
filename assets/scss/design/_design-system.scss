@@ -21,10 +21,17 @@
     font-size: var(--font-size-label-small);
     margin-top: 10px;
     margin-bottom: 10px;
+
+    &::after {
+      transform: unset;
+    }
   }
 
   .accordion-button.active {
     background-color: #e0e0e0;
+    &::after {
+      transform: rotate(-180deg);
+    }
   }
 
   .code-box {
@@ -130,6 +137,12 @@
     @include flex;
     gap: var(--gap-5);
     flex-flow: wrap;
+  }
+
+  &.with-column-center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -815,7 +828,6 @@ h6,
   }
 
   .help-panel-wrap {
-    // display: none;
     visibility: hidden;
     position: fixed; //실 적용시 포지션 변경 필요
     right: -100%;
@@ -832,6 +844,7 @@ h6,
     @include mobile {
       padding: var(--padding-6, 16px) var(--padding-8, 24px)
         var(--padding-8, 24px);
+      width: calc(100vw - 30px);
     }
 
     &.is-open {
@@ -1112,6 +1125,157 @@ h6,
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+// tool tip
+.com-tooltip-wrap {
+  @include flexYCenter;
+  gap: var(--gap-2, 4px);
+
+  .tooltip-txt {
+    font-size: var(--font-size-body-medium, 17px);
+  }
+
+  .tooltip-action {
+    position: relative;
+    @include flexYCenter;
+
+    .btn-tooltip-open {
+      @include flexYCenter;
+      z-index: 200;
+
+      .icon-tooltip {
+        content: "";
+        display: inline-flex;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        @include mask("icon/tooltip.svg", center center);
+        background-color: var(--color-button-primary-fill);
+      }
+    }
+
+    .tooltip-popover {
+      @include flexColumn;
+      display: none;
+      gap: var(--gap-5, 16px);
+
+      &.active {
+        display: flex;
+      }
+
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      width: 360px;
+      margin-left: -20px;
+      margin-bottom: 16px;
+      padding: var(--padding-8, 24px);
+      border: 1px solid var(--color-border-gray);
+      box-shadow: var(--color-box-shadow-popover);
+      border-radius: var(--radius-xlarge-1);
+      background-color: #fff;
+      z-index: 201;
+
+      &::before {
+        position: absolute;
+        top: 100%;
+        left: 24px;
+        margin-top: -7px;
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-left: 1px solid var(--color-border-gray);
+        border-bottom: 1px solid var(--color-border-gray);
+        background-color: #fff;
+        transform: rotate(-45deg);
+      }
+
+      &.top {
+        bottom: 100%;
+        margin-bottom: 16px;
+
+        &::before {
+          top: 100%;
+          margin-top: -7px;
+          transform: rotate(-45deg);
+        }
+      }
+
+      &.bottom {
+        bottom: unset;
+        margin-bottom: unset;
+        top: 100%;
+        margin-top: 16px;
+
+        &::before {
+          top: unset;
+          margin-top: unset;
+          bottom: 100%;
+          margin-bottom: -7px;
+          transform: rotate(135deg);
+        }
+      }
+
+      &.left {
+        left: 0;
+        bottom: 100%;
+        width: 360px;
+        margin-left: -20px;
+
+        &::before {
+          left: 24px;
+          transform: rotate(-45deg);
+        }
+      }
+
+      &.right {
+        left: unset;
+        margin-left: unset;
+        right: 0;
+        margin-right: -20px;
+
+        &::before {
+          left: unset;
+          right: 24px;
+        }
+      }
+
+      &.center {
+        left: 20px;
+        transform: translateX(-50%);
+        margin-left: unset;
+        margin-right: -20px;
+
+        &::before {
+          left: unset;
+          right: 50%;
+        }
+      }
+
+      @include mobile {
+        &::before {
+          all: unset;
+        }
+      }
+
+      .tooltip-content-container {
+        font-size: var(--font-size-body-small, 15px);
+        color: var(--color-text-basic);
+      }
+
+      .btn-tooltip-close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+
+        &::before {
+          width: 16px;
+          height: 16px;
         }
       }
     }

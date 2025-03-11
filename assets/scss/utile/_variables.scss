@@ -275,6 +275,8 @@ $colors: (
   --padding-9: 32px;
   --padding-10: 40px;
 
+  // tooptip gap
+
   // radius
   --radius-xsmall-1: 2px;
   --radius-xsmall-2: 2px;
@@ -323,6 +325,10 @@ $colors: (
   --color-border-gray: #b1b8be;
   --color-border-help-gray: #cdd1d5;
   --color-divider-gray-light: #cdd1d5;
+
+  // box shadow color
+  --color-box-shadow-popover: 0 0 0.2rem 0 #00000014,
+    0 0.8rem 1.6rem 0 #0000001f;
 
   // button color
   --color-button-primary-fill: #256ef4;
