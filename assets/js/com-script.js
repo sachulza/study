@@ -115,3 +115,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+/** feedback panel */
+document.addEventListener("DOMContentLoaded", function () {
+  const positiveRadio = document.getElementById("radio-feedback-positive");
+  const negativeRadio = document.getElementById("radio-feedback-negative");
+  const positiveContents = document.querySelector(
+    ".feedback-contents-wrap.positive"
+  );
+  const negativeContents = document.querySelector(
+    ".feedback-contents-wrap.negative"
+  );
+  const submitMessage = document.querySelector(".submit-message-wrap");
+  const submitBtns = document.querySelectorAll(".btn-submit-feedback"); // 모든 버튼 선택
+
+  positiveRadio.addEventListener("change", function () {
+    positiveContents.classList.add("active");
+    negativeContents.classList.remove("active");
+    submitMessage.classList.remove("active");
+  });
+
+  negativeRadio.addEventListener("change", function () {
+    negativeContents.classList.add("active");
+    positiveContents.classList.remove("active");
+    submitMessage.classList.remove("active");
+  });
+
+  submitBtns.forEach(function (btn) {
+    // 각 버튼에 이벤트 리스너 추가
+    btn.addEventListener("click", function () {
+      submitMessage.classList.add("active");
+    });
+  });
+});

@@ -300,3 +300,8 @@
     font-weight: 400;
   }
 }
+
+.ui-input-container {
+  @include flexYCenter;
+  gap: var(--gap-3, 8px);
+}

@@ -1324,7 +1324,9 @@
                 <div class="sr-only"></div>
                 <i class="icon-tooltip"></i>
               </button>
-              <div class="tooltip-popover center" role="tooltip">
+              <!-- 위 아래 포지션을 class에 추가해주세요. top / bottom -->
+              <!-- arrow 위치를 class에 추가해주세요. left/right/center/no-arrow -->
+              <div class="tooltip-popover top center" role="tooltip">
                 <h6 class="tit-heading-xsmall">툴팁 제목</h6>
                 <div class="tooltip-content-container">
                   툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기
@@ -1436,8 +1438,212 @@
               </div>
             </div>
           </div>
+
+          <br />
+
+          <!-- 코드 복사 -->
+          <div class="cbox-accordion">
+            <div class="accordion">
+              <button class="accordion-button">코드작성탬플릿</button>
+              <div class="accordion-content">
+                <div class="code-box">
+                  <button class="copy-button">코드 복사</button>
+                  <pre>
+      <code class="language-javascript">
+        &lt;div class=&quot;com-tooltip-wrap&quot;&gt;
+        &lt;p class=&quot;tooltip-txt&quot;&gt;&#xC0C1;&#xB2E8; &#xD45C;&#xC2DC; - &#xC911;&#xC559; &#xD654;&#xC0B4;&#xD45C;&lt;/p&gt;
+        &lt;div class=&quot;tooltip-action&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn-tooltip-open&quot;&gt;
+            &lt;div class=&quot;sr-only&quot;&gt;&lt;/div&gt;
+            &lt;i class=&quot;icon-tooltip&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;!-- &#xC704; &#xC544;&#xB798; &#xD3EC;&#xC9C0;&#xC158;&#xC744; class&#xC5D0; &#xCD94;&#xAC00;&#xD574;&#xC8FC;&#xC138;&#xC694;. top / bottom --&gt;
+          &lt;!-- arrow &#xC704;&#xCE58;&#xB97C; class&#xC5D0; &#xCD94;&#xAC00;&#xD574;&#xC8FC;&#xC138;&#xC694;. left/right/center/no-arrow --&gt;
+          &lt;div class=&quot;tooltip-popover top center&quot; role=&quot;tooltip&quot;&gt;
+            &lt;h6 class=&quot;tit-heading-xsmall&quot;&gt;&#xD234;&#xD301; &#xC81C;&#xBAA9;&lt;/h6&gt;
+            &lt;div class=&quot;tooltip-content-container&quot;&gt;
+              &#xD234;&#xD301;&#xC740; 150&#xC790; &#xB0B4;&#xC678;&#xC758; &#xD14D;&#xC2A4;&#xD2B8;&#xB9CC; &#xC81C;&#xACF5;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB0B4;&#xBD80;&#xC5D0; &#xB2EB;&#xAE30;
+              &#xBC84;&#xD2BC;&#xC744; &#xD3EC;&#xD568;&#xD55C; &#xB300;&#xD654;&#xD615; &#xC694;&#xC18C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.&#xD234;&#xD301;&#xC740; 150&#xC790;
+              &#xB0B4;&#xC678;&#xC758; &#xD14D;&#xC2A4;&#xD2B8;&#xB9CC; &#xC81C;&#xACF5;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB0B4;&#xBD80;&#xC5D0; &#xB2EB;&#xAE30; &#xBC84;&#xD2BC;&#xC744; &#xD3EC;&#xD568;&#xD55C;
+              &#xB300;&#xD654;&#xD615; &#xC694;&#xC18C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.&#xBCF8;&#xBB38;&#xC744; &#xAC00;&#xB9AC;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D;
+              &#xC8FC;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.
+            &lt;/div&gt;
+            &lt;button
+              type=&quot;button&quot;
+              class=&quot;com-btn-close btn-tooltip-close&quot;
+            &gt;&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      </code>
+     </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
         <!-- //tool tip -->
+
+        <h2>feedback panel</h2>
+
+        <div class="part-container">
+          <div class="com-feedback-panel-wrap">
+            <div class="feedback-panel-wrap">
+              <div class="feedback-header-wrap">
+                <h5 class="tit-heading-small mr-auto">
+                  이 페이지에 만족하시나요?
+                </h5>
+                <div class="header-btn-wrap">
+                  <div class="btn-radio-container">
+                    <input
+                      type="radio"
+                      name="feedback-satisfaction"
+                      id="radio-feedback-positive"
+                    />
+                    <label for="radio-feedback-positive" class="feedback yes"
+                      >네</label
+                    >
+                  </div>
+                  <div class="btn-radio-container">
+                    <input
+                      type="radio"
+                      name="feedback-satisfaction"
+                      id="radio-feedback-negative"
+                    />
+                    <label for="radio-feedback-negative" class="feedback no"
+                      >아니오</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="feedback-contents-wrap positive">
+                <ol class="feedback-list-wrap">
+                  <li class="contents-radio-wrap">
+                    <span>1. </span>
+                    <div class="contents-column">
+                      <p>이 페이지의 어떤 점에 만족하셨나요? (선택 입력)</p>
+                      <form>
+                        <label class="ui-input-container">
+                          <input
+                            type="checkbox"
+                            name="feedback-positive-reason"
+                          />필요한 정보를 찾음
+                        </label>
+                        <label class="ui-input-container">
+                          <input
+                            type="checkbox"
+                            name="feedback-positive-reason"
+                          />내용이 마음에 듦
+                        </label>
+                        <label class="ui-input-container">
+                          <input
+                            type="checkbox"
+                            name="feedback-positive-reason"
+                          />내용을 이해하기 쉬움
+                        </label>
+                      </form>
+                    </div>
+                  </li>
+                  <li class="contents-input-text-wrap">
+                    <span>2. </span>
+                    <div class="contents-column">
+                      <p>기타 제안 사항이 있다면 작성해주세요. (선택 입력)</p>
+                      <div class="textarea-wrap">
+                        <textarea
+                          id=""
+                          class="text-input"
+                          placeholder="내용을 입력해주세요."
+                          title="기타 제안 사항 입력"
+                        ></textarea>
+                        <p class="text-count">
+                          <span class="text-primary">1</span>
+                          <span class="text-number">/100</span>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+                <div class="btn-submit-wrap">
+                  <button class="com-btn medium tertiary">취소</button>
+                  <button class="com-btn medium primary btn-submit-feedback">
+                    평가완료
+                  </button>
+                </div>
+              </div>
+              <div class="feedback-contents-wrap negative">
+                <ol class="feedback-list-wrap">
+                  <li class="contents-radio-wrap">
+                    <span>1. </span>
+                    <div class="contents-column">
+                      <p>
+                        이 페이지의 어떤 점에 만족하지 못하셨나요? (선택 입력)
+                      </p>
+                      <form>
+                        <label class="ui-input-container">
+                          <input
+                            type="checkbox"
+                            name="feedback-negative-reason"
+                          />원하는 정보를 찾을 수 없음
+                        </label>
+                        <label class="ui-input-container">
+                          <input
+                            type="checkbox"
+                            name="feedback-negative-reason"
+                          />정보가 정확하지 않음
+                        </label>
+                        <label class="ui-input-container">
+                          <input
+                            type="checkbox"
+                            name="feedback-negative-reason"
+                          />내용이 마음에 들지 않음
+                        </label>
+                        <label class="ui-input-container">
+                          <input
+                            type="checkbox"
+                            name="feedback-negative-reason"
+                          />내용을 이해하기 어려움
+                        </label>
+                      </form>
+                    </div>
+                  </li>
+                  <li class="contents-input-text-wrap">
+                    <span>2. </span>
+                    <div class="contents-column">
+                      <p>기타 제안 사항이 있다면 작성해주세요. (선택 입력)</p>
+                      <div class="textarea-wrap">
+                        <textarea
+                          id=""
+                          class="text-input"
+                          placeholder="내용을 입력해주세요."
+                          title="기타 제안 사항 입력"
+                        ></textarea>
+                        <p class="text-count">
+                          <span class="text-primary">1</span>
+                          <span class="text-number">/100</span>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+                <div class="btn-submit-wrap">
+                  <button class="com-btn medium tertiary">취소</button>
+                  <button class="com-btn medium primary btn-submit-feedback">
+                    평가완료
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="submit-message-wrap">
+              <p class="message-tit tit-heading-xsmall">
+                의견을 남겨주셔서 감사합니다.
+              </p>
+              <p class="message-desc">
+                보내주신 소중한 의견은 페이지 개선에 도움이 됩니다.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
