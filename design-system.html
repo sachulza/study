@@ -1444,7 +1444,7 @@
           <!-- 코드 복사 -->
           <div class="cbox-accordion">
             <div class="accordion">
-              <button class="accordion-button">코드작성탬플릿</button>
+              <button class="accordion-button">Tool tip 코드</button>
               <div class="accordion-content">
                 <div class="code-box">
                   <button class="copy-button">코드 복사</button>
@@ -1643,6 +1643,180 @@
               </p>
             </div>
           </div>
+
+          <br />
+
+          <!-- 코드 복사 -->
+          <div class="cbox-accordion">
+            <div class="accordion">
+              <button class="accordion-button">feedback panel 코드</button>
+              <div class="accordion-content">
+                <div class="code-box">
+                  <button class="copy-button">코드 복사</button>
+                  <pre>
+      <code class="language-javascript">
+        &lt;div class=&quot;com-feedback-panel-wrap&quot;&gt;
+        &lt;div class=&quot;feedback-panel-wrap&quot;&gt;
+          &lt;div class=&quot;feedback-header-wrap&quot;&gt;
+            &lt;h5 class=&quot;tit-heading-small mr-auto&quot;&gt;
+              &#xC774; &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xB9CC;&#xC871;&#xD558;&#xC2DC;&#xB098;&#xC694;?
+            &lt;/h5&gt;
+            &lt;div class=&quot;header-btn-wrap&quot;&gt;
+              &lt;div class=&quot;btn-radio-container&quot;&gt;
+                &lt;input
+                  type=&quot;radio&quot;
+                  name=&quot;feedback-satisfaction&quot;
+                  id=&quot;radio-feedback-positive&quot;
+                /&gt;
+                &lt;label for=&quot;radio-feedback-positive&quot; class=&quot;feedback yes&quot;
+                  &gt;&#xB124;&lt;/label
+                &gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;btn-radio-container&quot;&gt;
+                &lt;input
+                  type=&quot;radio&quot;
+                  name=&quot;feedback-satisfaction&quot;
+                  id=&quot;radio-feedback-negative&quot;
+                /&gt;
+                &lt;label for=&quot;radio-feedback-negative&quot; class=&quot;feedback no&quot;
+                  &gt;&#xC544;&#xB2C8;&#xC624;&lt;/label
+                &gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;feedback-contents-wrap positive&quot;&gt;
+            &lt;ol class=&quot;feedback-list-wrap&quot;&gt;
+              &lt;li class=&quot;contents-radio-wrap&quot;&gt;
+                &lt;span&gt;1. &lt;/span&gt;
+                &lt;div class=&quot;contents-column&quot;&gt;
+                  &lt;p&gt;&#xC774; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC5B4;&#xB5A4; &#xC810;&#xC5D0; &#xB9CC;&#xC871;&#xD558;&#xC168;&#xB098;&#xC694;? (&#xC120;&#xD0DD; &#xC785;&#xB825;)&lt;/p&gt;
+                  &lt;form&gt;
+                    &lt;label class=&quot;ui-input-container&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        name=&quot;feedback-positive-reason&quot;
+                      /&gt;&#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xCC3E;&#xC74C;
+                    &lt;/label&gt;
+                    &lt;label class=&quot;ui-input-container&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        name=&quot;feedback-positive-reason&quot;
+                      /&gt;&#xB0B4;&#xC6A9;&#xC774; &#xB9C8;&#xC74C;&#xC5D0; &#xB4E6;
+                    &lt;/label&gt;
+                    &lt;label class=&quot;ui-input-container&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        name=&quot;feedback-positive-reason&quot;
+                      /&gt;&#xB0B4;&#xC6A9;&#xC744; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC26C;&#xC6C0;
+                    &lt;/label&gt;
+                  &lt;/form&gt;
+                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li class=&quot;contents-input-text-wrap&quot;&gt;
+                &lt;span&gt;2. &lt;/span&gt;
+                &lt;div class=&quot;contents-column&quot;&gt;
+                  &lt;p&gt;&#xAE30;&#xD0C0; &#xC81C;&#xC548; &#xC0AC;&#xD56D;&#xC774; &#xC788;&#xB2E4;&#xBA74; &#xC791;&#xC131;&#xD574;&#xC8FC;&#xC138;&#xC694;. (&#xC120;&#xD0DD; &#xC785;&#xB825;)&lt;/p&gt;
+                  &lt;div class=&quot;textarea-wrap&quot;&gt;
+                    &lt;textarea
+                      id=&quot;&quot;
+                      class=&quot;text-input&quot;
+                      placeholder=&quot;&#xB0B4;&#xC6A9;&#xC744; &#xC785;&#xB825;&#xD574;&#xC8FC;&#xC138;&#xC694;.&quot;
+                      title=&quot;&#xAE30;&#xD0C0; &#xC81C;&#xC548; &#xC0AC;&#xD56D; &#xC785;&#xB825;&quot;
+                    &gt;&lt;/textarea&gt;
+                    &lt;p class=&quot;text-count&quot;&gt;
+                      &lt;span class=&quot;text-primary&quot;&gt;1&lt;/span&gt;
+                      &lt;span class=&quot;text-number&quot;&gt;/100&lt;/span&gt;
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/ol&gt;
+            &lt;div class=&quot;btn-submit-wrap&quot;&gt;
+              &lt;button class=&quot;com-btn medium tertiary&quot;&gt;&#xCDE8;&#xC18C;&lt;/button&gt;
+              &lt;button class=&quot;com-btn medium primary btn-submit-feedback&quot;&gt;
+                &#xD3C9;&#xAC00;&#xC644;&#xB8CC;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;feedback-contents-wrap negative&quot;&gt;
+            &lt;ol class=&quot;feedback-list-wrap&quot;&gt;
+              &lt;li class=&quot;contents-radio-wrap&quot;&gt;
+                &lt;span&gt;1. &lt;/span&gt;
+                &lt;div class=&quot;contents-column&quot;&gt;
+                  &lt;p&gt;
+                    &#xC774; &#xD398;&#xC774;&#xC9C0;&#xC758; &#xC5B4;&#xB5A4; &#xC810;&#xC5D0; &#xB9CC;&#xC871;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xC168;&#xB098;&#xC694;? (&#xC120;&#xD0DD; &#xC785;&#xB825;)
+                  &lt;/p&gt;
+                  &lt;form&gt;
+                    &lt;label class=&quot;ui-input-container&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        name=&quot;feedback-negative-reason&quot;
+                      /&gt;&#xC6D0;&#xD558;&#xB294; &#xC815;&#xBCF4;&#xB97C; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xC74C;
+                    &lt;/label&gt;
+                    &lt;label class=&quot;ui-input-container&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        name=&quot;feedback-negative-reason&quot;
+                      /&gt;&#xC815;&#xBCF4;&#xAC00; &#xC815;&#xD655;&#xD558;&#xC9C0; &#xC54A;&#xC74C;
+                    &lt;/label&gt;
+                    &lt;label class=&quot;ui-input-container&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        name=&quot;feedback-negative-reason&quot;
+                      /&gt;&#xB0B4;&#xC6A9;&#xC774; &#xB9C8;&#xC74C;&#xC5D0; &#xB4E4;&#xC9C0; &#xC54A;&#xC74C;
+                    &lt;/label&gt;
+                    &lt;label class=&quot;ui-input-container&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        name=&quot;feedback-negative-reason&quot;
+                      /&gt;&#xB0B4;&#xC6A9;&#xC744; &#xC774;&#xD574;&#xD558;&#xAE30; &#xC5B4;&#xB824;&#xC6C0;
+                    &lt;/label&gt;
+                  &lt;/form&gt;
+                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li class=&quot;contents-input-text-wrap&quot;&gt;
+                &lt;span&gt;2. &lt;/span&gt;
+                &lt;div class=&quot;contents-column&quot;&gt;
+                  &lt;p&gt;&#xAE30;&#xD0C0; &#xC81C;&#xC548; &#xC0AC;&#xD56D;&#xC774; &#xC788;&#xB2E4;&#xBA74; &#xC791;&#xC131;&#xD574;&#xC8FC;&#xC138;&#xC694;. (&#xC120;&#xD0DD; &#xC785;&#xB825;)&lt;/p&gt;
+                  &lt;div class=&quot;textarea-wrap&quot;&gt;
+                    &lt;textarea
+                      id=&quot;&quot;
+                      class=&quot;text-input&quot;
+                      placeholder=&quot;&#xB0B4;&#xC6A9;&#xC744; &#xC785;&#xB825;&#xD574;&#xC8FC;&#xC138;&#xC694;.&quot;
+                      title=&quot;&#xAE30;&#xD0C0; &#xC81C;&#xC548; &#xC0AC;&#xD56D; &#xC785;&#xB825;&quot;
+                    &gt;&lt;/textarea&gt;
+                    &lt;p class=&quot;text-count&quot;&gt;
+                      &lt;span class=&quot;text-primary&quot;&gt;1&lt;/span&gt;
+                      &lt;span class=&quot;text-number&quot;&gt;/100&lt;/span&gt;
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/ol&gt;
+            &lt;div class=&quot;btn-submit-wrap&quot;&gt;
+              &lt;button class=&quot;com-btn medium tertiary&quot;&gt;&#xCDE8;&#xC18C;&lt;/button&gt;
+              &lt;button class=&quot;com-btn medium primary btn-submit-feedback&quot;&gt;
+                &#xD3C9;&#xAC00;&#xC644;&#xB8CC;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;submit-message-wrap&quot;&gt;
+          &lt;p class=&quot;message-tit tit-heading-xsmall&quot;&gt;
+            &#xC758;&#xACAC;&#xC744; &#xB0A8;&#xACA8;&#xC8FC;&#xC154;&#xC11C; &#xAC10;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.
+          &lt;/p&gt;
+          &lt;p class=&quot;message-desc&quot;&gt;
+            &#xBCF4;&#xB0B4;&#xC8FC;&#xC2E0; &#xC18C;&#xC911;&#xD55C; &#xC758;&#xACAC;&#xC740; &#xD398;&#xC774;&#xC9C0; &#xAC1C;&#xC120;&#xC5D0; &#xB3C4;&#xC6C0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      </code>
+     </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //코드 복사 -->
         </div>
       </div>
     </div>

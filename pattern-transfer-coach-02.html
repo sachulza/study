@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pattern-transfer</title>
+    <title>전입신고 코칭02</title>
 
     <!-- 부트스트랩 -->
     <link
@@ -36,7 +36,7 @@
             </ol>
           </nav>
         </div>
-        <div class="page-transfer-wrap">
+        <div class="page-transfer-wrap coaching01">
           <h2 class="tit-heading-xlarge">전입신고</h2>
           <div class="transfer-step">
             <div class="com-step-indicator-wrap">
@@ -95,9 +95,7 @@
                             <option value="" disabled selected>
                               시도 선택
                             </option>
-                            <option value="">항목1</option>
-                            <option value="">항목2</option>
-                            <option value="">항목3</option>
+                            <option value="">서울특별시</option>
                           </select>
                         </div>
                       </div>
@@ -107,18 +105,86 @@
                             <option value="" disabled selected>
                               시군구 선택
                             </option>
-                            <option value="">항목1</option>
-                            <option value="">항목2</option>
-                            <option value="">항목3</option>
+                            <option value="">관악구</option>
                           </select>
                         </div>
                       </div>
                       <button class="com-btn large secondary">주소 조회</button>
                     </div>
+                    <div class="coaching-select-wrap focus-coaching highlight">
+                      <div class="custom-tooltip-action">
+                        <!-- 위 아래 포지션을 class에 추가해주세요. top / bottom -->
+                        <!-- arrow 위치를 class에 추가해주세요. left/right/center/no-arrow -->
+                        <div
+                          class="tooltip-popover top right active"
+                          role="tooltip"
+                        >
+                          <h6 class="tit-heading-xsmall">
+                            2단계 : 이사 전 살던 곳
+                          </h6>
+                          <div class="tooltip-content-container">
+                            이사 전에 살던 곳의 주소를 선택 후 ‘주소 조회’를
+                            클릭해주세요.
+                          </div>
+                          <div class="pagination-wrap">
+                            <div class="pagination-container">
+                              <span class="text-active">2</span>
+                              <span class="text-desc">/ 4</span>
+                            </div>
+                            <div class="btn-container">
+                              <a
+                                class="btn-quit"
+                                href="./pattern-transfer.html"
+                              >
+                                그만보기
+                              </a>
+
+                              <a
+                                class="btn-prev"
+                                href="./pattern-transfer-coach-01.html"
+                              >
+                                이전으로
+                              </a>
+
+                              <a
+                                class="btn-next"
+                                href="./pattern-transfer-coach-03.html"
+                              >
+                                다음으로
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="previous-address-wrap">
+                        <ul>
+                          <li>
+                            <span class="list-inner-title">기본주소</span>
+                            <span class="list-inner-desc"
+                              >세종특별자치시 도움6로 42(어진동)</span
+                            >
+                          </li>
+                          <li>
+                            <span class="list-inner-title">상세주소</span>
+                            <span class="list-inner-desc">행정안전부</span>
+                          </li>
+                        </ul>
+                        <ul class="lwr-list-ul">
+                          <li>
+                            <span class="list-inner-title"
+                              >관할 읍·면사무소/동 주민센터</span
+                            >
+                            <span class="list-inner-desc"
+                              >어진동 행정복지센터</span
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="ui-border-box">
+              <div class="ui-border-box hi">
                 <div class="layout-transfer-content-inner">
                   <div class="inner-tit">
                     <h4 class="tit-heading-medium">신고 대상자</h4>
@@ -151,7 +217,7 @@
                   <li id="help-tab-01" class="nav-item">
                     <button
                       type="button"
-                      class="panel-tab-btn tit-heading-xsmall nav-link active"
+                      class="panel-tab-btn tit-heading-xsmall nav-link"
                       data-bs-toggle="tab"
                       data-bs-target="#help-panel-01"
                       type="button"
@@ -165,7 +231,7 @@
                   <li id="help-tab-02" class="nav-item">
                     <button
                       type="button"
-                      class="panel-tab-btn tit-heading-xsmall nav-link"
+                      class="panel-tab-btn tit-heading-xsmall nav-link active"
                       data-bs-toggle="tab"
                       data-bs-target="#help-panel-02"
                       type="button"
@@ -180,7 +246,7 @@
               </nav>
             </div>
             <div class="tab-contents-wrap">
-              <section id="help-panel-01" class="help-panel-container active">
+              <section id="help-panel-01" class="help-panel-container">
                 <div class="contents-header-wrap">
                   <h5 class="tit-heading-small">
                     전자문서지갑
@@ -229,35 +295,35 @@
                 </div>
               </section>
 
-              <section id="help-panel-02" class="help-panel-container">
+              <section id="help-panel-02" class="help-panel-container active">
                 <div class="contents-header-wrap">
                   <h5 class="tit-heading-small">
-                    실습을 진행할 내용을 선택해주세요.
-                  </h5>
-                  <div class="contents-desc">
-                    선택한 신청 내용을 단계별로 알려드립니다.
-                  </div>
-                  <div class="contents-link-wrap">
-                    <a href="#" class="link-move"
-                      >자주 묻는 질문 페이지에서 확인하기</a
+                    <a
+                      href="./pattern-transfer.html"
+                      class="icon-left-arrow coaching01"
+                      >이사 전 살던 곳 정보 입력하기</a
                     >
-                    <a href="#" class="link-down">문서 버전 다운로드 받기</a>
-                  </div>
+                  </h5>
                 </div>
-                <div class="contents-accordian-wrap accordion accordion-flush">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
+                <ul
+                  class="contents-accordian-wrap accordion accordion-flush coaching01"
+                >
+                  <li class="accordion-item coaching01">
+                    <h5 class="tit-heading-small coaching01 highlight">
+                      Task 1: 이사 전에 살던 곳 주소 확인
+                    </h5>
+                    <div class="accordion-header" id="headingOne">
                       <button
-                        class="accordion-button collapsed"
+                        class="accordion-button collapsed coaching01"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        유의 사항 확인하기
+                        전체 2단계
                       </button>
-                    </h2>
+                    </div>
                     <div
                       id="collapseOne"
                       class="accordion-collapse collapse"
@@ -265,34 +331,29 @@
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        이 단계의 실습에서는 다음 내용을 안내합니다.
                         <ul>
-                          <li>이사 전에 살던 곳 주소확인</li>
-                          <li>
-                            현재 가족 구성원 중 함께 이사갈 사람 정보 선택
-                          </li>
+                          <li>단계1 : 주소조회</li>
+                          <li>단계2 : 조회 결과 확인</li>
                         </ul>
-                        <a href="./pattern-transfer-coach-01.html">
-                          <button class="com-btn small secondary">
-                            실습 시작하기
-                          </button>
-                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
+                  </li>
+                  <li class="accordion-item coaching01">
+                    <h5 class="tit-heading-small coaching01">
+                      Task 2: 이사 갈 가족 구성원 선택하기
+                    </h5>
+                    <div class="accordion-header" id="headingTwo">
                       <button
-                        class="accordion-button collapsed"
+                        class="accordion-button collapsed coaching01"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        이사 전 살던 곳 정보 입력하기
+                        전체 1단계
                       </button>
-                    </h2>
+                    </div>
                     <div
                       id="collapseTwo"
                       class="accordion-collapse collapse"
@@ -300,92 +361,13 @@
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        이 단계의 실습에서는 다음 내용을 안내합니다.
                         <ul>
-                          <li>이사 전에 살던 곳 주소확인</li>
-                          <li>
-                            현재 가족 구성원 중 함께 이사갈 사람 정보 선택
-                          </li>
+                          <li>단계1 : 주소조회</li>
                         </ul>
-                        <a href="./pattern-transfer-coach-01.html">
-                          <button class="com-btn small secondary">
-                            실습 시작하기
-                          </button>
-                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        이사 온 곳 정보 확인하기
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseThree"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="headingThree"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <div class="accordion-body">
-                        이 단계의 실습에서는 다음 내용을 안내합니다.
-                        <ul>
-                          <li>이사 전에 살던 곳 주소확인</li>
-                          <li>
-                            현재 가족 구성원 중 함께 이사갈 사람 정보 선택
-                          </li>
-                        </ul>
-                        <a href="./pattern-transfer-coach-01.html">
-                          <button class="com-btn small secondary">
-                            실습 시작하기
-                          </button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour"
-                        aria-expanded="false"
-                        aria-controls="collapseFour"
-                      >
-                        부가서비스 신청하기
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseFour"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="headingFour"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <div class="accordion-body">
-                        이 단계의 실습에서는 다음 내용을 안내합니다.
-                        <ul>
-                          <li>이사 전에 살던 곳 주소확인</li>
-                          <li>
-                            현재 가족 구성원 중 함께 이사갈 사람 정보 선택
-                          </li>
-                        </ul>
-                        <a href="./pattern-transfer-coach-01.html">
-                          <button class="com-btn small secondary">
-                            실습 시작하기
-                          </button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </section>
             </div>
           </div>

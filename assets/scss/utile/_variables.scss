@@ -323,10 +323,14 @@ $colors: (
   --color-element-disabled-light: #cdd1d5;
   --color-input-border: #58616a;
   --color-input-border-active: #256ef4;
+  --color-border-primary: #256ef4;
   --color-border-gray: #b1b8be;
   --color-border-help-gray: #cdd1d5;
   --color-divider-gray-light: #cdd1d5;
   --color-divider-gray: #8a949e;
+
+  // outline color
+  --color-coach-outline: #d8e5fd;
 
   // box shadow color
   --color-box-shadow-popover: 0 0 0.2rem 0 #00000014,
